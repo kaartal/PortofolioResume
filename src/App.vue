@@ -17,8 +17,8 @@ import { defineAsyncComponent } from 'vue';
 
 const loading = ref(true);
 
-const NavBar = defineAsyncComponent(() => import('@/components/Navbar.vue'));
-const HeroSection = defineAsyncComponent(() => import('@/components/Herosection.vue'));
+const NavBar = defineAsyncComponent(() => import('@/components/NavBar.vue'));
+const HeroSection = defineAsyncComponent(() => import('@/components/HeroSection.vue'));
 const SkillsSection = defineAsyncComponent(() => import('@/components/SkillsSection.vue'));
 const ColorTrail = defineAsyncComponent(() => import('@/components/ColorTrail.vue'));
 const ProjectSection = defineAsyncComponent(() => import('@/components/ProjectSection.vue'));
