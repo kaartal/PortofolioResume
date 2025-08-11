@@ -1,24 +1,9 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body, html, #app {
-  cursor: none !important;
-}
-
-
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-html {
-  scroll-behavior: smooth;
+  background-image: linear-gradient(to right bottom, #2c1b52, #2f1e57, #33215d, #362362, #392767, #3c296c, #3f2b6f, #432c71, #462c73, #4a2c74, #4d2b75, #512a75);
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;      
+  color: white;
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
