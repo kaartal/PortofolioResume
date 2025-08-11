@@ -1,107 +1,120 @@
 <template>
-  <div class="skills-grid">
-    <!-- .NET -->
-    <div class="skill-card">
-        <div class="windowButtons">
-            <span class="btn red"></span>
-            <span class="btn yellow"></span>
-            <span class="btn green"></span>
-        </div>
-    <h3>.NET</h3>
-      <div class="typing-code">
-        <div class="line line1">public class App &#123;</div>
-        <div class="line line2">  static void Main() &#123;</div>
-        <div class="line line3">    Console.WriteLine("Hello .NET");</div>
-        <div class="line line4">    var version = Environment.Version;</div>
-        <div class="line line5">    Console.WriteLine(version);</div>
-        <div class="line line6">    var now = DateTime.Now;</div>
-        <div class="line line7">    Console.WriteLine(now);</div>
-        <div class="line line8">    AppDomain.CurrentDomain.UnhandledException += (s, e) => &#123;</div>
-        <div class="line line9">      Console.WriteLine("Unhandled exception");</div>
-        <div class="line line10">    &#125;;</div>
-      </div>
-      <p>
-        Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
-        
-      </p>
-    </div>
+  <div class="page-wrapper">
+    <div class="skillsGrid">
 
-    <!-- Linux -->
-    <div class="skill-card">
+      <!-- BACKEND -->
+      <div class="skill-card">
         <div class="windowButtons">
-            <span class="btn red"></span>
-            <span class="btn yellow"></span>
-            <span class="btn green"></span>
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
         </div>
-      <h3>Linux</h3>
-      <div class="typing-code">
-        <div class="line line1">#!/bin/bash</div>
-        <div class="line line2">echo "Linux server started"</div>
-        <div class="line line3">sudo apt update</div>
-        <div class="line line4">sudo systemctl start nginx</div>
-        <div class="line line5">df -h</div>
-        <div class="line line6">uptime</div>
-        <div class="line line7">whoami</div>
-        <div class="line line8">ps aux | grep nginx</div>
-        <div class="line line9">journalctl -xe</div>
-        <div class="line line10">echo "Ready."</div>
+        <h3>
+          <i class="fab fa-microsoft icon-csharp"></i> backend
+        </h3>
+        <div class="typing-code">
+          <div class="line line1">public class App &#123;</div>
+          <div class="line line2">  static void Main() &#123;</div>
+          <div class="line line3">    Console.WriteLine("Hello .NET");</div>
+          <div class="line line4">    var version = Environment.Version;</div>
+          <div class="line line5">    Console.WriteLine(version);</div>
+          <div class="line line6">    var now = DateTime.Now;</div>
+          <div class="line line7">    Console.WriteLine(now);</div>
+          <div class="line line8">    AppDomain.CurrentDomain.UnhandledException += (s, e) => &#123;</div>
+          <div class="line line9">      Console.WriteLine("Unhandled exception");</div>
+          <div class="line line10">    &#125;;</div>
+        </div>
+        <p>
+          Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
+        </p>
       </div>
-      <p>
-        Skilled in managing Linux-based systems, primarily Ubuntu and Debian distributions. Comfortable with shell scripting.
-        
-      </p>
-    </div>
 
-    <!-- Algorithms -->
-    <div class="skill-card">
+      <!-- FRONTEND -->
+      <div class="skill-card">
         <div class="windowButtons">
-            <span class="btn red"></span>
-            <span class="btn yellow"></span>
-            <span class="btn green"></span>
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
         </div>
-      <h3>Algorithms</h3>
-      <div class="typing-code">
-        <div class="line line1">function binarySearch(arr, x) &#123;</div>
-        <div class="line line2">  let left = 0, right = arr.length - 1;</div>
-        <div class="line line3">  while (left &lt;= right) &#123;</div>
-        <div class="line line4">    const mid = Math.floor((left + right) / 2);</div>
-        <div class="line line5">    if (arr[mid] === x) return mid;</div>
-        <div class="line line6">    else if (arr[mid] &lt; x) left = mid + 1;</div>
-        <div class="line line7">    else right = mid - 1;</div>
-        <div class="line line8">  &#125;</div>
-        <div class="line line9">  return -1;</div>
-        <div class="line line10">&#125;</div>
+        <h3>
+          <i class="fab fa-html5 icon-html"></i>
+          <i class="fab fa-css3-alt icon-css"></i>
+          <i class="fab fa-js icon-js"></i> frontend
+        </h3>
+        <div class="typing-code">
+          <div class="line line1">#!/bin/bash</div>
+          <div class="line line2">echo "Linux server started"</div>
+          <div class="line line3">sudo apt update</div>
+          <div class="line line4">sudo systemctl start nginx</div>
+          <div class="line line5">df -h</div>
+          <div class="line line6">uptime</div>
+          <div class="line line7">whoami</div>
+          <div class="line line8">ps aux | grep nginx</div>
+          <div class="line line9">journalctl -xe</div>
+          <div class="line line10">echo "Ready."</div>
+        </div>
+        <p>
+          Skilled in managing Linux-based systems, primarily Ubuntu and Debian distributions. Comfortable with shell scripting.
+        </p>
       </div>
-      <p>
-        Passionate about data structures and algorithms. I apply algorithmic thinking to solve complex problems efficiently.
-       
-      </p>
-    </div>
 
-    <!-- C++ -->
-    <div class="skill-card">
+      <!-- DATABASE -->
+      <div class="skill-card">
         <div class="windowButtons">
-            <span class="btn red"></span>
-            <span class="btn yellow"></span>
-            <span class="btn green"></span>
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
         </div>
-      <h3>C++</h3>
-      <div class="typing-code">
-        <div class="line line1">#include &lt;iostream&gt;</div>
-        <div class="line line2">int main() &#123;</div>
-        <div class="line line3">  std::cout &lt;&lt; "Hello C++";</div>
-        <div class="line line4">  int a = 5, b = 10;</div>
-        <div class="line line5">  std::cout &lt;&lt; a + b &lt;&lt; std::endl;</div>
-        <div class="line line6">  if (a &lt; b) &#123;</div>
-        <div class="line line7">    std::cout &lt;&lt; "a is smaller";</div>
-        <div class="line line8">  &#125; else &#123;</div>
-        <div class="line line9">    std::cout &lt;&lt; "b is smaller";</div>
-        <div class="line line10">  &#125;</div>
+        <h3>
+          <i class="fas fa-database icon-db"></i>
+          <span class="db-icons">MySQL | SQL</span> database
+        </h3>
+        <div class="typing-code">
+          <div class="line line1">function binarySearch(arr, x) &#123;</div>
+          <div class="line line2">  let left = 0, right = arr.length - 1;</div>
+          <div class="line line3">  while (left &lt;= right) &#123;</div>
+          <div class="line line4">    const mid = Math.floor((left + right) / 2);</div>
+          <div class="line line5">    if (arr[mid] === x) return mid;</div>
+          <div class="line line6">    else if (arr[mid] &lt; x) left = mid + 1;</div>
+          <div class="line line7">    else right = mid - 1;</div>
+          <div class="line line8">  &#125;</div>
+          <div class="line line9">  return -1;</div>
+          <div class="line line10">&#125;</div>
+        </div>
+        <p>
+          Passionate about data structures and algorithms. I apply algorithmic thinking to solve complex problems efficiently.
+        </p>
       </div>
-      <p>
-        Solid experience in C++ for systems-level and performance-critical programming. Familiar with object-oriented design,
-        memory management.
-      </p>
+
+      <!-- LINUX -->
+      <div class="skill-card">
+        <div class="windowButtons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <h3>
+          <i class="fab fa-ubuntu icon-ubuntu"></i>
+          <i class="fas fa-terminal icon-terminal"></i> linux
+        </h3>
+        <div class="typing-code">
+          <div class="line line1">#include &lt;iostream&gt;</div>
+          <div class="line line2">int main() &#123;</div>
+          <div class="line line3">  std::cout &lt;&lt; "Hello C++";</div>
+          <div class="line line4">  int a = 5, b = 10;</div>
+          <div class="line line5">  std::cout &lt;&lt; a + b &lt;&lt; std::endl;</div>
+          <div class="line line6">  if (a &lt; b) &#123;</div>
+          <div class="line line7">    std::cout &lt;&lt; "a is smaller";</div>
+          <div class="line line8">  &#125; else &#123;</div>
+          <div class="line line9">    std::cout &lt;&lt; "b is smaller";</div>
+          <div class="line line10">  &#125;</div>
+        </div>
+        <p>
+          Solid experience in C++ for systems-level and performance-critical programming. Familiar with object-oriented design,
+          memory management.
+        </p>
+      </div>
+
     </div>
   </div>
 </template>
@@ -109,12 +122,18 @@
 
 
 <style scoped>
-.skills-grid {
+.page-wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+}
+
+.skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   padding: 2rem;
-  margin-bottom:400px;
 }
 
 .skill-card {
@@ -126,10 +145,25 @@
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  height: 240px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 500px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.skill-card:hover {
+  animation-play-state: paused;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .skill-card:hover {
@@ -138,16 +172,16 @@
 
 .skill-card h3 {
   font-size: 1.1rem;
-  margin: 0.1 0 0.5rem 0;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .skill-card p {
   font-size: 0.75rem;
-  z-index: 1;
-  margin: 0;
   margin-top: auto;
 }
+
 .windowButtons {
   position: absolute;
   top: 15px;
@@ -165,19 +199,25 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
-.windowButtons .red {
-  background-color: #ff5f56;
+.windowButtons .red { background-color: #ff5f56; }
+.windowButtons .yellow { background-color: #ffbd2e; }
+.windowButtons .green { background-color: #27c93f; }
+
+/* Ikone boje */
+.icon-html { color: #e34f26; }
+.icon-css { color: #2965f1; }
+.icon-js { color: #f7df1e; }
+.icon-csharp { color: #9b4f96; }
+.icon-db { color: #f29111; }
+.icon-ubuntu { color: #dd4814; }
+.icon-terminal { color: #6c757d; }
+
+.db-icons {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-left: 4px;
 }
 
-.windowButtons .yellow {
-  background-color: #ffbd2e;
-}
-
-.windowButtons .green {
-  background-color: #27c93f;
-}
-
-/* Typing background container */
 .typing-code {
   position: relative;
   font-family: 'Courier New', monospace;
@@ -186,8 +226,6 @@
   line-height: 1.1rem;
   white-space: nowrap;
   overflow: hidden;
-  z-index: 0;
-  animation: resetTyping 12.5s linear infinite;
   height: 200px;
 }
 
@@ -213,33 +251,14 @@
 .typing-code .line10 { animation-delay: 22.5s; }
 
 @keyframes typing {
-  from {
-    width: 0;
-    border-color: transparent;
+  from { width: 0; border-color: transparent; }
+  to { border-color: transparent; width: max-content; }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem;
   }
-  to {
-    border-color: transparent;
-    width: max-content;
-  }
-}
-
-@keyframes resetTyping {
-  0%, 95% { }
-  96%, 100% { }
-}
-
-.cursor {
-  position: absolute;
-  bottom: 0.4rem;
-  left: 0.5rem;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.1);
-  animation: blink 1s step-end infinite;
-  z-index: 1;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
 }
 </style>

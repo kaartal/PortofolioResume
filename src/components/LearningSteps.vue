@@ -1,4 +1,12 @@
 <template>
+  <div v-if="!titleVisible" class="loading-dots">
+  <span>.</span><span>.</span><span>.</span>
+</div>
+
+<div ref="titleRef" :class="['timeline-title', { visible: titleVisible }]">
+  my steps
+</div>
+
   <div class="timeline-container">
     <div v-for="(entry, i) in timeline" :key="i" class="timeline-year-group" ref="timelineItems">
       <div class="year-row">
@@ -14,6 +22,33 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+const titleRef = ref(null);
+const titleVisible = ref(false);
+
+onMounted(() => {
+  const items = timelineItems.value;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  });
+
+  items.forEach(el => observer.observe(el));
+
+  // Observer za naslov
+  if (titleRef.value) {
+    const titleObserver = new IntersectionObserver(entries => {
+      titleVisible.value = entries[0].isIntersecting;
+    }, { threshold: 0.5 });
+
+    titleObserver.observe(titleRef.value);
+  }
+});
 
 const timeline = ref([
   { 
@@ -75,6 +110,41 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.timeline-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #A04DFF;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.timeline-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-title {
+    animation: fadeInUpScroll 1s ease-out forwards;
+  }
+}
+
+@keyframes fadeInUpScroll {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .timeline-container {
   max-width: 700px;
   margin: auto;
@@ -119,6 +189,7 @@ onMounted(() => {
   font-size: 1.7rem;
   margin-left: 1.2rem;
   margin-bottom: 0.7rem;
+  margin-top:10px;
 }
 
 .year-items {
