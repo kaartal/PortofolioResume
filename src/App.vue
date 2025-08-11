@@ -1,20 +1,21 @@
 <template>
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></link>
-</head>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></link>
+  </head>
   <Preloader v-if="loading" />
   <template v-else>
-
     <ColorTrail />
-    <Time />
     <NavBar />
     <HeroSection />
     <SkillsSection />
     <ProjectSection />
     <LearningSteps />
+    <Time />
     <Footer />
   </template>
 </template>
+
+
 
 <script setup>
 import { ref, onMounted } from 'vue';
@@ -31,7 +32,7 @@ const ProjectSection = defineAsyncComponent(() => import('@/components/ProjectSe
 const LearningSteps = defineAsyncComponent(() => import('@/components/LearningSteps.vue'));
 const Footer = defineAsyncComponent(() => import('@/components/Footer.vue'));
 const Time = defineAsyncComponent(() => import('@/components/Time.vue'));
-import Preloader from '@/components/Time.vue';
+import Preloader from '@/components/Preloader.vue';
 
 onMounted(() => {
   
