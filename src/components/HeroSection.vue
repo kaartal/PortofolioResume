@@ -16,7 +16,7 @@
   <div class="infoBox">
     <!-- PICTURE -->
     <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
-      <img src="@/assets/halidkartal.jpg" alt="Developer Image" />
+
     </div>
 
     <!-- DESCRIPTION -->
@@ -324,5 +324,6 @@ display:none;
     padding-top: 8rem;
   }
 }
+
 
 </style>
