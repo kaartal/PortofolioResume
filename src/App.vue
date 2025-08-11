@@ -10,10 +10,11 @@
     <Footer />
   </template>
 </template>
-    
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { defineAsyncComponent } from 'vue';
+
 
 const loading = ref(true);
 

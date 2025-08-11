@@ -119,10 +119,7 @@
   </div>
 </template>
 
-<!-- Dodaj u index.html ili head dijela projekta -->
-<!--
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
--->
+
 
 <style scoped>
 .page-wrapper {
@@ -153,6 +150,20 @@
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.skill-card:hover {
+  animation-play-state: paused;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .skill-card:hover {

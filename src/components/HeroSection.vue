@@ -16,7 +16,11 @@
   <div class="infoBox">
     <!-- PICTURE -->
     <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
-
+      <img
+        :class="['rocket-img', { 'rocket-enter': rocketVisible, 'rocket-float': rocketVisible }]"
+        :src="rocketImg"
+        alt="Developer Image"
+      />
     </div>
 
     <!-- DESCRIPTION -->
@@ -30,15 +34,15 @@
       </h2>
 
       <p class="fade-section" :class="{ visible: showText }">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit similique doloribus tenetur doloremque.
-        Minus laborum dolores esse.
+        Innovative Full Stack Developer passionate about creating seamless and impactful web solutions.
+        Eager to leverage modern technologies to solve real-world problems and contribute to dynamic team environments.
       </p>
 
       <div class="actionsRow fade-section" :class="{ visible: showButton }">
         <div class="resume-button">
           <a href="/test.pdf" download>
             <button class="glow-on-hover">
-              📄 Download Resume
+              Download My CV
             </button>
           </a>
         </div>
@@ -46,17 +50,21 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue'
+import rocketImg from '@/assets/halidkartal.png'
 
 const showImage = ref(false)
 const showTitle = ref(false)
 const showText = ref(false)
 const showButton = ref(false)
+const rocketVisible = ref(false)
 
 onMounted(() => {
   setTimeout(() => {
     showImage.value = true
+    rocketVisible.value = true
     setTimeout(() => {
       showTitle.value = true
       setTimeout(() => {
@@ -70,8 +78,8 @@ onMounted(() => {
 })
 </script>
 
-
-<style scoped>@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+<style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 .infoBox {
   display: flex;
@@ -82,29 +90,83 @@ onMounted(() => {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   flex-wrap: wrap;
-  margin-top:250px;
-  margin-bottom:200px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 800px;
 }
 
 .imageDeveloper {
   position: relative;
   max-width: 400px;
   width: 100%;
+  height: 800px;
   aspect-ratio: 5 / 6;
   z-index: 1;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pulse 3s infinite ease-in-out;
 }
 
 .imageDeveloper img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: lighten;
+  object-fit: contain;
+  background-color: transparent;
   border-radius: 20px;
+}
+
+/* 🚀 ANIMACIJE */
+@keyframes rocketFlyIn {
+  0% {
+    transform: translateY(500px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rocketMove {
+  0% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+}
+
+.rocket-enter {
+  animation: rocketFlyIn 1.2s ease-out forwards;
+}
+
+.rocket-float {
+  animation: rocketMove 5s ease-in-out infinite;
+}
+
+
+
+
+.rocket-enter {
+  animation: rocketFlyIn 1.2s ease-out forwards;
+}
+
+.rocket-float {
+  animation: rocketMove 5s ease-in-out infinite, rocketGlow 3s infinite alternate ease-in-out;
+}
+
+.fade-section {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .developerDescription {
@@ -165,8 +227,18 @@ onMounted(() => {
 
 .glow-on-hover:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00,
-              #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   position: absolute;
   top: -2px;
   left: -2px;
@@ -177,7 +249,7 @@ onMounted(() => {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
@@ -199,17 +271,6 @@ onMounted(() => {
   left: 0;
   top: 0;
   border-radius: 10px;
-}
-
-.fade-section {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  pointer-events: none;
-}
-
-.fade-section.visible {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .flySocial {
@@ -234,37 +295,33 @@ onMounted(() => {
   color: #A04DFF;
 }
 
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0px #3B1360; }
-  50% { box-shadow: 0 0 25px #3B1360, 0 0 20px #3B1360; }
-  100% { box-shadow: 0 0 0px #3B1360; }
-}
-
 @keyframes textGlow {
-  0% { text-shadow: 0 0 0px #A04DFF; }
-  50% { text-shadow: 0 0 10px #A04DFF, 0 0 20px #A04DFF, 0 0 30px #A04DFF; }
-  100% { text-shadow: 0 0 0px #A04DFF; }
+  0% {
+    text-shadow: 0 0 0px #A04DFF;
+  }
+  50% {
+    text-shadow: 0 0 10px #A04DFF, 0 0 20px #A04DFF, 0 0 30px #A04DFF;
+  }
+  100% {
+    text-shadow: 0 0 0px #A04DFF;
+  }
 }
 
-@keyframes floatY {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
+/* RESPONSIVE */
 
-/* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
   .infoBox {
+    padding-top: 8rem;
+    margin-top: 40px;
     flex-direction: column;
     text-align: center;
     height: auto;
     gap: 2rem;
+  }
+
+  .actionsRow {
+    text-align: center;
+    justify-content: center;
   }
 
   .developerDescription {
@@ -282,6 +339,12 @@ onMounted(() => {
 
   .developerDescription p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .flySocial {
+    display: none;
   }
 }
 
@@ -308,22 +371,4 @@ onMounted(() => {
     font-size: 16px;
   }
 }
-@media (max-width: 768px) {
-  .infoBox {
-    padding-top: 8rem;
-  }
-
-  .flySocial {
-display:none;
-}
-
-}
-
-@media (max-width: 1024px) {
-  .infoBox {
-    padding-top: 8rem;
-  }
-}
-
-
 </style>

@@ -135,5 +135,51 @@ onMounted(() => {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+
+
+/* TABLET RESPONSIVE */
+@media (max-width: 1024px) {
+  .codeBox {
+    padding: 1.5rem 2rem;
+    min-width: 260px;
+    font-size: 0.95rem;
+  }
+
+  .windowButton {
+    width: 12px;
+    height: 12px;
+  }
+
+  .cursor {
+    width: 6px;
+    height: 16px;
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .codeBox {
+    padding: 1rem 1.2rem;
+    min-width: 220px;
+    font-size: 0.85rem;
+  }
+
+  .windowsButtons {
+    top: 8px;
+    left: 12px;
+    gap: 6px;
+  }
+
+  .windowButton {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cursor {
+    width: 5px;
+    height: 14px;
+  }
+}
+
 </style>
 

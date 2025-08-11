@@ -1,9 +1,10 @@
 <template>
   <div class="projectsBox">
-    <h2 class="sectionName">My Projects</h2>
-    <p class="description">
-      I’m passionate about turning ideas into real, useful products and I love sharing what I learn along the way.
-    </p>
+   <h2 class="sectionName" :class="{ 'animate': isVisible }">My Projects</h2>
+<p class="description" :class="{ 'animate': isVisible }">
+  I’m passionate about turning ideas into real, useful products and I love sharing what I learn along the way.
+</p>
+
 
     <div class="projectGrid">
       <div
@@ -43,12 +44,21 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
 
+const isVisible = ref(false);
+
+onMounted(() => {
+  setTimeout(() => {
+    isVisible.value = true;
+  }, 100);
+});
+
 const activeProjectIndex = ref(1);
 const projectRefs = ref([]);
+
 const setActive = async (index) => {
   activeProjectIndex.value = index;
 
-  await nextTick(); 
+  await nextTick();
 
   const el = projectRefs.value[index];
   if (el && el.scrollIntoView) {
@@ -56,29 +66,31 @@ const setActive = async (index) => {
   }
 };
 
+
+
 const projects = [
   {
-    title: "Array Sorting Visualizer",
-    date: "2022",
-    description: "Created a visualizer using JavaScript to show how sorting algorithms work visually.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    source: "#",
+    title: "vehicleregistration.html",
+    date: "April 2024",
+    description: "Created a Web application to simulate vehicle registration operations.",
+    tags: ["PHP", "CSS", "HTML"],
+    source: "https://github.com/kaartal/VehicleRegistration",
+    image: new URL('@/assets/carregistration.png', import.meta.url).href,
+  },
+  {
+    title: "ticketshop.cs",
+    date: "Dec 2025 – Jun 2025",
+    description: "Developed a comprehensive online ticketing platform that facilitates the seamless sale and real-time tracking of digital tickets.",
+    tags: [".NET", "C#", "EF", "HTML","CSS","JavaScript","SQL"],
+    source: "https://github.com/kaartal/FootballTickets",
     image: new URL('@/assets/begitam.png', import.meta.url).href,
   },
   {
-    title: "Kurma",
-    date: "Oct 2024 – Present",
-    description: "Created a visualizer using JavaScript to show how sorting algorithms work visually.",
-    tags: ["Python", "Streamlit", "AI", "UI"],
-    source: "#",
-    image: new URL('@/assets/begitam.png', import.meta.url).href,
-  },
-  {
-    title: "My Third Project",
-    date: "2025",
-    description: "Created a visualizer using JavaScript to show how sorting algorithms work visually.",
-    tags: ["Vue", "Tailwind"],
-    source: "#",
+    title: "bankapp.cpp",
+    date: "May 2024",
+    description: "Developed a desktop application in C++ designed to simulate comprehensive banking operations along with user management functionalities.",
+    tags: ["C++", "C"],
+    source: "https://github.com/kaartal/BankSystem",
     image: new URL('@/assets/begitam.png', import.meta.url).href,
   },
 ];
@@ -108,6 +120,35 @@ const projects = [
   color: #ccc;
   margin-bottom: 70px;
 }
+.sectionName, .description {
+  opacity: 0;
+  transform: translateY(40px); 
+  animation: flyIn 0.8s ease-out forwards;
+}
+
+.sectionName {
+  animation-delay: 0.2s; 
+}
+
+.description {
+  animation-delay: 0.6s; 
+}
+
+.animate {
+  animation: flyIn 0.8s ease-out forwards;
+}
+
+@keyframes flyIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .projectGrid {
   display: flex;
@@ -129,7 +170,7 @@ const projects = [
   transition: transform 0.4s ease, opacity 0.4s ease;
   cursor: pointer;
   scroll-snap-align: center;
-  height: 500px;
+  height: 550px;
   position: relative;
 }
 
@@ -149,7 +190,10 @@ const projects = [
   filter: brightness(0.3);
 }
 
-/* Bounce animation */
+.projectItem:hover {
+  animation-play-state: paused;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -165,7 +209,7 @@ const projects = [
 
 .projectLogo img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
@@ -182,7 +226,7 @@ const projects = [
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #00aaff;
+  background-image: linear-gradient(to right top, #6c239b, #62228e, #582182, #4e2075, #451e69);
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -190,11 +234,10 @@ const projects = [
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 170, 255, 0.4);
+  margin-top:7px;
 }
 
 .sourceButton:hover {
-  background-color: #008ecc;
   transform: translateY(-2px);
 }
 
@@ -244,7 +287,6 @@ const projects = [
   font-size: 0.9rem;
   font-weight: 500;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 170, 255, 0.3);
 }
 
 .links a:hover {

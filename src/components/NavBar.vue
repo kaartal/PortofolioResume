@@ -1,13 +1,9 @@
 <template>
   <nav :class="['navbarBox', { navbarHidden: isHidden }]">
+    <!-- Logo i navigacija će biti vidljivi samo na desktopu -->
     <div class="logoPic"> 
       <img :src="logo" alt="HK Logo" class="logoImage" />
     </div>
-    <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
-      <span :class="{ bar1: true, open: menuOpen }"></span>
-      <span :class="{ bar2: true, open: menuOpen }"></span>
-      <span :class="{ bar3: true, open: menuOpen }"></span>
-    </button>
 
     <ul :class="['navigationLinks', { open: menuOpen }]">
       <li v-for="link in links" :key="link.id">
@@ -20,8 +16,17 @@
         </a>
       </li>
     </ul>
+
+    <!-- Hamburger dugme uvek prikazano, ali samo na mobilnom -->
+    <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
+      <span :class="{ bar1: true, open: menuOpen }"></span>
+      <span :class="{ bar2: true, open: menuOpen }"></span>
+      <span :class="{ bar3: true, open: menuOpen }"></span>
+    </button>
   </nav>
 </template>
+
+
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
@@ -53,7 +58,21 @@ function scrollToSection(id) {
   }
 }
 
+let lastScrollTop = 0;
+
 function onScroll() {
+  const scrollTop = window.scrollY || window.pageYOffset;
+
+  // Sakrij navbar ako skroluješ (bilo gde osim na vrhu)
+  if (scrollTop > 0) {
+    isHidden.value = true;
+    closeMenu();
+  } else {
+    // Ako si na vrhu stranice, prikaži navbar
+    isHidden.value = false;
+  }
+
+  // Aktivna sekcija - opcionalno, možeš i ukloniti ako ti ne treba
   let current = null;
   links.forEach(link => {
     const section = document.getElementById(link.id);
@@ -65,17 +84,9 @@ function onScroll() {
     }
   });
   activeSection.value = current;
-
-  const scrollTop = window.scrollY || window.pageYOffset;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolledPercent = scrollTop / docHeight;
-
-  isHidden.value = scrolledPercent > 0.3;
-
-  if (isHidden.value) {
-    closeMenu();
-  }
 }
+
+
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll);
@@ -95,7 +106,6 @@ onBeforeUnmount(() => {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 3rem;
   padding: 16px 24px;
   background: rgba(17, 23, 40, 0.85);
@@ -103,15 +113,15 @@ onBeforeUnmount(() => {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(1px);
   width: fit-content;
-  z-index:2;
+  z-index: 2;
   user-select: none;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .navbarHidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-20px);
+  transform: translate(-50%, -100%);
 }
 
 .logoPic {
@@ -127,16 +137,6 @@ onBeforeUnmount(() => {
 
 .hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 26px;
-  height: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  box-sizing: border-box;
-  z-index: 10000;
 }
 
 .hamburger span {
@@ -155,7 +155,14 @@ onBeforeUnmount(() => {
 .bar2.open {
   opacity: 0;
 }
+.navbarBox {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
 
+.navbarHidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
 .bar3.open {
   transform: rotate(-45deg);
 }
@@ -189,44 +196,11 @@ onBeforeUnmount(() => {
 
 /* Mobilni prikaz */
 @media (max-width: 768px) {
-  .navbarBox {
-    gap: 1.5rem;
-    padding: 10px 16px;
-    justify-content: center;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 480px;
-    border-radius: 12px;
-
-    background-color: transparent !important;
-    background-image: none !important;
-  }
-  
-  .logoPic {
-    position: static;
-    margin: 0 auto;
-    order: 1;
-    left: auto;
-  }
-
-  /* Pomeramo hamburger u desni ugao */
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-
-  /* Sakrij linkove po defaultu */
   .navigationLinks {
     position: fixed;
     top: 0;
     right: 0;
-    height: 20vh;
+    height: 100vh;
     background: rgba(17, 23, 40, 0.95);
     border-radius: 0 0 0 12px;
     flex-direction: column;
@@ -241,11 +215,43 @@ onBeforeUnmount(() => {
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 9999;
   }
+.logoPic {
+  display:none;
+}
 
+.logoImage {
+  display:none;
+}
   .navigationLinks.open {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 26px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .navbarBox {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .logoPic {
+    position: static;
+    left: auto;
   }
 
   .navigationLinks li a {
