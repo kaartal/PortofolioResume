@@ -1,5 +1,8 @@
 <template>
   <div class="page-wrapper">
+    <!-- Naslov sa animacijom kucanja -->
+    <h1 class="typing-title">my skills</h1>
+
     <div class="skillsGrid">
 
       <!-- BACKEND -->
@@ -13,16 +16,19 @@
           <i class="fab fa-microsoft icon-csharp"></i> backend
         </h3>
         <div class="typing-code">
-          <div class="line line1">public class App &#123;</div>
-          <div class="line line2">  static void Main() &#123;</div>
-          <div class="line line3">    Console.WriteLine("Hello .NET");</div>
-          <div class="line line4">    var version = Environment.Version;</div>
-          <div class="line line5">    Console.WriteLine(version);</div>
-          <div class="line line6">    var now = DateTime.Now;</div>
-          <div class="line line7">    Console.WriteLine(now);</div>
-          <div class="line line8">    AppDomain.CurrentDomain.UnhandledException += (s, e) => &#123;</div>
-          <div class="line line9">      Console.WriteLine("Unhandled exception");</div>
-          <div class="line line10">    &#125;;</div>
+          <div class="line line1">using System;</div>
+          <div class="line line2">public class App {</div>
+          <div class="line line3">    static void Main() {</div>
+          <div class="line line4">        Console.WriteLine("Hello .NET");</div>
+          <div class="line line5">        var version = Environment.Version;</div>
+          <div class="line line6">        Console.WriteLine(version);</div>
+          <div class="line line7">        var now = DateTime.Now;</div>
+          <div class="line line8">        Console.WriteLine(now);</div>
+          <div class="line line9">        AppDomain.CurrentDomain.UnhandledException += (s, e) => {</div>
+          <div class="line line10">            Console.WriteLine("Unhandled exception");</div>
+          <div class="line line11">        };</div>
+          <div class="line line12">    }</div>
+          <div class="line line13">}</div>
         </div>
         <p>
           Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
@@ -42,19 +48,22 @@
           <i class="fab fa-js icon-js"></i> frontend
         </h3>
         <div class="typing-code">
-          <div class="line line1">#!/bin/bash</div>
-          <div class="line line2">echo "Linux server started"</div>
-          <div class="line line3">sudo apt update</div>
-          <div class="line line4">sudo systemctl start nginx</div>
-          <div class="line line5">df -h</div>
-          <div class="line line6">uptime</div>
-          <div class="line line7">whoami</div>
-          <div class="line line8">ps aux | grep nginx</div>
-          <div class="line line9">journalctl -xe</div>
-          <div class="line line10">echo "Ready."</div>
+          <div class="line line1">&lt;!DOCTYPE html&gt;</div>
+          <div class="line line2">&lt;html lang="en"&gt;</div>
+          <div class="line line3">&lt;head&gt;</div>
+          <div class="line line4">    &lt;meta charset="UTF-8"&gt;</div>
+          <div class="line line5">    &lt;title&gt;Frontend Test&lt;/title&gt;</div>
+          <div class="line line6">&lt;/head&gt;</div>
+          <div class="line line7">&lt;body&gt;</div>
+          <div class="line line8">    &lt;h1&gt;Hello Frontend&lt;/h1&gt;</div>
+          <div class="line line9">&lt;script&gt;</div>
+          <div class="line line10">    console.log("Frontend ready");</div>
+          <div class="line line11">&lt;/script&gt;</div>
+          <div class="line line12">&lt;/body&gt;</div>
+          <div class="line line13">&lt;/html&gt;</div>
         </div>
         <p>
-          Skilled in managing Linux-based systems, primarily Ubuntu and Debian distributions. Comfortable with shell scripting.
+          Skilled in managing HTML, CSS, and JavaScript for frontend development, including dynamic DOM manipulation and responsive design.
         </p>
       </div>
 
@@ -70,19 +79,17 @@
           <span class="db-icons">MySQL | SQL</span> database
         </h3>
         <div class="typing-code">
-          <div class="line line1">function binarySearch(arr, x) &#123;</div>
-          <div class="line line2">  let left = 0, right = arr.length - 1;</div>
-          <div class="line line3">  while (left &lt;= right) &#123;</div>
-          <div class="line line4">    const mid = Math.floor((left + right) / 2);</div>
-          <div class="line line5">    if (arr[mid] === x) return mid;</div>
-          <div class="line line6">    else if (arr[mid] &lt; x) left = mid + 1;</div>
-          <div class="line line7">    else right = mid - 1;</div>
-          <div class="line line8">  &#125;</div>
-          <div class="line line9">  return -1;</div>
-          <div class="line line10">&#125;</div>
+          <div class="line line1">CREATE TABLE Users (</div>
+          <div class="line line2">    Id INT PRIMARY KEY AUTO_INCREMENT,</div>
+          <div class="line line3">    Name VARCHAR(100),</div>
+          <div class="line line4">    Email VARCHAR(100) UNIQUE</div>
+          <div class="line line5">);</div>
+          <div class="line line6"></div>
+          <div class="line line7">INSERT INTO Users (Name, Email) VALUES ('Halid', 'halid@example.com');</div>
+          <div class="line line8">SELECT * FROM Users;</div>
         </div>
         <p>
-          Passionate about data structures and algorithms. I apply algorithmic thinking to solve complex problems efficiently.
+          Passionate about databases, creating efficient schemas, and writing optimized SQL queries for data management.
         </p>
       </div>
 
@@ -98,20 +105,19 @@
           <i class="fas fa-terminal icon-terminal"></i> linux
         </h3>
         <div class="typing-code">
-          <div class="line line1">#include &lt;iostream&gt;</div>
-          <div class="line line2">int main() &#123;</div>
-          <div class="line line3">  std::cout &lt;&lt; "Hello C++";</div>
-          <div class="line line4">  int a = 5, b = 10;</div>
-          <div class="line line5">  std::cout &lt;&lt; a + b &lt;&lt; std::endl;</div>
-          <div class="line line6">  if (a &lt; b) &#123;</div>
-          <div class="line line7">    std::cout &lt;&lt; "a is smaller";</div>
-          <div class="line line8">  &#125; else &#123;</div>
-          <div class="line line9">    std::cout &lt;&lt; "b is smaller";</div>
-          <div class="line line10">  &#125;</div>
+          <div class="line line1">#!/bin/bash</div>
+          <div class="line line2">echo "Hello Linux"</div>
+          <div class="line line3">a=5</div>
+          <div class="line line4">b=10</div>
+          <div class="line line5">echo "Sum: $((a + b))"</div>
+          <div class="line line6">if [ $a -lt $b ]; then</div>
+          <div class="line line7">    echo "a is smaller"</div>
+          <div class="line line8">else</div>
+          <div class="line line9">    echo "b is smaller"</div>
+          <div class="line line10">fi</div>
         </div>
         <p>
-          Solid experience in C++ for systems-level and performance-critical programming. Familiar with object-oriented design,
-          memory management.
+          Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
         </p>
       </div>
 
@@ -120,14 +126,30 @@
 </template>
 
 
-
 <style scoped>
 .page-wrapper {
   display: flex;
   justify-content: center; 
   align-items: center;     
   min-height: 100vh;       
+  flex-direction: column; 
 }
+
+.typing-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #a04dff;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #a04dff;
+  width: 13ch; 
+  animation: typing 3.5s steps(9) forwards, blinkCaret 0.75s step-end infinite;
+}
+
+
+
 
 .skillsGrid {
   display: grid;
@@ -145,12 +167,14 @@
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
   animation: floatUpDown 4s ease-in-out infinite;
+   width: 100%;
+  max-width: 500px;
+  min-height: 300px;
 }
 
 .skill-card:hover {
@@ -188,7 +212,7 @@
   left: 20px;
   display: flex;
   gap: 6px;
-  z-index: 2;
+  z-index:1;
 }
 
 .windowButtons .btn {
@@ -203,7 +227,6 @@
 .windowButtons .yellow { background-color: #ffbd2e; }
 .windowButtons .green { background-color: #27c93f; }
 
-/* Ikone boje */
 .icon-html { color: #e34f26; }
 .icon-css { color: #2965f1; }
 .icon-js { color: #f7df1e; }
@@ -259,6 +282,21 @@
   .skillsGrid {
     grid-template-columns: repeat(1, 1fr);
     padding: 2rem;
+  }
+
+  .skill-card {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+
+  .skill-card {
+    width: 94%;
   }
 }
 </style>

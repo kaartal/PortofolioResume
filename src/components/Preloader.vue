@@ -1,6 +1,6 @@
 <template>
-  <div class="preloader">
-    <div class="codeBox">
+  <div v-if="showPreloader" class="preloader" :class="{ 'fade-out': finished }">
+    <div class="codeBox scale-up">
       <div class="windowsButtons">
         <span class="windowButton red"></span>
         <span class="windowButton yellow"></span>
@@ -9,11 +9,15 @@
       <pre>{{ displayedCode }}<span class="cursor"></span></pre>
     </div>
   </div>
+
+  <div v-else class="main-content fade-in">
+    <h1>Dobrodošao 🚀</h1>
+    <p>Developer mode: Aktiviran</p>
+  </div>
 </template>
 
-
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 const fullCode = `
 console.log("☕ Making coffee");
@@ -21,27 +25,14 @@ console.log("💻 Compiling focus");
 console.log("✅ Developer mode: ON");
 `;
 
-const displayedCode = ref('');
-let index = 0;
+const displayedCode = ref("");
+const showPreloader = ref(true);
+const finished = ref(false);
 
 onMounted(() => {
-  const typingSpeed = 25; 
-
-  const type = () => {
-    if (index < fullCode.length) {
-      displayedCode.value += fullCode[index];
-      index++;
-      setTimeout(type, typingSpeed);
-    }
-  };
-
-  type();
-});
-
-const emit = defineEmits(['done']); 
-
-onMounted(() => {
-  const typingSpeed = 25;
+  const totalDuration = 5000; 
+  const typingSpeed = totalDuration / fullCode.length;
+  let index = 0;
 
   const type = () => {
     if (index < fullCode.length) {
@@ -49,49 +40,61 @@ onMounted(() => {
       index++;
       setTimeout(type, typingSpeed);
     } else {
-      
-      emit('done');
+      finished.value = true;
+      setTimeout(() => {
+        showPreloader.value = false;
+      }, 4000); 
     }
   };
 
   type();
 });
-
 </script>
 
 <style scoped>
 .preloader {
   position: fixed;
   inset: 0;
-  background-color: rgba(13, 13, 26, 0.85); 
-  backdrop-filter: blur(6px); 
+  background: radial-gradient(circle at center, #111221, #0a0a14);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  font-family: 'Courier New', monospace;
-  color: #A04DFF;
-  user-select: none;
+  font-family: "Courier New", monospace;
+  color: #a04dff;
   overflow: hidden;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
+.preloader.fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+}
 
 .codeBox {
   background: #0f111a;
   padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow:
-    0 0 15px #A04DFF(0, 255, 174, 0.6),
-    inset 0 0 5px #A04DFF(0, 255, 174, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(160, 77, 255, 0.6),
+    inset 0 0 8px rgba(160, 77, 255, 0.3);
   max-width: 90%;
-  max-height: 80%;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  border: 1.5px solid #A04DFF;
-  position: relative;
   min-width: 320px;
+  border: 1.5px solid #a04dff;
+  position: relative;
+  overflow: hidden;
+  animation: glow 2s infinite alternate;
 }
 
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(160, 77, 255, 0.5),
+      inset 0 0 5px rgba(160, 77, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(160, 77, 255, 0.8),
+      inset 0 0 10px rgba(160, 77, 255, 0.4);
+  }
+}
 
 .windowsButtons {
   position: absolute;
@@ -105,27 +108,24 @@ onMounted(() => {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 .windowButton.red {
   background: #ff5f56;
 }
-
 .windowButton.yellow {
   background: #ffbd2e;
 }
-
 .windowButton.green {
-  background: rgb(0, 202, 86); 
+  background: rgb(0, 202, 86);
 }
-
 
 .cursor {
   display: inline-block;
   width: 8px;
   height: 18px;
-  background-color: #A04DFF;
+  background-color: #a04dff;
   margin-left: 2px;
   animation: blink 1.2s steps(2, start) infinite;
   vertical-align: bottom;
@@ -136,50 +136,26 @@ onMounted(() => {
   51%, 100% { opacity: 0; }
 }
 
-
-/* TABLET RESPONSIVE */
-@media (max-width: 1024px) {
-  .codeBox {
-    padding: 1.5rem 2rem;
-    min-width: 260px;
-    font-size: 0.95rem;
-  }
-
-  .windowButton {
-    width: 12px;
-    height: 12px;
-  }
-
-  .cursor {
-    width: 6px;
-    height: 16px;
-  }
+.scale-up {
+  animation: scaleUp 0.6s ease;
+}
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-  .codeBox {
-    padding: 1rem 1.2rem;
-    min-width: 220px;
-    font-size: 0.85rem;
-  }
-
-  .windowsButtons {
-    top: 8px;
-    left: 12px;
-    gap: 6px;
-  }
-
-  .windowButton {
-    width: 10px;
-    height: 10px;
-  }
-
-  .cursor {
-    width: 5px;
-    height: 14px;
-  }
+.main-content {
+  opacity: 0;
+  transform: translateY(20px);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  color: #e2e8f0;
+  padding: 2rem;
 }
-
+.main-content.fade-in {
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
-

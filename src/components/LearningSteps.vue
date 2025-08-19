@@ -1,161 +1,151 @@
 <template>
-  <div v-if="!titleVisible" class="loading-dots">
-  <span>.</span><span>.</span><span>.</span>
-</div>
 
-<div ref="titleRef" :class="['timeline-title', { visible: titleVisible }]">
-  my steps
-</div>
+  <div ref="titleRef" :class="['timelineTitle', { visible: titleVisible }]">
+    my steps
+  </div>
 
-  <div class="timeline-container">
-    <div v-for="(entry, i) in timeline" :key="i" class="timeline-year-group" ref="timelineItems">
-      <div class="year-row">
+  <div class="timelineContainer">
+    <div
+      v-for="(entry, i) in timeline"
+      :key="i"
+      class="timelineYearGroup"
+      ref="timelineItems"
+    >
+      <div class="yearRow">
         <div class="circle"></div>
-        <div class="year-label">{{ entry.year }}</div>
+        <div class="yearLabel">{{ entry.year }}</div>
       </div>
-      <ul class="year-items">
-        <li v-for="(item, j) in entry.items" :key="j" class="year-item">{{ item }}</li>
+      <ul class="yearItems">
+        <li v-for="(item, j) in entry.items" :key="j" class="yearItem">
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
+
 const titleRef = ref(null);
 const titleVisible = ref(false);
 
-onMounted(() => {
-  const items = timelineItems.value;
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  });
-
-  items.forEach(el => observer.observe(el));
-
-  // Observer za naslov
-  if (titleRef.value) {
-    const titleObserver = new IntersectionObserver(entries => {
-      titleVisible.value = entries[0].isIntersecting;
-    }, { threshold: 0.5 });
-
-    titleObserver.observe(titleRef.value);
-  }
-});
-
-const timeline = ref([
-  { 
-    year: '2025', 
-    items: [
-      'Engaged in advanced personal projects to enhance skills', 
-      'Began development using Vue.js framework' 
-    ] 
-  },
-  { 
-    year: '2024', 
-    items: [
-      'Gained proficiency in database management and design', 
-      'Started learning backend development with .NET Core and C#' 
-    ] 
-  },
-  { 
-    year: '2023', 
-    items: [
-      'Adopted Object-Oriented Programming principles in projects', 
-      'Developed applications utilizing Shell scripting and C++' 
-    ] 
-  },
-  { 
-    year: '2022', 
-    items: [
-      'Enrolled in a Bachelor’s program in Information Technology' 
-    ] 
-  },
-  { 
-    year: '2021', 
-    items: [
-      'Initiated work on personal projects to build practical experience', 
-      'Started programming with C++ on Linux environments' 
-    ] 
-  }
-]);
-
-
 const timelineItems = ref([]);
 
-onMounted(() => {
+const timeline = ref([
+  {
+    year: '2025',
+    items: [
+      'Engaged in advanced personal projects to enhance skills',
+      'Began development using Vue.js framework',
+    ],
+  },
+  {
+    year: '2024',
+    items: [
+      'Gained proficiency in database management and design',
+      'Started learning backend development with .NET Core and C#',
+    ],
+  },
+  {
+    year: '2023',
+    items: [
+      'Adopted Object-Oriented Programming principles in projects',
+      'Developed applications utilizing Shell scripting and C++',
+    ],
+  },
+  {
+    year: '2022',
+    items: ['Enrolled in a Bachelor’s program in Information Technology'],
+  },
+  {
+    year: '2021',
+    items: [
+      'Initiated work on personal projects to build practical experience',
+      'Started programming with C++ on Linux environments',
+    ],
+  },
+]);
+
+onMounted(async () => {
+  await nextTick();
+
+  if (titleRef.value) {
+    const titleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          titleVisible.value = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.5 }
+    );
+    titleObserver.observe(titleRef.value);
+  }
+
   const items = timelineItems.value;
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-  );
+  if (items.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  items.forEach(el => observer.observe(el));
+    items.forEach((el) => observer.observe(el));
+  }
 });
 </script>
 
 <style scoped>
-.timeline-title {
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.timelineTitle {
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #A04DFF;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #a04dff;
+  font-family: 'Orbitron', sans-serif;
   user-select: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  margin-bottom: 4rem;
+  visibility: hidden;
 }
 
-.timeline-title.visible {
+.timelineTitle.visible {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
+  animation: floatUpDown 3s ease-in-out infinite;
+  transform: translateY(0); 
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .timeline-title {
-    animation: fadeInUpScroll 1s ease-out forwards;
-  }
-}
-
-@keyframes fadeInUpScroll {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+@keyframes floatUpDown {
+  0%,
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
 
-.timeline-container {
+.timelineContainer {
   max-width: 700px;
   margin: auto;
   padding: 2rem 1rem;
   position: relative;
-  border-left: 3px solid #A04DFF;
-  margin-bottom:120px;
-
+  border-left: 3px solid #a04dff;
+  margin-bottom: 120px;
 }
 
-.timeline-year-group {
+.timelineYearGroup {
   margin-bottom: 2.5rem;
   opacity: 0;
   transform: translateY(30px);
@@ -163,12 +153,12 @@ onMounted(() => {
   position: relative;
 }
 
-.timeline-year-group.visible {
+.timelineYearGroup.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.year-row {
+.yearRow {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
@@ -179,40 +169,42 @@ onMounted(() => {
   left: -25px;
   width: 16px;
   height: 16px;
-  background-color: #A04DFF;
+  background-color: #a04dff;
   border-radius: 50%;
+  animation: pulseGlow 2s infinite ease-in-out;
 }
 
-.year-label {
-  color: #A04DFF;
+.yearLabel {
+  color: #a04dff;
   font-weight: bold;
   font-size: 1.7rem;
   margin-left: 1.2rem;
   margin-bottom: 0.7rem;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
-.year-items {
+.yearItems {
   list-style: none;
   margin: 0;
   padding: 0 0 0 1.5rem;
 }
 
-.year-item {
+.yearItem {
   color: #ccc;
   font-size: 1.05rem;
   margin-bottom: 0.7rem;
-  margin-left:10px;
-  
+  margin-left: 10px;
 }
+
 @media (max-width: 1024px) {
-  .timeline-container {
+  .timelineContainer {
     margin-left: 170px;
     border-left-width: 4px;
-  }}
+  }
+}
 
 @media (max-width: 768px) {
-  .timeline-container {
+  .timelineContainer {
     margin-left: 60px;
     border-left-width: 4px;
   }
@@ -222,50 +214,31 @@ onMounted(() => {
     height: 12px;
   }
 
-  .year-label {
+  .yearLabel {
     font-size: 1rem;
   }
 
-  .year-item {
+  .yearItem {
     font-size: 0.85rem;
   }
 }
+
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 3px #A04DFF, 0 0 10px #A04DFF;
+    box-shadow: 0 0 3px #a04dff, 0 0 10px #a04dff;
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 10px #A04DFF, 0 0 25px #A04DFF;
+    box-shadow: 0 0 10px #a04dff, 0 0 25px #a04dff;
     transform: scale(1.1);
   }
   100% {
-    box-shadow: 0 0 3px #A04DFF, 0 0 10px #A04DFF;
+    box-shadow: 0 0 3px #a04dff, 0 0 10px #a04dff;
     transform: scale(1);
   }
 }
 
-.circle {
-  position: absolute;
-  left: -25px;
-  width: 16px;
-  height: 16px;
-  background-color: #A04DFF;
-  border-radius: 50%;
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-@keyframes floatUpDown {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.timeline-year-group.visible {
+.timelineYearGroup.visible {
   animation: floatUpDown 3s ease-in-out infinite;
 }
-
 </style>

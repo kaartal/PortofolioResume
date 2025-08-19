@@ -44,10 +44,9 @@ const formattedTime = computed(() =>
   font-weight: 600;
   font-size: 10px;
   color: white;
-  text-shadow: 0 0 1px purple, 0 0 1px purple;
   text-align: right;
   user-select: none;
-  z-index: 2;
+  z-index: 1;
 }
 
 .location {

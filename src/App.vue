@@ -6,10 +6,10 @@
   <template v-else>
     <ColorTrail />
     <NavBar />
-    <HeroSection />
-    <SkillsSection />
-    <ProjectSection />
-    <LearningSteps />
+    <HeroSection id="about" />
+    <SkillsSection id="skills" />
+    <ProjectSection id="projects" />
+    <LearningSteps id="timeline" />
     <Time />
     <Footer />
   </template>
@@ -38,8 +38,10 @@ onMounted(() => {
   
   setTimeout(() => {
     loading.value = false;
-  }, 2000); 
+  }, 7000); 
 });
 </script>
+
+
 
 

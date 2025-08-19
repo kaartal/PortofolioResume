@@ -1,105 +1,59 @@
-<template>
+<template> 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </link>
+</head>
   <nav :class="['navbarBox', { navbarHidden: isHidden }]">
-    <!-- Logo i navigacija će biti vidljivi samo na desktopu -->
-    <div class="logoPic"> 
-      <img :src="logo" alt="HK Logo" class="logoImage" />
-    </div>
+    <!-- LOGO -->
+   
+   <ul :class="['navigationLinks', { open: menuOpen }]">
+  <li v-for="link in links" :key="link.id">
+    <a
+      href="#"
+      @click.prevent="scrollToSection(link.id)"
+      :class="{ active: activeSection === link.id }"
+    >
+      {{ link.name }}
+    </a>
+  </li>
+</ul>
 
-    <ul :class="['navigationLinks', { open: menuOpen }]">
-      <li v-for="link in links" :key="link.id">
-        <a
-          :href="`#${link.id}`"
-          :class="{ active: activeSection === link.id }"
-          @click.prevent="scrollToSection(link.id); closeMenu()"
-        >
-          {{ link.name }}
-        </a>
-      </li>
-    </ul>
-
-    <!-- Hamburger dugme uvek prikazano, ali samo na mobilnom -->
-    <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
+<!-- HAMBURGER BUTTON -->
+   <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
       <span :class="{ bar1: true, open: menuOpen }"></span>
       <span :class="{ bar2: true, open: menuOpen }"></span>
       <span :class="{ bar3: true, open: menuOpen }"></span>
     </button>
   </nav>
+   
 </template>
 
-
-
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import logo from '@/assets/download.svg';
+import { ref } from 'vue';
 
 const links = [
   { id: 'about', name: 'About' },
-  { id: 'projects', name: 'Skills' },
-  { id: 'testimonials', name: 'Projects' },
-  { id: 'contact', name: 'Timeline' },
+  { id: 'skills', name: 'Skills' },
+  { id: 'projects', name: 'Projects' },
+  { id: 'timeline', name: 'Timeline' },
 ];
 
-const activeSection = ref(null);
-const isHidden = ref(false);
 const menuOpen = ref(false);
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value;
-};
+const toggleMenu = () => menuOpen.value = !menuOpen.value;
+const closeMenu = () => menuOpen.value = false;
 
-const closeMenu = () => {
-  menuOpen.value = false;
-};
-
-function scrollToSection(id) {
+// Smooth scroll do sekcije
+const scrollToSection = (id) => {
   const el = document.getElementById(id);
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' });
-    isHidden.value = false; // Prikaži navbar odmah nakon klika
+    closeMenu(); // zatvori mobilni meni ako je otvoren
   }
-}
+};
 
 
-let lastScrollTop = 0;
-
-function onScroll() {
-  const scrollTop = window.scrollY || window.pageYOffset;
-
-  // Sakrij navbar ako skroluješ (bilo gde osim na vrhu)
-  if (scrollTop > 0) {
-    isHidden.value = true;
-    closeMenu();
-  } else {
-    // Ako si na vrhu stranice, prikaži navbar
-    isHidden.value = false;
-  }
-
-  // Aktivna sekcija - opcionalno, možeš i ukloniti ako ti ne treba
-  let current = null;
-  links.forEach(link => {
-    const section = document.getElementById(link.id);
-    if (section) {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 80) {
-        current = link.id;
-      }
-    }
-  });
-  activeSection.value = current;
-}
-
-
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll);
-  onScroll();
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll);
-});
 </script>
-
 <style scoped>
 .navbarBox {
   position: fixed;
@@ -115,7 +69,7 @@ onBeforeUnmount(() => {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(1px);
   width: fit-content;
-  z-index: 2;
+  z-index: 4;
   user-select: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -127,14 +81,22 @@ onBeforeUnmount(() => {
 }
 
 .logoPic {
-  position: absolute;
-  left: -90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: #1e1e1e; /* tamna pozadina */
+  border-radius: 20px; /* moderni zaobljeni rubovi */
 }
 
-.logoImage {
-  height: 50px;
-  user-select: none;
-  margin-top:10px;
+.logoText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #00d8ff; /* moderna tirkizna boja */
+  letter-spacing: 5px; /* razmak između slova */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* lagana sjena */
 }
 
 .hamburger {
@@ -169,9 +131,8 @@ onBeforeUnmount(() => {
   transform: rotate(-45deg);
 }
 
-/* Navigacioni linkovi */
 .navigationLinks {
-  font-family: Copperplate;
+
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -180,7 +141,7 @@ onBeforeUnmount(() => {
 }
 
 .navigationLinks li a {
-  font-family: Copperplate;
+  font-family: 'Audiowide', sans-serif;
   color: #fff;
   font-weight: 500;
   text-decoration: none;
@@ -198,13 +159,13 @@ onBeforeUnmount(() => {
   color: #fff;
 }
 
-/* Mobilni prikaz */
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .navigationLinks {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 24vh;
     background: rgba(17, 23, 40, 0.95);
     border-radius: 0 0 0 12px;
     flex-direction: column;
@@ -217,7 +178,7 @@ onBeforeUnmount(() => {
     pointer-events: none;
     transform: translateX(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 9999;
+    z-index: 14;
   }
 .logoPic {
   display:none;
@@ -236,7 +197,7 @@ onBeforeUnmount(() => {
     display: flex;
     position: absolute;
     top: 24px;
-    right: 24px;
+    right: 54px;
     flex-direction: column;
     justify-content: space-around;
     width: 26px;
@@ -251,6 +212,7 @@ onBeforeUnmount(() => {
     width: 100%;
     justify-content: space-between;
     padding: 16px;
+    display:none;
   }
 
   .logoPic {

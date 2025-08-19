@@ -115,7 +115,6 @@ onMounted(() => {
   border-radius: 20px;
 }
 
-/* 🚀 ANIMACIJE */
 @keyframes rocketFlyIn {
   0% {
     transform: translateY(500px) scale(0.8);
@@ -147,9 +146,6 @@ onMounted(() => {
   animation: rocketMove 5s ease-in-out infinite;
 }
 
-
-
-
 .rocket-enter {
   animation: rocketFlyIn 1.2s ease-out forwards;
 }
@@ -162,6 +158,7 @@ onMounted(() => {
   opacity: 0;
   transition: opacity 2s ease-in-out;
   pointer-events: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fade-section.visible {
@@ -172,25 +169,25 @@ onMounted(() => {
 .developerDescription {
   max-width: 500px;
   width: 100%;
-  font-family: 'Orbitron', sans-serif;
+
 }
 
 .developerDescription h1 {
   font-size: 3rem;
   font-weight: 700;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
 }
 
 .developerDescription h1 .highlight {
   color: #A04DFF;
   animation: textGlow 2s infinite alternate ease-in-out;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
 }
 
 .developerDescription h2 {
   font-size: 2rem;
   margin-top: 0.2rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
 }
 
 .developerDescription p {
@@ -198,7 +195,7 @@ onMounted(() => {
   font-size: 1rem;
   line-height: 1.6;
   color: #ccc;
-  font-family: 'Orbitron', sans-serif;
+ font-family: 'Orbitron';
 }
 
 .actionsRow {

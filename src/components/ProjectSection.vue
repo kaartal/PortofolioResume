@@ -1,10 +1,9 @@
 <template>
   <div class="projectsBox">
-   <h2 class="sectionName" :class="{ 'animate': isVisible }">My Projects</h2>
-<p class="description" :class="{ 'animate': isVisible }">
-  I’m passionate about turning ideas into real, useful products and I love sharing what I learn along the way.
-</p>
-
+    <h2 class="sectionName" :class="{ animate: isVisible }" ref="titleRef">selected projects</h2>
+    <p class="description" :class="{ animate: isVisible }" ref="descriptionRef">
+      I’m passionate about turning ideas into real, useful products and I love sharing what I learn along the way.
+    </p>
 
     <div class="projectGrid">
       <div
@@ -14,8 +13,7 @@
         class="projectItem"
         :class="{
           active: index === activeProjectIndex,
-          faded: index !== activeProjectIndex,
-          bounce: index === activeProjectIndex
+          faded: index !== activeProjectIndex
         }"
         @click="setActive(index)"
       >
@@ -45,12 +43,8 @@
 import { ref, onMounted, nextTick } from 'vue';
 
 const isVisible = ref(false);
-
-onMounted(() => {
-  setTimeout(() => {
-    isVisible.value = true;
-  }, 100);
-});
+const titleRef = ref(null);
+const descriptionRef = ref(null);
 
 const activeProjectIndex = ref(1);
 const projectRefs = ref([]);
@@ -66,8 +60,6 @@ const setActive = async (index) => {
   }
 };
 
-
-
 const projects = [
   {
     title: "vehicleregistration.html",
@@ -81,7 +73,7 @@ const projects = [
     title: "ticketshop.cs",
     date: "Dec 2025 – Jun 2025",
     description: "Developed a comprehensive online ticketing platform that facilitates the seamless sale and real-time tracking of digital tickets.",
-    tags: [".NET", "C#", "EF", "HTML","CSS","JavaScript","SQL"],
+    tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/FootballTickets",
     image: new URL('@/assets/begitam.png', import.meta.url).href,
   },
@@ -95,60 +87,72 @@ const projects = [
   },
 ];
 
+onMounted(async () => {
+  await nextTick();
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === titleRef.value || entry.target === descriptionRef.value) {
+          isVisible.value = entry.isIntersecting;
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
+  if (titleRef.value) observer.observe(titleRef.value);
+  if (descriptionRef.value) observer.observe(descriptionRef.value);
+});
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 .projectsBox {
   max-width: 1200px;
   margin: auto;
   padding: 2rem 1rem;
   text-align: center;
   margin-bottom: 300px;
+  margin-top: 300px;
 }
 
-.sectionName {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.description {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 70px;
-}
-.sectionName, .description {
-  opacity: 0;
-  transform: translateY(40px); 
-  animation: flyIn 0.8s ease-out forwards;
-}
-
-.sectionName {
-  animation-delay: 0.2s; 
-}
-
-.description {
-  animation-delay: 0.6s; 
-}
-
-.animate {
-  animation: flyIn 0.8s ease-out forwards;
-}
-
-@keyframes flyIn {
-  from {
+.sectionName{
     opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
+  transform: translateY(20px);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  animation-fill-mode: forwards;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom:20px;
+}
+
+.description {
+  opacity: 0;
+  transform: translateY(20px);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  animation-fill-mode: forwards;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom:44px;
+}
+
+.animate.sectionName,
+.animate.description {
+  opacity: 1;
+  transform: translateY(0);
+  animation: floatSmooth 6s ease-in-out infinite;
+}
+
+@keyframes floatSmooth {
+  0%, 100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-5px);
+  }
 }
-
 
 .projectGrid {
   display: flex;
@@ -157,7 +161,7 @@ const projects = [
   gap: 2rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .projectItem {
@@ -167,44 +171,35 @@ const projects = [
   width: 350px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s ease, opacity 0.4s ease;
   cursor: pointer;
   scroll-snap-align: center;
   height: 550px;
   position: relative;
-}
-
-.projectItem:hover {
-  transform: translateY(-5px);
+  opacity: 0.5;
+  transform: translateY(10px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  animation: floatSmooth 6s ease-in-out infinite;
 }
 
 .projectItem.active {
-  transform: scale(1);
   opacity: 1;
+  transform: translateY(0);
   z-index: 2;
+  box-shadow: 0 1px px rgba(176, 83, 255, 0.7);
+  animation: floatSmooth 4s ease-in-out infinite;
 }
 
 .projectItem.faded {
-  transform: scale(0.9);
   opacity: 0.4;
-  filter: brightness(0.3);
+  transform: scale(0.9);
+  filter: brightness(0.6);
+  animation: none;
 }
 
 .projectItem:hover {
   animation-play-state: paused;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.bounce {
-  animation: bounce 1.4s infinite;
 }
 
 .projectLogo img {
@@ -234,7 +229,7 @@ const projects = [
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top:7px;
+  margin-top: 7px;
 }
 
 .sourceButton:hover {
@@ -250,7 +245,6 @@ const projects = [
 .projectName {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 1;
   margin-top: 10px;
 }
 
@@ -291,7 +285,7 @@ const projects = [
 
 .links a:hover {
   background-color: #008ecc;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {

@@ -22,3 +22,16 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+html, body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* za vertikalni scroll */
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: start; /* ili center, end - zavisi kako želiš */
+  height: 100vh; /* ili koliko već treba da zauzima */
+}
+
