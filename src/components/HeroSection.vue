@@ -29,22 +29,22 @@
         Hi, It's <span class="highlight">Kartal</span>
       </h1>
 
-      <h2 class="fade-section" :class="{ visible: showTitle }">
+      <h2 class="fadeSection" :class="{ visible: showTitle }">
         I'm Full-Stack Developer
       </h2>
 
-      <p class="fade-section" :class="{ visible: showText }">
+      <p class="fadeSection" :class="{ visible: showText }">
         Innovative Full Stack Developer passionate about creating seamless and impactful web solutions.
-        Eager to leverage modern technologies to solve real-world problems and contribute to dynamic team environments.
+        Passionate about using modern technologies to solve real-world problems.
       </p>
 
-      <div class="actionsRow fade-section" :class="{ visible: showButton }">
+      <div class="actionsRow fadeSection" :class="{ visible: showButton }">
         <div class="resume-button">
-          <a href="/test.pdf" download>
+          <!-- <a href="/test.pdf" download>-->
             <button class="glow-on-hover">
-              Download My CV
+              CV Coming Soon 🚀
             </button>
-          </a>
+
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import rocketImg from '@/assets/halidkartal.png'
+import rocketImg from '@/assets/rocket.png'
 
 const showImage = ref(false)
 const showTitle = ref(false)
@@ -115,6 +115,7 @@ onMounted(() => {
   border-radius: 20px;
 }
 
+/* 🚀 ANIMACIJE */
 @keyframes rocketFlyIn {
   0% {
     transform: translateY(500px) scale(0.8);
@@ -146,6 +147,9 @@ onMounted(() => {
   animation: rocketMove 5s ease-in-out infinite;
 }
 
+
+
+
 .rocket-enter {
   animation: rocketFlyIn 1.2s ease-out forwards;
 }
@@ -154,14 +158,14 @@ onMounted(() => {
   animation: rocketMove 5s ease-in-out infinite, rocketGlow 3s infinite alternate ease-in-out;
 }
 
-.fade-section {
+.fadeSection {
   opacity: 0;
   transition: opacity 2s ease-in-out;
   pointer-events: none;
   font-family: 'Poppins', sans-serif;
 }
 
-.fade-section.visible {
+.fadeSection.visible {
   opacity: 1;
   pointer-events: auto;
 }
@@ -181,13 +185,13 @@ onMounted(() => {
 .developerDescription h1 .highlight {
   color: #A04DFF;
   animation: textGlow 2s infinite alternate ease-in-out;
-  font-family: 'Orbitron';
+  
 }
 
 .developerDescription h2 {
   font-size: 2rem;
   margin-top: 0.2rem;
-  font-family: 'Orbitron';
+  font-family: 'Orbitron', sans-serif;
 }
 
 .developerDescription p {
@@ -195,7 +199,11 @@ onMounted(() => {
   font-size: 1rem;
   line-height: 1.6;
   color: #ccc;
- font-family: 'Orbitron';
+  font-weight: 500; 
+font-size: 1.1rem; 
+letter-spacing: 1px; 
+line-height: 1.6; 
+ 
 }
 
 .actionsRow {
@@ -225,6 +233,7 @@ onMounted(() => {
   font-size: 18px;
   font-weight: bold;
   transition: color 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .glow-on-hover:before {
@@ -297,6 +306,18 @@ onMounted(() => {
   color: #A04DFF;
 }
 
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes textGlow {
   0% {
     text-shadow: 0 0 0px #A04DFF;
@@ -348,6 +369,12 @@ onMounted(() => {
   .flySocial {
     display: none;
   }
+
+  .infoBox {
+  margin-top:-168px;
+  margin-bottom: 10px;
+
+}
 }
 
 @media (max-width: 480px) {

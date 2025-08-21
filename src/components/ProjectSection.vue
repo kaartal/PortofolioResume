@@ -64,8 +64,8 @@ const projects = [
   {
     title: "vehicleregistration.html",
     date: "April 2024",
-    description: "Created a Web application to simulate vehicle registration operations.",
-    tags: ["PHP", "CSS", "HTML"],
+    description: "I developed a full-stack web application that simulates real-world vehicle registration processes. The application allows users to register vehicles, manage ownership records, issue license plates, and track registration history.",
+    tags: ["PHP", "CSS", "HTML", "MySQL"],
     source: "https://github.com/kaartal/VehicleRegistration",
     image: new URL('@/assets/carregistration.png', import.meta.url).href,
   },
@@ -75,15 +75,15 @@ const projects = [
     description: "Developed a comprehensive online ticketing platform that facilitates the seamless sale and real-time tracking of digital tickets.",
     tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/FootballTickets",
-    image: new URL('@/assets/begitam.png', import.meta.url).href,
+    image: new URL('@/assets/ticket.avif', import.meta.url).href,
   },
   {
-    title: "bankapp.cpp",
+    title: "bank.cpp",
     date: "May 2024",
-    description: "Developed a desktop application in C++ designed to simulate comprehensive banking operations along with user management functionalities.",
+    description: "I designed and implemented a desktop-based banking simulation system in C++, focusing on replicating real-world banking processes and account management.",
     tags: ["C++", "C"],
     source: "https://github.com/kaartal/BankSystem",
-    image: new URL('@/assets/begitam.png', import.meta.url).href,
+    image: new URL('@/assets/bank.jpg', import.meta.url).href,
   },
 ];
 
@@ -107,8 +107,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
 .projectsBox {
   max-width: 1200px;
   margin: auto;
@@ -124,18 +122,22 @@ onMounted(async () => {
   color: white;
   font-family: 'Orbitron', sans-serif;
   animation-fill-mode: forwards;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.8s ease, transform 1.8s ease;
   margin-bottom:20px;
+  font-size:38px;
+  user-select: none;
 }
 
 .description {
   opacity: 0;
   transform: translateY(20px);
   color: white;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Copperplate", "Copperplate Gothic Light";
   animation-fill-mode: forwards;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  margin-bottom:44px;
+  margin-bottom:42px;
+  font-size:14px;
+  user-select: none;
 }
 
 .animate.sectionName,
@@ -153,7 +155,9 @@ onMounted(async () => {
     transform: translateY(-5px);
   }
 }
-
+section {
+  scroll-margin-top: 20px; 
+}
 .projectGrid {
   display: flex;
   flex-direction: row;
@@ -173,7 +177,7 @@ onMounted(async () => {
   flex-direction: column;
   cursor: pointer;
   scroll-snap-align: center;
-  height: 550px;
+  height: 640px;
   position: relative;
   opacity: 0.5;
   transform: translateY(10px);
@@ -181,6 +185,9 @@ onMounted(async () => {
     opacity 0.6s ease,
     transform 0.6s ease;
   animation: floatSmooth 6s ease-in-out infinite;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 1px rgba(176, 83, 255, 0.7);
+  
 }
 
 .projectItem.active {
@@ -229,7 +236,9 @@ onMounted(async () => {
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 7px;
+  margin-top: 20px;
+  font-family: 'Orbitron', sans-serif;
+  
 }
 
 .sourceButton:hover {
@@ -264,9 +273,11 @@ onMounted(async () => {
 .tag {
   background-color: #222;
   color: #ccc;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  box-shadow: 0 1px 1px rgba(176, 83, 255, 0.7);
+  font-family: 'Orbitron', sans-serif;
 }
 
 .links {

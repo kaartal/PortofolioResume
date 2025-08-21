@@ -15,8 +15,8 @@ body, html, #app {
 }
 
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 html {
@@ -25,13 +25,19 @@ html {
 
 html, body {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; /* za vertikalni scroll */
+  scroll-snap-type: y mandatory; 
   height: 100vh;
   overflow-y: scroll;
 }
 
 section {
-  scroll-snap-align: start; /* ili center, end - zavisi kako želiš */
-  height: 100vh; /* ili koliko već treba da zauzima */
-}
+  scroll-snap-align: start; 
+  height: 100vh; }
 
+ 
+#skills{
+  scroll-margin-top: 20px;
+}  
+#projects {
+  scroll-margin-top: 80px;
+}

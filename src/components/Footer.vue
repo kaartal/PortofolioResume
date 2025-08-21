@@ -9,10 +9,17 @@
         <a href="https://www.facebook.com/tvoj-profil" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-      <div class="crafted">
-        <span>Created by me</span><br />
-        <p>Halid Kartal</p>
-      </div>
+     <div class="crafted">
+  <span>Created by me</span><br />
+  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
+    <text x="120" y="80" 
+          font-family="Brush Script MT, cursive" 
+          font-size="82" 
+          fill="white">
+      Halid Kartal
+    </text>
+  </svg>
+</div>
     </footer>
   </div>
 </template>
@@ -34,10 +41,10 @@
   background-color: black;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
   font-family: 'Courier New', monospace;
   z-index: 2;
-  margin-top: 180px;
+  margin-top: 200px;
 }
 
 .footerTitle {

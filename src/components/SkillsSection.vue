@@ -1,8 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <!-- Naslov sa animacijom kucanja -->
     <h1 class="typing-title">my skills</h1>
-
     <div class="skillsGrid">
 
       <!-- BACKEND -->
@@ -13,7 +11,10 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <i class="fab fa-microsoft icon-csharp"></i> backend
+          <img src="@/assets/c.png" alt=".NET logo" class="icon-csharp" /> 
+          <img src="@/assets/c++.png" alt="C# logo" class="icon-csharp" />
+          <img src="@/assets/c-sharp.png" alt="C# logo" class="icon-csharp" />
+          backend
         </h3>
         <div class="typing-code">
           <div class="line line1">using System;</div>
@@ -30,7 +31,7 @@
           <div class="line line12">    }</div>
           <div class="line line13">}</div>
         </div>
-        <p>
+        <p class="skillText">
           Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
         </p>
       </div>
@@ -43,9 +44,10 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <i class="fab fa-html5 icon-html"></i>
-          <i class="fab fa-css3-alt icon-css"></i>
-          <i class="fab fa-js icon-js"></i> frontend
+          <img src="@/assets/html.png" alt="HTML logo" class="icon-csharp" />
+          <img src="@/assets/css.png" alt="CSS logo" class="icon-csharp" />
+          <img src="@/assets/javascript.png" alt="JavaScript logo" class="icon-csharp" />frontend
+           
         </h3>
         <div class="typing-code">
           <div class="line line1">&lt;!DOCTYPE html&gt;</div>
@@ -62,8 +64,8 @@
           <div class="line line12">&lt;/body&gt;</div>
           <div class="line line13">&lt;/html&gt;</div>
         </div>
-        <p>
-          Skilled in managing HTML, CSS, and JavaScript for frontend development, including dynamic DOM manipulation and responsive design.
+        <p class="skillText">
+          Skilled in managing HTML, CSS, and JavaScript for frontend development, and responsive design.
         </p>
       </div>
 
@@ -75,8 +77,8 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <i class="fas fa-database icon-db"></i>
-          <span class="db-icons">MySQL | SQL</span> database
+          <img src="@/assets/mysql.png" alt="Microsoft logo" class="icon-csharp" />
+          <img src="@/assets/sql.png" alt="Microsoft logo" class="icon-csharp" /> database
         </h3>
         <div class="typing-code">
           <div class="line line1">CREATE TABLE Users (</div>
@@ -88,7 +90,7 @@
           <div class="line line7">INSERT INTO Users (Name, Email) VALUES ('Halid', 'halid@example.com');</div>
           <div class="line line8">SELECT * FROM Users;</div>
         </div>
-        <p>
+        <p class="skillText">
           Passionate about databases, creating efficient schemas, and writing optimized SQL queries for data management.
         </p>
       </div>
@@ -101,8 +103,8 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <i class="fab fa-ubuntu icon-ubuntu"></i>
-          <i class="fas fa-terminal icon-terminal"></i> linux
+          <img src="@/assets/linux.png" alt="Microsoft logo" class="icon-csharp" />
+          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="icon-csharp" /> linux
         </h3>
         <div class="typing-code">
           <div class="line line1">#!/bin/bash</div>
@@ -116,15 +118,32 @@
           <div class="line line9">    echo "b is smaller"</div>
           <div class="line line10">fi</div>
         </div>
-        <p>
-          Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
-        </p>
+        <p class="skillText">
+  Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
+</p>
       </div>
-
+      <!-- </div>
+      <div class="tech-container">
+    <div class="tech-item">
+      <img src="@/assets/git (2).png" alt="Next.js" class="tech-icon">
+      <p class="tech-label">Git</p>
     </div>
+    <div class="tech-item">
+      <img src="@/assets/terminal.png" alt="React" class="tech-icon">
+      <p class="tech-label">Shell</p>
+    </div>
+    <div class="tech-item">
+      <img src="@/assets/.net.png" alt="Remix" class="tech-icon">
+      <p class="tech-label">.NET</p>
+    </div>
+    <div class="tech-item">
+      <img src="@/assets/vuejs.png" alt="Redux" class="tech-icon">
+      <p class="tech-label">Vue.js</p>
+    </div>
+  </div> -->
   </div>
+    </div>
 </template>
-
 
 <style scoped>
 .page-wrapper {
@@ -134,6 +153,51 @@
   min-height: 100vh;       
   flex-direction: column; 
 }
+.icon-csharp{
+  margin-top:8px;
+  height:36px;
+  width:36px;
+  border-radius: 9px;
+}
+
+/* TECH PART
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.tech-item {
+  background: rgba(14, 18, 23, 0.8); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
+  backdrop-filter: blur(6px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+  border-color: #a855f7;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6); 
+  transform: translateY(-6px) scale(1.01);
+}
+
+.tech-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-label {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f3e8ff; /* svjetlo ljubičasta */
 
 .typing-title {
   font-family: 'Orbitron', sans-serif;
@@ -146,9 +210,8 @@
   border-right: 4px solid #a04dff;
   width: 13ch; 
   animation: typing 3.5s steps(9) forwards, blinkCaret 0.75s step-end infinite;
+  user-select: none;
 }
-
-
 
 
 .skillsGrid {
@@ -173,8 +236,8 @@
   width: 500px;
   animation: floatUpDown 4s ease-in-out infinite;
    width: 100%;
-  max-width: 500px;
-  min-height: 300px;
+  max-width: 450px;
+  max-height: 300px;
 }
 
 .skill-card:hover {
@@ -199,11 +262,20 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  user-select: none;
 }
-
+.skillText{
+  font-size:14px;
+  font-family: 'Orbitron', 'Poppins', sans-serif;  
+font-size: 14px; 
+letter-spacing: 1px; 
+line-height: 1.4; 
+}¸
 .skill-card p {
   font-size: 0.75rem;
   margin-top: auto;
+  font-family: 'Rajdhani';
+  user-select: none;
 }
 
 .windowButtons {
@@ -216,8 +288,8 @@
 }
 
 .windowButtons .btn {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   display: inline-block;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
@@ -236,7 +308,7 @@
 .icon-terminal { color: #6c757d; }
 
 .db-icons {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: #ccc;
   margin-left: 4px;
 }
@@ -250,6 +322,7 @@
   white-space: nowrap;
   overflow: hidden;
   height: 200px;
+  user-select: none;
 }
 
 .typing-code .line {
@@ -260,6 +333,7 @@
   animation: typing 2s steps(30, end) forwards;
   margin-bottom: 0.1rem;
   color: rgba(255, 255, 255, 0.05);
+  user-select: none;
 }
 
 .typing-code .line1 { animation-delay: 0s; }

@@ -43,14 +43,15 @@ const timeline = ref([
   {
     year: '2024',
     items: [
-      'Gained proficiency in database management and design',
       'Started learning backend development with .NET Core and C#',
+      'Completed a 3-month remote internship with a USA-based company'
     ],
   },
   {
     year: '2023',
     items: [
       'Adopted Object-Oriented Programming principles in projects',
+      'Gained proficiency in database management and design',
       'Developed applications utilizing Shell scripting and C++',
     ],
   },
@@ -141,7 +142,7 @@ onMounted(async () => {
   margin: auto;
   padding: 2rem 1rem;
   position: relative;
-  border-left: 3px solid #a04dff;
+  border-left: px solid #a04dff;
   margin-bottom: 120px;
 }
 
@@ -167,8 +168,8 @@ onMounted(async () => {
 .circle {
   position: absolute;
   left: -25px;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background-color: #a04dff;
   border-radius: 50%;
   animation: pulseGlow 2s infinite ease-in-out;
@@ -179,8 +180,12 @@ onMounted(async () => {
   font-weight: bold;
   font-size: 1.7rem;
   margin-left: 1.2rem;
-  margin-bottom: 0.7rem;
-  margin-top: 10px;
+  margin-bottom: 0.3rem;
+  margin-top: 4px;
+  font-family: 'Orbitron', 'Poppins';
+font-size: 22px; 
+letter-spacing: 2px; 
+line-height: 1.5; 
 }
 
 .yearItems {
@@ -192,8 +197,12 @@ onMounted(async () => {
 .yearItem {
   color: #ccc;
   font-size: 1.05rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.3rem;
   margin-left: 10px;
+  font-family: 'Orbitron', 'Poppins';
+font-size: 15px; 
+letter-spacing: 2px; 
+line-height: 1.5; 
 }
 
 @media (max-width: 1024px) {

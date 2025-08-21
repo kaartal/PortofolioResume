@@ -43,12 +43,12 @@ const menuOpen = ref(false);
 const toggleMenu = () => menuOpen.value = !menuOpen.value;
 const closeMenu = () => menuOpen.value = false;
 
-// Smooth scroll do sekcije
+
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' });
-    closeMenu(); // zatvori mobilni meni ako je otvoren
+    closeMenu(); 
   }
 };
 
@@ -57,7 +57,7 @@ const scrollToSection = (id) => {
 <style scoped>
 .navbarBox {
   position: fixed;
-  top: 20px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -65,13 +65,14 @@ const scrollToSection = (id) => {
   gap: 3rem;
   padding: 16px 24px;
   background: rgba(17, 23, 40, 0.85);
-  border-radius: 12px;
+  border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(1px);
   width: fit-content;
   z-index: 4;
   user-select: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  backdrop-filter: blur(4px); 
 }
 
 .navbarHidden {
@@ -86,17 +87,17 @@ const scrollToSection = (id) => {
   align-items: center;
   width: 120px;
   height: 120px;
-  background-color: #1e1e1e; /* tamna pozadina */
-  border-radius: 20px; /* moderni zaobljeni rubovi */
+  background-color: #1e1e1e; 
+  border-radius: 20px; 
 }
 
 .logoText {
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  color: #00d8ff; /* moderna tirkizna boja */
-  letter-spacing: 5px; /* razmak između slova */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* lagana sjena */
+  color: #00d8ff; 
+  letter-spacing: 5px; 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
 }
 
 .hamburger {
@@ -146,7 +147,7 @@ const scrollToSection = (id) => {
   font-weight: 500;
   text-decoration: none;
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius:20px;
   transition: background-color 0.3s ease;
   cursor: pointer;
   font-size: 1rem;
@@ -157,6 +158,7 @@ const scrollToSection = (id) => {
 .navigationLinks li a.active {
   background-color: #3b3f5c;
   color: #fff;
+  border-radius:20px;
 }
 
 /* RESPONSIVE MOBILE */
