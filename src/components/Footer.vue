@@ -3,12 +3,14 @@
     <footer class="footer">
       <h2 class="footerTitle">Contact me</h2>
       <a href="mailto:halidkartal09@gmail.com" class="email">halidkartal09@gmail.com</a>
-<!-- SOCIAL LINKS -->
+
+      <!-- SOCIAL LINKS -->
       <div class="socialLinks">
         <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.facebook.com/tvoj-profil" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
       </div>
+      <!-- CRAFTED BY -->
      <div class="crafted">
   <span>Created by me</span><br />
   <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
@@ -20,12 +22,9 @@
     </text>
   </svg>
 </div>
-    </footer>
-  </div>
+</footer>
+</div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .footerBox {
@@ -91,6 +90,11 @@
 
 /* TABLET RESPONSIVE */
 @media (max-width: 1024px) {
+
+  .footer {
+  margin-top: 80px;
+}
+
   .footerBox {
     clip-path: polygon(0 20%, 100% 0, 1030% 100%, 0% 100%);
   }
@@ -105,6 +109,9 @@
 
 /* SMALL SCREEN DESIGN RESPONSIVE */
 @media (max-width: 768px) {
+  .footer {
+  margin-top: 70px;
+  }
   .footerTitle {
     font-size: 1.8em;
     padding: 4px 8px;

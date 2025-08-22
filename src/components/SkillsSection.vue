@@ -1,34 +1,34 @@
 <template>
-  <div class="page-wrapper">
-    <h1 class="typing-title">my skills</h1>
+  <div class="pageWrapper">
+    <h1 class="typingTitle">my skills</h1>
     <div class="skillsGrid">
 
       <!-- BACKEND -->
-      <div class="skill-card">
+      <div class="skillCard">
         <div class="windowButtons">
           <span class="btn red"></span>
           <span class="btn yellow"></span>
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/c.png" alt=".NET logo" class="icon-csharp" /> 
-          <img src="@/assets/c++.png" alt="C# logo" class="icon-csharp" />
-          <img src="@/assets/c-sharp.png" alt="C# logo" class="icon-csharp" />
+          <img src="@/assets/c.png" alt=".NET logo" class="iconLanguage" /> 
+          <img src="@/assets/c++.png" alt="C# logo" class="iconLanguage" />
+          <img src="@/assets/c-sharp.png" alt="C# logo" class="iconLanguage" />
           backend
         </h3>
-        <div class="typing-code">
+        <div class="writingCode">
           <div class="line line1">using System;</div>
           <div class="line line2">public class App {</div>
-          <div class="line line3">    static void Main() {</div>
-          <div class="line line4">        Console.WriteLine("Hello .NET");</div>
-          <div class="line line5">        var version = Environment.Version;</div>
-          <div class="line line6">        Console.WriteLine(version);</div>
-          <div class="line line7">        var now = DateTime.Now;</div>
-          <div class="line line8">        Console.WriteLine(now);</div>
-          <div class="line line9">        AppDomain.CurrentDomain.UnhandledException += (s, e) => {</div>
-          <div class="line line10">            Console.WriteLine("Unhandled exception");</div>
-          <div class="line line11">        };</div>
-          <div class="line line12">    }</div>
+          <div class="line line3">static void Main() {</div>
+          <div class="line line4">Console.WriteLine("Hello .NET");</div>
+          <div class="line line5">var version = Environment.Version;</div>
+          <div class="line line6">Console.WriteLine(version);</div>
+          <div class="line line7">var now = DateTime.Now;</div>
+          <div class="line line8">Console.WriteLine(now);</div>
+          <div class="line line9">ppDomain.CurrentDomain.UnhandledException += (s, e) => {</div>
+          <div class="line line10">Console.WriteLine("Unhandled exception");</div>
+          <div class="line line11">};</div>
+          <div class="line line12">}</div>
           <div class="line line13">}</div>
         </div>
         <p class="skillText">
@@ -37,29 +37,29 @@
       </div>
 
       <!-- FRONTEND -->
-      <div class="skill-card">
+      <div class="skillCard">
         <div class="windowButtons">
           <span class="btn red"></span>
           <span class="btn yellow"></span>
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/html.png" alt="HTML logo" class="icon-csharp" />
-          <img src="@/assets/css.png" alt="CSS logo" class="icon-csharp" />
-          <img src="@/assets/javascript.png" alt="JavaScript logo" class="icon-csharp" />frontend
+          <img src="@/assets/html.png" alt="HTML logo" class="iconLanguage" />
+          <img src="@/assets/css.png" alt="CSS logo" class="iconLanguage" />
+          <img src="@/assets/javascript.png" alt="JavaScript logo" class="iconLanguage" />frontend
            
         </h3>
-        <div class="typing-code">
+        <div class="writingCode">
           <div class="line line1">&lt;!DOCTYPE html&gt;</div>
           <div class="line line2">&lt;html lang="en"&gt;</div>
           <div class="line line3">&lt;head&gt;</div>
-          <div class="line line4">    &lt;meta charset="UTF-8"&gt;</div>
-          <div class="line line5">    &lt;title&gt;Frontend Test&lt;/title&gt;</div>
+          <div class="line line4">&lt;meta charset="UTF-8"&gt;</div>
+          <div class="line line5">&lt;title&gt;Frontend Test&lt;/title&gt;</div>
           <div class="line line6">&lt;/head&gt;</div>
           <div class="line line7">&lt;body&gt;</div>
-          <div class="line line8">    &lt;h1&gt;Hello Frontend&lt;/h1&gt;</div>
+          <div class="line line8">&lt;h1&gt;Hello Frontend&lt;/h1&gt;</div>
           <div class="line line9">&lt;script&gt;</div>
-          <div class="line line10">    console.log("Frontend ready");</div>
+          <div class="line line10">console.log("Frontend ready");</div>
           <div class="line line11">&lt;/script&gt;</div>
           <div class="line line12">&lt;/body&gt;</div>
           <div class="line line13">&lt;/html&gt;</div>
@@ -70,21 +70,21 @@
       </div>
 
       <!-- DATABASE -->
-      <div class="skill-card">
+      <div class="skillCard">
         <div class="windowButtons">
           <span class="btn red"></span>
           <span class="btn yellow"></span>
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/mysql.png" alt="Microsoft logo" class="icon-csharp" />
-          <img src="@/assets/sql.png" alt="Microsoft logo" class="icon-csharp" /> database
+          <img src="@/assets/mysql.png" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> database
         </h3>
-        <div class="typing-code">
+        <div class="writingCode">
           <div class="line line1">CREATE TABLE Users (</div>
-          <div class="line line2">    Id INT PRIMARY KEY AUTO_INCREMENT,</div>
-          <div class="line line3">    Name VARCHAR(100),</div>
-          <div class="line line4">    Email VARCHAR(100) UNIQUE</div>
+          <div class="line line2">Id INT PRIMARY KEY AUTO_INCREMENT,</div>
+          <div class="line line3">Name VARCHAR(100),</div>
+          <div class="line line4">Email VARCHAR(100) UNIQUE</div>
           <div class="line line5">);</div>
           <div class="line line6"></div>
           <div class="line line7">INSERT INTO Users (Name, Email) VALUES ('Halid', 'halid@example.com');</div>
@@ -96,32 +96,33 @@
       </div>
 
       <!-- LINUX -->
-      <div class="skill-card">
+      <div class="skillCard">
         <div class="windowButtons">
           <span class="btn red"></span>
           <span class="btn yellow"></span>
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/linux.png" alt="Microsoft logo" class="icon-csharp" />
-          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="icon-csharp" /> linux
+          <img src="@/assets/linux.png" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="iconLanguage" /> linux
         </h3>
-        <div class="typing-code">
+        <div class="writingCode">
           <div class="line line1">#!/bin/bash</div>
           <div class="line line2">echo "Hello Linux"</div>
           <div class="line line3">a=5</div>
           <div class="line line4">b=10</div>
           <div class="line line5">echo "Sum: $((a + b))"</div>
           <div class="line line6">if [ $a -lt $b ]; then</div>
-          <div class="line line7">    echo "a is smaller"</div>
+          <div class="line line7">echo "a is smaller"</div>
           <div class="line line8">else</div>
-          <div class="line line9">    echo "b is smaller"</div>
+          <div class="line line9">echo "b is smaller"</div>
           <div class="line line10">fi</div>
         </div>
         <p class="skillText">
   Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
 </p>
       </div>
+      <!-- TECH INFO -->
       <!-- </div>
       <div class="tech-container">
     <div class="tech-item">
@@ -146,14 +147,14 @@
 </template>
 
 <style scoped>
-.page-wrapper {
+.pageWrapper {
   display: flex;
   justify-content: center; 
   align-items: center;     
   min-height: 100vh;       
   flex-direction: column; 
 }
-.icon-csharp{
+.iconLanguage{
   margin-top:8px;
   height:36px;
   width:36px;
@@ -199,7 +200,7 @@
   font-weight: 600;
   color: #f3e8ff; /* svjetlo ljubičasta */
 
-.typing-title {
+.typingTitle {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 3rem;
@@ -221,7 +222,7 @@
   padding: 2rem;
 }
 
-.skill-card {
+.skillCard {
   position: relative;
   padding: 1rem;
   background-color: #1b1b1b;
@@ -240,7 +241,7 @@
   max-height: 300px;
 }
 
-.skill-card:hover {
+.skillCard:hover {
   animation-play-state: paused;
 }
 
@@ -253,11 +254,11 @@
   }
 }
 
-.skill-card:hover {
+.skillCard:hover {
   transform: translateY(-6px);
 }
 
-.skill-card h3 {
+.skillCard h3 {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -271,7 +272,7 @@ font-size: 14px;
 letter-spacing: 1px; 
 line-height: 1.4; 
 }¸
-.skill-card p {
+.skillCard p {
   font-size: 0.75rem;
   margin-top: auto;
   font-family: 'Rajdhani';
@@ -313,7 +314,7 @@ line-height: 1.4;
   margin-left: 4px;
 }
 
-.typing-code {
+.writingCode {
   position: relative;
   font-family: 'Courier New', monospace;
   font-size: 0.7rem;
@@ -325,7 +326,7 @@ line-height: 1.4;
   user-select: none;
 }
 
-.typing-code .line {
+.writingCode .line {
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid transparent;
@@ -336,16 +337,16 @@ line-height: 1.4;
   user-select: none;
 }
 
-.typing-code .line1 { animation-delay: 0s; }
-.typing-code .line2 { animation-delay: 2.5s; }
-.typing-code .line3 { animation-delay: 5s; }
-.typing-code .line4 { animation-delay: 7.5s; }
-.typing-code .line5 { animation-delay: 10s; }
-.typing-code .line6 { animation-delay: 12.5s; }
-.typing-code .line7 { animation-delay: 15s; }
-.typing-code .line8 { animation-delay: 17.5s; }
-.typing-code .line9 { animation-delay: 20s; }
-.typing-code .line10 { animation-delay: 22.5s; }
+.writingCode .line1 { animation-delay: 0s; }
+.writingCode .line2 { animation-delay: 2.5s; }
+.writingCode .line3 { animation-delay: 5s; }
+.writingCode .line4 { animation-delay: 7.5s; }
+.writingCode .line5 { animation-delay: 10s; }
+.writingCode .line6 { animation-delay: 12.5s; }
+.writingCode .line7 { animation-delay: 15s; }
+.writingCode .line8 { animation-delay: 17.5s; }
+.writingCode .line9 { animation-delay: 20s; }
+.writingCode .line10 { animation-delay: 22.5s; }
 
 @keyframes typing {
   from { width: 0; border-color: transparent; }
@@ -358,7 +359,7 @@ line-height: 1.4;
     padding: 2rem;
   }
 
-  .skill-card {
+  .skillCard {
     width: 95%;
   }
 }
@@ -369,7 +370,7 @@ line-height: 1.4;
     padding: 2rem;
   }
 
-  .skill-card {
+  .skillCard {
     width: 94%;
   }
 }

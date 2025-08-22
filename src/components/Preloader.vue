@@ -1,18 +1,14 @@
 <template>
   <div v-if="showPreloader" class="preloader" :class="{ 'fade-out': finished }">
+    <!-- TERMINAL BOX -->
     <div class="codeBox scale-up">
       <div class="windowsButtons">
         <span class="windowButton red"></span>
         <span class="windowButton yellow"></span>
         <span class="windowButton green"></span>
       </div>
-      <pre>{{ displayedCode }}<span class="cursor"></span></pre>
+      <pre>{{ displayedCode }} <span class="cursor"></span></pre>
     </div>
-  </div>
-
-  <div v-else class="main-content fade-in">
-    <h1>Dobrodošao 🚀</h1>
-    <p>Developer mode: Aktiviran</p>
   </div>
 </template>
 
@@ -20,9 +16,9 @@
 import { ref, onMounted } from "vue";
 
 const fullCode = `
-console.log("☕ Making coffee");
-console.log("💻 Compiling focus");
-console.log("✅ Developer mode: ON");
+kartal-desktop: console.log("☕ Making coffee");
+kartal-desktop: console.log("💻 Compiling focus");
+kartal-desktop: console.log("✅ Developer mode: ON");
 `;
 
 const displayedCode = ref("");
@@ -33,7 +29,7 @@ onMounted(() => {
   const totalDuration = 5000; 
   const typingSpeed = totalDuration / fullCode.length;
   let index = 0;
-
+// TYPING CODE
   const type = () => {
     if (index < fullCode.length) {
       displayedCode.value += fullCode[index];
@@ -46,7 +42,6 @@ onMounted(() => {
       }, 4000); 
     }
   };
-
   type();
 });
 </script>
@@ -59,7 +54,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 1;
   font-family: "Courier New", monospace;
   color: #a04dff;
   overflow: hidden;
@@ -78,11 +73,12 @@ onMounted(() => {
   box-shadow: 0 0 25px rgba(160, 77, 255, 0.6),
     inset 0 0 8px rgba(160, 77, 255, 0.3);
   max-width: 90%;
-  min-width: 320px;
+  min-width: 420px;
   border: 1.5px solid #a04dff;
   position: relative;
   overflow: hidden;
   animation: glow 2s infinite alternate;
+  height:100px;
 }
 
 @keyframes glow {
@@ -124,7 +120,7 @@ onMounted(() => {
 .cursor {
   display: inline-block;
   width: 8px;
-  height: 18px;
+  height: 22px;
   background-color: #a04dff;
   margin-left: 2px;
   animation: blink 1.2s steps(2, start) infinite;
@@ -140,22 +136,8 @@ onMounted(() => {
   animation: scaleUp 0.6s ease;
 }
 @keyframes scaleUp {
-  from { transform: scale(0.8); opacity: 0; }
+  from { transform: scale(0.1); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
-.main-content {
-  opacity: 0;
-  transform: translateY(20px);
-  text-align: center;
-  font-family: "Segoe UI", sans-serif;
-  color: #e2e8f0;
-  padding: 2rem;
-}
-.main-content.fade-in {
-  animation: fadeInUp 1s forwards;
-}
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
-}
 </style>

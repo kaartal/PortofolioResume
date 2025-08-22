@@ -1,12 +1,15 @@
 <template>
   <!-- SOCIAL MEDIA FIXED LINKS -->
   <div class="flySocial">
+    <!-- LINKEDIN PROFILE -->
     <a href="https://linkedin.com/in/halidkartal" target="_blank">
       <i class="fab fa-linkedin-in"></i>
     </a>
+    <!-- GITHUB PROFILE -->
     <a href="https://github.com/kaartal" target="_blank">
       <i class="fab fa-github"></i>
     </a>
+    <!-- FACEBOOK PROFILE -->
     <a href="https://www.facebook.com/tvoj-profil" target="_blank">
       <i class="fab fa-facebook-f"></i>
     </a>
@@ -14,7 +17,7 @@
 
   <!-- DEVELOPER INFO -->
   <div class="infoBox">
-    <!-- PICTURE -->
+    <!-- ROCKET PICTURE -->
     <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
       <img
         :class="['rocket-img', { 'rocket-enter': rocketVisible, 'rocket-float': rocketVisible }]"
@@ -26,33 +29,33 @@
     <!-- DESCRIPTION -->
     <div class="developerDescription">
       <h1 class="fade-section" :class="{ visible: showTitle }">
-        Hi, It's <span class="highlight">Kartal</span>
+        Hi, I'm <span class="highlight">Kartal</span>
       </h1>
 
       <h2 class="fadeSection" :class="{ visible: showTitle }">
-        I'm Full-Stack Developer
+        I'm a Full-Stack Developer
       </h2>
 
       <p class="fadeSection" :class="{ visible: showText }">
-        Innovative Full Stack Developer passionate about creating seamless and impactful web solutions.
+        Innovative Full Stack Developer passionate about creating seamless and impactful app solutions.
         Passionate about using modern technologies to solve real-world problems.
       </p>
 
       <div class="actionsRow fadeSection" :class="{ visible: showButton }">
-        <div class="resume-button">
+        <div class="resumeButton">
           <!-- <a href="/test.pdf" download>-->
-            <button class="glow-on-hover">
+            <button class="glowHover">
               CV Coming Soon 🚀
             </button>
-
         </div>
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import rocketImg from '@/assets/rocket.png'
 
 const showImage = ref(false)
@@ -61,6 +64,7 @@ const showText = ref(false)
 const showButton = ref(false)
 const rocketVisible = ref(false)
 
+// SHOW TEXT 1s, 1s, 1s, 0.5s
 onMounted(() => {
   setTimeout(() => {
     showImage.value = true
@@ -75,6 +79,24 @@ onMounted(() => {
       }, 1000)
     }, 1000)
   }, 500)
+})
+
+const scrollArrow = ref(null)
+
+const handleScroll = () => {
+  if (window.scrollY > 10) {
+    scrollArrow.value.style.opacity = '0'
+  } else {
+    scrollArrow.value.style.opacity = '1'
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
@@ -115,16 +137,9 @@ onMounted(() => {
   border-radius: 20px;
 }
 
-/* 🚀 ANIMACIJE */
-@keyframes rocketFlyIn {
-  0% {
-    transform: translateY(500px) scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
+/*ROCKET ANIMATION */
+.rocket-float {
+  animation: rocketMove 5s ease-in-out infinite, rocketGlow 3s infinite alternate ease-in-out;
 }
 
 @keyframes rocketMove {
@@ -137,34 +152,7 @@ onMounted(() => {
   100% {
     transform: translateY(0) rotate(-1deg);
   }
-}
-
-.rocket-enter {
-  animation: rocketFlyIn 1.2s ease-out forwards;
-}
-
-.rocket-float {
-  animation: rocketMove 5s ease-in-out infinite;
-}
-
-
-
-
-.rocket-enter {
-  animation: rocketFlyIn 1.2s ease-out forwards;
-}
-
-.rocket-float {
-  animation: rocketMove 5s ease-in-out infinite, rocketGlow 3s infinite alternate ease-in-out;
-}
-
-.fadeSection {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  pointer-events: none;
-  font-family: 'Poppins', sans-serif;
-}
-
+}/* DEVELOPER INFO */
 .fadeSection.visible {
   opacity: 1;
   pointer-events: auto;
@@ -215,11 +203,11 @@ line-height: 1.6;
   z-index: 1;
 }
 
-.resume-button {
+.resumeButton {
   text-align: center;
 }
 
-.glow-on-hover {
+.glowHover {
   width: 220px;
   height: 50px;
   border: none;
@@ -236,7 +224,7 @@ line-height: 1.6;
   font-family: 'Orbitron', sans-serif;
 }
 
-.glow-on-hover:before {
+.glowHover:before {
   content: '';
   background: linear-gradient(
     45deg,
@@ -264,15 +252,15 @@ line-height: 1.6;
   border-radius: 10px;
 }
 
-.glow-on-hover:hover:before {
+.glowHover:hover:before {
   opacity: 1;
 }
 
-.glow-on-hover:active {
+.glowHover:active {
   color: #000;
 }
 
-.glow-on-hover:after {
+.glowHover:after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -306,18 +294,6 @@ line-height: 1.6;
   color: #A04DFF;
 }
 
-@keyframes floatY {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 @keyframes textGlow {
   0% {
     text-shadow: 0 0 0px #A04DFF;
@@ -330,8 +306,7 @@ line-height: 1.6;
   }
 }
 
-/* RESPONSIVE */
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .infoBox {
     padding-top: 8rem;
@@ -373,9 +348,7 @@ line-height: 1.6;
   .infoBox {
   margin-top:-168px;
   margin-bottom: 10px;
-
-}
-}
+}}
 
 @media (max-width: 480px) {
   .imageDeveloper {

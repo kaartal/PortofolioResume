@@ -1,5 +1,5 @@
 <template>
-
+<!-- TIMELINE TITLE -->
   <div ref="titleRef" :class="['timelineTitle', { visible: titleVisible }]">
     my steps
   </div>
@@ -204,7 +204,7 @@ font-size: 15px;
 letter-spacing: 2px; 
 line-height: 1.5; 
 }
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .timelineContainer {
     margin-left: 170px;

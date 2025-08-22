@@ -4,8 +4,8 @@
   </link>
 </head>
   <nav :class="['navbarBox', { navbarHidden: isHidden }]">
+    
     <!-- LOGO -->
-   
    <ul :class="['navigationLinks', { open: menuOpen }]">
   <li v-for="link in links" :key="link.id">
     <a
@@ -25,7 +25,6 @@
       <span :class="{ bar3: true, open: menuOpen }"></span>
     </button>
   </nav>
-   
 </template>
 
 <script setup>
@@ -39,10 +38,8 @@ const links = [
 ];
 
 const menuOpen = ref(false);
-
 const toggleMenu = () => menuOpen.value = !menuOpen.value;
 const closeMenu = () => menuOpen.value = false;
-
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -59,7 +56,7 @@ const scrollToSection = (id) => {
   position: fixed;
   top: 30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -67,12 +64,20 @@ const scrollToSection = (id) => {
   background: rgba(17, 23, 40, 0.85);
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(4px);
   width: fit-content;
   z-index: 4;
   user-select: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  backdrop-filter: blur(4px); 
+  animation: floatNav 8s ease-in-out infinite;
+}
+
+@keyframes floatNav {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 4px);
+  }
 }
 
 .navbarHidden {
@@ -133,7 +138,6 @@ const scrollToSection = (id) => {
 }
 
 .navigationLinks {
-
   list-style: none;
   display: flex;
   gap: 2rem;
