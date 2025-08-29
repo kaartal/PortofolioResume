@@ -1,4 +1,7 @@
 <template>
+
+<div id="about"></div>
+
   <!-- SOCIAL MEDIA FIXED LINKS -->
   <div class="flySocial">
     <!-- LINKEDIN PROFILE -->
@@ -50,6 +53,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 </template>
@@ -275,7 +279,7 @@ line-height: 1.6;
 .flySocial {
   position: fixed;
   top: 40%;
-  left: 10px;
+  left:10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -338,6 +342,9 @@ line-height: 1.6;
   .developerDescription p {
     font-size: 1rem;
   }
+
+    .flySocial {
+    left: 4px;  }
 }
 
 @media (max-width: 768px) {
@@ -347,7 +354,6 @@ line-height: 1.6;
 
   .infoBox {
   margin-top:-168px;
-  margin-bottom: 10px;
 }}
 
 @media (max-width: 480px) {

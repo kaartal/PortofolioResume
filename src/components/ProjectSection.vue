@@ -55,9 +55,7 @@ const setActive = async (index) => {
   await nextTick();
 
   const el = projectRefs.value[index];
-  if (el && el.scrollIntoView) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+
 };
 
 const projects = [
@@ -114,6 +112,7 @@ onMounted(async () => {
   text-align: center;
   margin-bottom: 300px;
   margin-top: 300px;
+  padding-top: 80px;
 }
 
 .sectionName{
@@ -155,9 +154,7 @@ onMounted(async () => {
     transform: translateY(-5px);
   }
 }
-section {
-  scroll-margin-top: 20px; 
-}
+
 .projectGrid {
   display: flex;
   flex-direction: row;

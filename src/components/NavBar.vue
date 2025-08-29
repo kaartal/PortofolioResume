@@ -76,7 +76,7 @@ const scrollToSection = (id) => {
     transform: translate(-50%, 0);
   }
   50% {
-    transform: translate(-50%, 4px);
+    transform: translate(-50%, 7px);
   }
 }
 

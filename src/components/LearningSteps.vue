@@ -1,5 +1,8 @@
 <template>
-<!-- TIMELINE TITLE -->
+  
+    <div id="timeline"></div>
+
+    <!-- TIMELINE TITLE -->
   <div ref="titleRef" :class="['timelineTitle', { visible: titleVisible }]">
     my steps
   </div>
@@ -15,6 +18,7 @@
         <div class="circle"></div>
         <div class="yearLabel">{{ entry.year }}</div>
       </div>
+
       <ul class="yearItems">
         <li v-for="(item, j) in entry.items" :key="j" class="yearItem">
           {{ item }}
@@ -25,45 +29,44 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted, nextTick } from "vue";
 
 const titleRef = ref(null);
 const titleVisible = ref(false);
-
 const timelineItems = ref([]);
 
 const timeline = ref([
   {
-    year: '2025',
+    year: "2025",
     items: [
-      'Engaged in advanced personal projects to enhance skills',
-      'Began development using Vue.js framework',
+      "Engaged in advanced personal projects to enhance skills",
+      "Began development using Vue.js framework",
     ],
   },
   {
-    year: '2024',
+    year: "2024",
     items: [
-      'Started learning backend development with .NET Core and C#',
-      'Completed a 3-month remote internship with a USA-based company'
+      "Started learning backend development with .NET Core and C#",
+      "Completed a 3-month remote internship with a USA-based company",
     ],
   },
   {
-    year: '2023',
+    year: "2023",
     items: [
-      'Adopted Object-Oriented Programming principles in projects',
-      'Gained proficiency in database management and design',
-      'Developed applications utilizing Shell scripting and C++',
+      "Adopted Object-Oriented Programming principles in projects",
+      "Gained proficiency in database management and design",
+      "Developed applications utilizing Shell scripting and C++",
     ],
   },
   {
-    year: '2022',
-    items: ['Enrolled in a Bachelor’s program in Information Technology'],
+    year: "2022",
+    items: ["Enrolled in a Bachelor’s program in Information Technology"],
   },
   {
-    year: '2021',
+    year: "2021",
     items: [
-      'Initiated work on personal projects to build practical experience',
-      'Started programming with C++ on Linux environments',
+      "Initiated work on personal projects to build practical experience",
+      "Started programming with C++ on Linux environments",
     ],
   },
 ]);
@@ -84,15 +87,14 @@ onMounted(async () => {
   }
 
   const items = timelineItems.value;
-
   if (items.length > 0) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           } else {
-            entry.target.classList.remove('visible');
+            entry.target.classList.remove("visible");
           }
         });
       },
@@ -118,6 +120,7 @@ onMounted(async () => {
   transition: opacity 1.2s ease;
   margin-bottom: 4rem;
   visibility: hidden;
+  padding-top: 100px;
 }
 
 .timelineTitle.visible {
@@ -200,10 +203,11 @@ line-height: 1.5;
   margin-bottom: 0.3rem;
   margin-left: 10px;
   font-family: 'Orbitron', 'Poppins';
-font-size: 15px; 
+font-size: 14px; 
 letter-spacing: 2px; 
 line-height: 1.5; 
 }
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .timelineContainer {
@@ -214,7 +218,7 @@ line-height: 1.5;
 
 @media (max-width: 768px) {
   .timelineContainer {
-    margin-left: 60px;
+    margin-left: 40px;
     border-left-width: 4px;
   }
 

@@ -153,6 +153,7 @@
   align-items: center;     
   min-height: 100vh;       
   flex-direction: column; 
+  padding-top: 40px;
 }
 .iconLanguage{
   margin-top:8px;
@@ -212,6 +213,7 @@
   width: 13ch; 
   animation: typing 3.5s steps(9) forwards, blinkCaret 0.75s step-end infinite;
   user-select: none;
+  
 }
 
 
@@ -234,11 +236,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 500px;
   animation: floatUpDown 4s ease-in-out infinite;
-   width: 100%;
+  width: 100%;
   max-width: 450px;
   max-height: 300px;
+  margin: auto; /* centrira na većim ekranima */
 }
 
 .skillCard:hover {
@@ -338,10 +340,14 @@ line-height: 1.4;
 }
 
 .writingCode .line1 { animation-delay: 0s; }
+
 .writingCode .line2 { animation-delay: 2.5s; }
 .writingCode .line3 { animation-delay: 5s; }
+
 .writingCode .line4 { animation-delay: 7.5s; }
 .writingCode .line5 { animation-delay: 10s; }
+
+
 .writingCode .line6 { animation-delay: 12.5s; }
 .writingCode .line7 { animation-delay: 15s; }
 .writingCode .line8 { animation-delay: 17.5s; }
@@ -353,25 +359,27 @@ line-height: 1.4;
   to { border-color: transparent; width: max-content; }
 }
 
-@media (max-width: 768px) {
-  .skillsGrid {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 2rem;
-  }
-
-  .skillCard {
-    width: 95%;
-  }
-}
-
 @media (max-width: 1024px) {
   .skillsGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .skillCard {
+    max-width: 95%;
+    gap:5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr; 
     padding: 2rem;
   }
 
   .skillCard {
-    width: 94%;
+    width: 94% !important;
+    max-width: none !important;
+    margin: 0; 
   }
 }
+
 </style>
