@@ -7,7 +7,7 @@
       <!-- SOCIAL LINKS -->
       <div class="socialLinks">
         <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/tvoj-profil" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
       </div>
       <!-- CRAFTED BY -->

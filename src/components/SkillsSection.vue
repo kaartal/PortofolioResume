@@ -240,7 +240,7 @@
   width: 100%;
   max-width: 450px;
   max-height: 300px;
-  margin: auto; /* centrira na većim ekranima */
+  margin: auto; 
 }
 
 .skillCard:hover {
@@ -270,9 +270,9 @@
 .skillText{
   font-size:14px;
   font-family: 'Orbitron', 'Poppins', sans-serif;  
-font-size: 14px; 
-letter-spacing: 1px; 
-line-height: 1.4; 
+  font-size: 14px; 
+  letter-spacing: 1px; 
+  line-height: 1.4; 
 }¸
 .skillCard p {
   font-size: 0.75rem;

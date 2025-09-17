@@ -13,7 +13,7 @@
       <i class="fab fa-github"></i>
     </a>
     <!-- FACEBOOK PROFILE -->
-    <a href="https://www.facebook.com/tvoj-profil" target="_blank">
+    <a href="https://www.facebook.com/halid.kartal.2025" target="_blank">
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>

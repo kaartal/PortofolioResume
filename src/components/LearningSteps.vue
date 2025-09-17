@@ -211,15 +211,18 @@ line-height: 1.5;
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .timelineContainer {
-    margin-left: 170px;
+      margin-left: 170px;
     border-left-width: 4px;
   }
 }
 
+
+
+
 @media (max-width: 768px) {
   .timelineContainer {
     margin-left: 40px;
-    border-left-width: 4px;
+    border-left-width: 4px;  
   }
 
   .circle {
@@ -248,7 +251,7 @@ line-height: 1.5;
   100% {
     box-shadow: 0 0 3px #a04dff, 0 0 10px #a04dff;
     transform: scale(1);
-  }
+  } 
 }
 
 .timelineYearGroup.visible {
