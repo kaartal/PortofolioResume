@@ -1,52 +1,24 @@
-<template>
-  <div class="footerBox">
-    <footer class="footer">
-      <h2 class="footerTitle">Contact me</h2>
-      <a href="mailto:halidkartal09@gmail.com" class="email">halidkartal09@gmail.com</a>
-
-      <!-- SOCIAL LINKS -->
-      <div class="socialLinks">
-        <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
-      <!-- CRAFTED BY -->
-     <div class="crafted">
-  <span>Created by me</span><br />
-  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
-    <text x="120" y="80" 
-          font-family="Brush Script MT, cursive" 
-          font-size="82" 
-          fill="white">
-      Halid Kartal
-    </text>
-  </svg>
-</div>
-</footer>
-</div>
-</template>
-
 <style scoped>
-.footerBox {
+.footerSectionDesign {
   position: relative;
   overflow: hidden;
   height: auto; 
   background-color: black;
-  clip-path: polygon(0 30%, 100% 0, 130% 100%, 0% 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
 }
 
-.footer {
+.footerMainBox {
   position: relative;
   background-color: black;
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 80px 40px;
   font-family: 'Courier New', monospace;
-  z-index: 2;
-  margin-top: 200px;
+  z-index: 1;
+  margin-top: 80px;
 }
 
-.footerTitle {
+.footerTitleText {
   font-size: 2.4em;
   background-color: white;
   color: black;
@@ -56,16 +28,16 @@
   clip-path: polygon(0 15%, 100% 0, 1030% 100%, 0% 100%);
 }
 
-.email {
+.emailTextDesign {
   display: block;
-  font-size: 1.4em;
+  font-size: 1.8em;
   color: white;
   margin-bottom: 40px;
   text-decoration: none;
   word-wrap: break-word;
 }
 
-.socialLinks {
+.socialLinksSectionDesign {
   margin: 20px 0;
   display: flex;
   justify-content: center;
@@ -73,84 +45,124 @@
   gap: 20px;
 }
 
-.socialLinks a {
+.socialLinksText a {
+  color: white;
+  font-size: 2em;
+  transition: color 0.3s ease;
+  width:40px;
+}
+.socialLinksSectionDesign a i {
   color: white;
   font-size: 2em;
   transition: color 0.3s ease;
 }
 
-.socialLinks a:hover {
+.socialLinksSectionDesign a i:hover {
   color: gray;
 }
 
-.crafted {
+.socialLinksText a:hover {
+  color: gray;
+}
+
+.craftedFromDeveloper {
   margin-top: 30px;
-  font-size: 1em;
+  font-size: 1.4em;
 }
 
 /* TABLET RESPONSIVE */
 @media (max-width: 1024px) {
 
-  .footer {
-  margin-top: 80px;
+  .footerSectionDesign {
+  margin-top: 40px;
 }
 
-  .footerBox {
+  .footerMainBox {
     clip-path: polygon(0 20%, 100% 0, 1030% 100%, 0% 100%);
   }
 }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
-  .footerBox {
-    clip-path: polygon(0 15%, 100% 0, 1030% 100%, 0% 100%);
+  .footerMainBox {
+    clip-path: polygon(20 15%, 1020% 20, 100% 100%, 22% 100%);
   }
 }
 
 /* SMALL SCREEN DESIGN RESPONSIVE */
 @media (max-width: 768px) {
-  .footer {
-  margin-top: 70px;
+  .footerSectionDesign {
+  margin-top: 30px;
   }
-  .footerTitle {
-    font-size: 1.8em;
+  .footerTitleText {
+    font-size: 2.4em;
     padding: 4px 8px;
   }
 
-  .email {
-    font-size: 1.1em;
+  .emailTextDesign {
+    font-size: 1.3em;
     margin-bottom: 30px;
   }
 
-  .socialLinks a {
+  .socialLinksText a {
     font-size: 1.5em;
   }
 
-  .crafted {
-    font-size: 0.9em;
+  .craftedFromDeveloper {
+    font-size: 1.1em;
   }
 }
 
 @media (max-width: 480px) {
-  .footer {
+  .footerSectionDesign {
     padding: 30px 15px;
   }
 
-  .footerTitle {
+  .footerTitleText {
     font-size: 1.5em;
   }
 
-  .email {
+  .emailTextDesign {
     font-size: 1em;
   }
 
-  .socialLinks {
+  .socialLinksText {
     gap: 15px;
   }
 
-  .socialLinks a {
+  .socialLinksText a {
     font-size: 1.3em;
   }
 }
-
 </style>
+
+<template>
+  <div class="footerSectionDesign">
+    <footer class="footerMainBox">
+      <h2 class="footerTitleText">Contact me</h2>
+      <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">halidkartal09@gmail.com</a>
+
+      <!-- SOCIAL LINKS LINKEDIN, FACEBOOK, GITHUB -->
+      <div class="socialLinksSectionDesign">
+        <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
+      <!-- CRAFTED BY DEVELOPER SIGNATURE -->
+     <div class="craftedFromDeveloper">
+  <span>Created by me</span><br />
+  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
+    <text x="15" y="120" 
+          font-family="Brush Script MT, cursive" 
+          font-size="130" 
+          fill="white">
+      Halid Kartal
+    </text>
+  </svg>
+</div>
+</footer>
+</div>
+</template>
+
+

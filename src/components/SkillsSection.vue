@@ -1,151 +1,3 @@
-<template>
-  <div class="pageWrapper">
-    <h1 class="typingTitle">my skills</h1>
-    <div class="skillsGrid">
-
-      <!-- BACKEND -->
-      <div class="skillCard">
-        <div class="windowButtons">
-          <span class="btn red"></span>
-          <span class="btn yellow"></span>
-          <span class="btn green"></span>
-        </div>
-        <h3>
-          <img src="@/assets/c.png" alt=".NET logo" class="iconLanguage" /> 
-          <img src="@/assets/c++.png" alt="C# logo" class="iconLanguage" />
-          <img src="@/assets/c-sharp.png" alt="C# logo" class="iconLanguage" />
-          backend
-        </h3>
-        <div class="writingCode">
-          <div class="line line1">using System;</div>
-          <div class="line line2">public class App {</div>
-          <div class="line line3">static void Main() {</div>
-          <div class="line line4">Console.WriteLine("Hello .NET");</div>
-          <div class="line line5">var version = Environment.Version;</div>
-          <div class="line line6">Console.WriteLine(version);</div>
-          <div class="line line7">var now = DateTime.Now;</div>
-          <div class="line line8">Console.WriteLine(now);</div>
-          <div class="line line9">ppDomain.CurrentDomain.UnhandledException += (s, e) => {</div>
-          <div class="line line10">Console.WriteLine("Unhandled exception");</div>
-          <div class="line line11">};</div>
-          <div class="line line12">}</div>
-          <div class="line line13">}</div>
-        </div>
-        <p class="skillText">
-          Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
-        </p>
-      </div>
-
-      <!-- FRONTEND -->
-      <div class="skillCard">
-        <div class="windowButtons">
-          <span class="btn red"></span>
-          <span class="btn yellow"></span>
-          <span class="btn green"></span>
-        </div>
-        <h3>
-          <img src="@/assets/html.png" alt="HTML logo" class="iconLanguage" />
-          <img src="@/assets/css.png" alt="CSS logo" class="iconLanguage" />
-          <img src="@/assets/javascript.png" alt="JavaScript logo" class="iconLanguage" />frontend
-           
-        </h3>
-        <div class="writingCode">
-          <div class="line line1">&lt;!DOCTYPE html&gt;</div>
-          <div class="line line2">&lt;html lang="en"&gt;</div>
-          <div class="line line3">&lt;head&gt;</div>
-          <div class="line line4">&lt;meta charset="UTF-8"&gt;</div>
-          <div class="line line5">&lt;title&gt;Frontend Test&lt;/title&gt;</div>
-          <div class="line line6">&lt;/head&gt;</div>
-          <div class="line line7">&lt;body&gt;</div>
-          <div class="line line8">&lt;h1&gt;Hello Frontend&lt;/h1&gt;</div>
-          <div class="line line9">&lt;script&gt;</div>
-          <div class="line line10">console.log("Frontend ready");</div>
-          <div class="line line11">&lt;/script&gt;</div>
-          <div class="line line12">&lt;/body&gt;</div>
-          <div class="line line13">&lt;/html&gt;</div>
-        </div>
-        <p class="skillText">
-          Skilled in managing HTML, CSS, and JavaScript for frontend development, and responsive design.
-        </p>
-      </div>
-
-      <!-- DATABASE -->
-      <div class="skillCard">
-        <div class="windowButtons">
-          <span class="btn red"></span>
-          <span class="btn yellow"></span>
-          <span class="btn green"></span>
-        </div>
-        <h3>
-          <img src="@/assets/mysql.png" alt="Microsoft logo" class="iconLanguage" />
-          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> database
-        </h3>
-        <div class="writingCode">
-          <div class="line line1">CREATE TABLE Users (</div>
-          <div class="line line2">Id INT PRIMARY KEY AUTO_INCREMENT,</div>
-          <div class="line line3">Name VARCHAR(100),</div>
-          <div class="line line4">Email VARCHAR(100) UNIQUE</div>
-          <div class="line line5">);</div>
-          <div class="line line6"></div>
-          <div class="line line7">INSERT INTO Users (Name, Email) VALUES ('Halid', 'halid@example.com');</div>
-          <div class="line line8">SELECT * FROM Users;</div>
-        </div>
-        <p class="skillText">
-          Passionate about databases, creating efficient schemas, and writing optimized SQL queries for data management.
-        </p>
-      </div>
-
-      <!-- LINUX -->
-      <div class="skillCard">
-        <div class="windowButtons">
-          <span class="btn red"></span>
-          <span class="btn yellow"></span>
-          <span class="btn green"></span>
-        </div>
-        <h3>
-          <img src="@/assets/linux.png" alt="Microsoft logo" class="iconLanguage" />
-          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="iconLanguage" /> linux
-        </h3>
-        <div class="writingCode">
-          <div class="line line1">#!/bin/bash</div>
-          <div class="line line2">echo "Hello Linux"</div>
-          <div class="line line3">a=5</div>
-          <div class="line line4">b=10</div>
-          <div class="line line5">echo "Sum: $((a + b))"</div>
-          <div class="line line6">if [ $a -lt $b ]; then</div>
-          <div class="line line7">echo "a is smaller"</div>
-          <div class="line line8">else</div>
-          <div class="line line9">echo "b is smaller"</div>
-          <div class="line line10">fi</div>
-        </div>
-        <p class="skillText">
-  Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
-</p>
-      </div>
-      <!-- TECH INFO -->
-      <!-- </div>
-      <div class="tech-container">
-    <div class="tech-item">
-      <img src="@/assets/git (2).png" alt="Next.js" class="tech-icon">
-      <p class="tech-label">Git</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/terminal.png" alt="React" class="tech-icon">
-      <p class="tech-label">Shell</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/.net.png" alt="Remix" class="tech-icon">
-      <p class="tech-label">.NET</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/vuejs.png" alt="Redux" class="tech-icon">
-      <p class="tech-label">Vue.js</p>
-    </div>
-  </div> -->
-  </div>
-    </div>
-</template>
-
 <style scoped>
 .pageWrapper {
   display: flex;
@@ -204,7 +56,7 @@
 .typingTitle {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 4rem;
   color: #a04dff;
   margin-bottom: 2rem;
   white-space: nowrap;
@@ -212,8 +64,7 @@
   border-right: 4px solid #a04dff;
   width: 13ch; 
   animation: typing 3.5s steps(9) forwards, blinkCaret 0.75s step-end infinite;
-  user-select: none;
-  
+  user-select: none; 
 }
 
 
@@ -222,6 +73,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   padding: 2rem;
+  margin-top:-40px;
 }
 
 .skillCard {
@@ -238,8 +90,8 @@
   justify-content: space-between;
   animation: floatUpDown 4s ease-in-out infinite;
   width: 100%;
-  max-width: 450px;
-  max-height: 300px;
+  max-width: 500px;
+  max-height: 400px;
   margin: auto; 
 }
 
@@ -266,18 +118,19 @@
   align-items: center;
   gap: 8px;
   user-select: none;
+  font-family: 'Orbitron', sans-serif;
 }
 .skillText{
   font-size:14px;
-  font-family: 'Orbitron', 'Poppins', sans-serif;  
-  font-size: 14px; 
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px; 
   letter-spacing: 1px; 
   line-height: 1.4; 
 }¸
 .skillCard p {
   font-size: 0.75rem;
   margin-top: auto;
-  font-family: 'Rajdhani';
+  font-family: 'Orbitron', sans-serif;
   user-select: none;
 }
 
@@ -319,7 +172,7 @@
 .writingCode {
   position: relative;
   font-family: 'Courier New', monospace;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.05);
   line-height: 1.1rem;
   white-space: nowrap;
@@ -383,3 +236,153 @@
 }
 
 </style>
+
+<template>
+  <div class="pageWrapper">
+    <h1 class="typingTitle">my skills</h1>
+    <div class="skillsGrid">
+
+      <!-- BACKEND -->
+      <div class="skillCard">
+        <div class="windowButtons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <h3>
+          <img src="@/assets/c.png" alt=".NET logo" class="iconLanguage" /> 
+          <img src="@/assets/c++.png" alt="C# logo" class="iconLanguage" />
+          <img src="@/assets/c-sharp.png" alt="C# logo" class="iconLanguage" />
+          
+        </h3>
+        <div class="writingCode">
+          <div class="line line1">using System;</div>
+          <div class="line line2">public class App {</div>
+          <div class="line line3">static void Main() {</div>
+          <div class="line line4">Console.WriteLine("Hello .NET");</div>
+          <div class="line line5">var version = Environment.Version;</div>
+          <div class="line line6">Console.WriteLine(version);</div>
+          <div class="line line7">var now = DateTime.Now;</div>
+          <div class="line line8">Console.WriteLine(now);</div>
+          <div class="line line9">ppDomain.CurrentDomain.UnhandledException += (s, e) => {</div>
+          <div class="line line10">Console.WriteLine("Unhandled exception");</div>
+          <div class="line line11">};</div>
+          <div class="line line12">}</div>
+          <div class="line line13">}</div>
+        </div>
+        <p class="skillText">
+          Proficient in backend development using the .NET ecosystem, including C#, ASP.NET Core, and Entity Framework.
+        </p>
+      </div>
+
+      <!-- FRONTEND -->
+      <div class="skillCard">
+        <div class="windowButtons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <h3>
+          <img src="@/assets/html.png" alt="HTML logo" class="iconLanguage" />
+          <img src="@/assets/css.png" alt="CSS logo" class="iconLanguage" />
+          <img src="@/assets/javascript.png" alt="JavaScript logo" class="iconLanguage" />
+           
+        </h3>
+        <div class="writingCode">
+          <div class="line line1">&lt;!DOCTYPE html&gt;</div>
+          <div class="line line2">&lt;html lang="en"&gt;</div>
+          <div class="line line3">&lt;head&gt;</div>
+          <div class="line line4">&lt;meta charset="UTF-8"&gt;</div>
+          <div class="line line5">&lt;title&gt;Frontend Test&lt;/title&gt;</div>
+          <div class="line line6">&lt;/head&gt;</div>
+          <div class="line line7">&lt;body&gt;</div>
+          <div class="line line8">&lt;h1&gt;Hello Frontend&lt;/h1&gt;</div>
+          <div class="line line9">&lt;script&gt;</div>
+          <div class="line line10">console.log("Frontend ready");</div>
+          <div class="line line11">&lt;/script&gt;</div>
+          <div class="line line12">&lt;/body&gt;</div>
+          <div class="line line13">&lt;/html&gt;</div>
+        </div>
+        <p class="skillText">
+          Skilled in managing HTML, CSS, and JavaScript for frontend development, and responsive design.
+        </p>
+      </div>
+
+      <!-- DATABASE -->
+      <div class="skillCard">
+        <div class="windowButtons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <h3>
+          <img src="@/assets/mysql.png" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> database
+        </h3>
+        <div class="writingCode">
+          <div class="line line1">CREATE TABLE Users (</div>
+          <div class="line line2">Id INT PRIMARY KEY AUTO_INCREMENT,</div>
+          <div class="line line3">Name VARCHAR(100),</div>
+          <div class="line line4">Email VARCHAR(100) UNIQUE</div>
+          <div class="line line5">);</div>
+          <div class="line line6"></div>
+          <div class="line line7">INSERT INTO Users (Name, Email) VALUES ('Halid', 'halid@example.com');</div>
+          <div class="line line8">SELECT * FROM Users;</div>
+        </div>
+        <p class="skillText">
+          Passionate about databases, creating efficient schemas, and writing optimized SQL queries for data management.
+        </p>
+      </div>
+
+      <!-- LINUX -->
+      <div class="skillCard">
+        <div class="windowButtons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <h3>
+          <img src="@/assets/linux.png" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="iconLanguage" /> 
+        </h3>
+        <div class="writingCode">
+          <div class="line line1">#!/bin/bash</div>
+          <div class="line line2">echo "Hello Linux"</div>
+          <div class="line line3">a=5</div>
+          <div class="line line4">b=10</div>
+          <div class="line line5">echo "Sum: $((a + b))"</div>
+          <div class="line line6">if [ $a -lt $b ]; then</div>
+          <div class="line line7">echo "a is smaller"</div>
+          <div class="line line8">else</div>
+          <div class="line line9">echo "b is smaller"</div>
+          <div class="line line10">fi</div>
+        </div>
+        <p class="skillText">
+  Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
+</p>
+      </div>
+      <!-- TECH INFO -->
+      <!-- </div>
+      <div class="tech-container">
+    <div class="tech-item">
+      <img src="@/assets/git (2).png" alt="Next.js" class="tech-icon">
+      <p class="tech-label">Git</p>
+    </div>
+    <div class="tech-item">
+      <img src="@/assets/terminal.png" alt="React" class="tech-icon">
+      <p class="tech-label">Shell</p>
+    </div>
+    <div class="tech-item">
+      <img src="@/assets/.net.png" alt="Remix" class="tech-icon">
+      <p class="tech-label">.NET</p>
+    </div>
+    <div class="tech-item">
+      <img src="@/assets/vuejs.png" alt="Redux" class="tech-icon">
+      <p class="tech-label">Vue.js</p>
+    </div>
+  </div> -->
+  </div>
+    </div>
+</template>
+
+

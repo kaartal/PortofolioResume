@@ -1,56 +1,3 @@
-<template> 
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  </link>
-</head>
-  <nav :class="['navbarBox', { navbarHidden: isHidden }]">
-    
-    <!-- LOGO -->
-   <ul :class="['navigationLinks', { open: menuOpen }]">
-  <li v-for="link in links" :key="link.id">
-    <a
-      href="#"
-      @click.prevent="scrollToSection(link.id)"
-      :class="{ active: activeSection === link.id }"
-    >
-      {{ link.name }}
-    </a>
-  </li>
-</ul>
-
-<!-- HAMBURGER BUTTON -->
-   <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
-      <span :class="{ bar1: true, open: menuOpen }"></span>
-      <span :class="{ bar2: true, open: menuOpen }"></span>
-      <span :class="{ bar3: true, open: menuOpen }"></span>
-    </button>
-  </nav>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-
-const links = [
-  { id: 'about', name: 'About' },
-  { id: 'skills', name: 'Skills' },
-  { id: 'projects', name: 'Projects' },
-  { id: 'timeline', name: 'Timeline' },
-];
-
-const menuOpen = ref(false);
-const toggleMenu = () => menuOpen.value = !menuOpen.value;
-const closeMenu = () => menuOpen.value = false;
-
-const scrollToSection = (id) => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-    closeMenu(); 
-  }
-};
-
-
-</script>
 <style scoped>
 .navbarBox {
   position: fixed;
@@ -146,7 +93,7 @@ const scrollToSection = (id) => {
 }
 
 .navigationLinks li a {
-  font-family: 'Audiowide', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   color: #fff;
   font-weight: 500;
   text-decoration: none;
@@ -154,7 +101,7 @@ const scrollToSection = (id) => {
   border-radius:20px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   user-select: none;
 }
 
@@ -184,7 +131,7 @@ const scrollToSection = (id) => {
     pointer-events: none;
     transform: translateX(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 14;
+    z-index: 2;
   }
 .logoPic {
   display:none;
@@ -203,22 +150,24 @@ const scrollToSection = (id) => {
     display: flex;
     position: absolute;
     top: 24px;
-    right: 54px;
+    right: 51px;
     flex-direction: column;
     justify-content: space-around;
-    width: 26px;
+    width: 32px;
     height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2;
   }
 
   .navbarBox {
     width: 100%;
     justify-content: space-between;
     padding: 16px;
-    display:none;
+      background: none;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .logoPic {
@@ -240,3 +189,57 @@ const scrollToSection = (id) => {
   }
 }
 </style>
+
+
+<template> 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </link>
+</head>
+  <nav :class="['navbarBox', { navbarHidden: isHidden }]">
+    
+    <!-- LOGO -->
+   <ul :class="['navigationLinks', { open: menuOpen }]">
+  <li v-for="link in links" :key="link.id">
+    <a
+      href="#"
+      @click.prevent="scrollToSection(link.id)"
+      :class="{ active: activeSection === link.id }"
+    >
+      {{ link.name }}
+    </a>
+  </li>
+</ul>
+
+<!-- HAMBURGER BUTTON -->
+   <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
+      <span :class="{ bar1: true, open: menuOpen }"></span>
+      <span :class="{ bar2: true, open: menuOpen }"></span>
+      <span :class="{ bar3: true, open: menuOpen }"></span>
+    </button>
+  </nav>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const links = [
+  { id: 'about', name: 'About' },
+  { id: 'skills', name: 'Skills' },
+  { id: 'projects', name: 'Projects' },
+  { id: 'timeline', name: 'Timeline' },
+];
+
+const menuOpen = ref(false);
+const toggleMenu = () => menuOpen.value = !menuOpen.value;
+const closeMenu = () => menuOpen.value = false;
+
+const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+    closeMenu(); 
+  }
+};
+
+</script>

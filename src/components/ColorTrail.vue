@@ -1,12 +1,56 @@
+<style scoped>
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.customCurosrCircleDesign {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index:5; 
+  top: 0;
+  left: 0;
+  user-select: none;
+  mix-blend-mode: difference; 
+}
+
+.outsideCircleDesign {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+}
+
+.innerCircleDesign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
 <template>
+
+  
   <canvas ref="canvas"></canvas>
   <div
     ref="cursor"
-    class="customCurosr"
+    class="customCurosrCircleDesign"
     :style="{ left: mouse.x + 'px', top: mouse.y + 'px' }"
   >
-    <div class="outsideCircle"></div>
-    <div class="innerCircle"></div>
+    <div class="outsideCircleDesign"></div>
+    <div class="innerCircleDesign"></div>
   </div>
 </template>
 
@@ -18,7 +62,7 @@ const cursor = ref(null);
 const mouse = ref({ x: -100, y: -100 });
 
 let ctx, stars = [], animationId;
-const numStars = 550;
+const numStars = 650;
 
 class Star {
   constructor() {
@@ -94,43 +138,3 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped>
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.customCurosr {
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 999999; 
-  top: 0;
-  left: 0;
-  user-select: none;
-  mix-blend-mode: difference; 
-}
-
-.outsideCircle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: white;
-}
-
-.innerCircle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  background: black;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>

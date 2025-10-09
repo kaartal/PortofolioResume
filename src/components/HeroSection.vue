@@ -1,109 +1,3 @@
-<template>
-
-<div id="about"></div>
-
-  <!-- SOCIAL MEDIA FIXED LINKS -->
-  <div class="flySocial">
-    <!-- LINKEDIN PROFILE -->
-    <a href="https://linkedin.com/in/halidkartal" target="_blank">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-    <!-- GITHUB PROFILE -->
-    <a href="https://github.com/kaartal" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
-    <!-- FACEBOOK PROFILE -->
-    <a href="https://www.facebook.com/halid.kartal.2025" target="_blank">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-  </div>
-
-  <!-- DEVELOPER INFO -->
-  <div class="infoBox">
-    <!-- ROCKET PICTURE -->
-    <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
-      <img
-        :class="['rocket-img', { 'rocket-enter': rocketVisible, 'rocket-float': rocketVisible }]"
-        :src="rocketImg"
-        alt="Developer Image"
-      />
-    </div>
-
-    <!-- DESCRIPTION -->
-    <div class="developerDescription">
-      <h1 class="fade-section" :class="{ visible: showTitle }">
-        Hi, I'm <span class="highlight">Kartal</span>
-      </h1>
-
-      <h2 class="fadeSection" :class="{ visible: showTitle }">
-        I'm a Full-Stack Developer
-      </h2>
-
-      <p class="fadeSection" :class="{ visible: showText }">
-        Innovative Full Stack Developer passionate about creating seamless and impactful app solutions.
-        Passionate about using modern technologies to solve real-world problems.
-      </p>
-
-      <div class="actionsRow fadeSection" :class="{ visible: showButton }">
-        <div class="resumeButton">
-          <!-- <a href="/test.pdf" download>-->
-            <button class="glowHover">
-              CV Coming Soon 🚀
-            </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</template>
-
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import rocketImg from '@/assets/rocket.png'
-
-const showImage = ref(false)
-const showTitle = ref(false)
-const showText = ref(false)
-const showButton = ref(false)
-const rocketVisible = ref(false)
-
-// SHOW TEXT 1s, 1s, 1s, 0.5s
-onMounted(() => {
-  setTimeout(() => {
-    showImage.value = true
-    rocketVisible.value = true
-    setTimeout(() => {
-      showTitle.value = true
-      setTimeout(() => {
-        showText.value = true
-        setTimeout(() => {
-          showButton.value = true
-        }, 1000)
-      }, 1000)
-    }, 1000)
-  }, 500)
-})
-
-const scrollArrow = ref(null)
-
-const handleScroll = () => {
-  if (window.scrollY > 10) {
-    scrollArrow.value.style.opacity = '0'
-  } else {
-    scrollArrow.value.style.opacity = '1'
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
-</script>
-
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
@@ -156,6 +50,7 @@ onBeforeUnmount(() => {
   100% {
     transform: translateY(0) rotate(-1deg);
   }
+
 }/* DEVELOPER INFO */
 .fadeSection.visible {
   opacity: 1;
@@ -163,13 +58,13 @@ onBeforeUnmount(() => {
 }
 
 .developerDescription {
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
 
 }
 
 .developerDescription h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   font-family: 'Orbitron';
 }
@@ -181,7 +76,7 @@ onBeforeUnmount(() => {
 }
 
 .developerDescription h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 0.2rem;
   font-family: 'Orbitron', sans-serif;
 }
@@ -192,10 +87,10 @@ onBeforeUnmount(() => {
   line-height: 1.6;
   color: #ccc;
   font-weight: 500; 
-font-size: 1.1rem; 
+font-size: 1.2rem; 
 letter-spacing: 1px; 
 line-height: 1.6; 
- 
+font-family: 'Orbitron', sans-serif;
 }
 
 .actionsRow {
@@ -380,3 +275,112 @@ line-height: 1.6;
   }
 }
 </style>
+
+<template>
+
+<div id="about"></div>
+
+  <!-- SOCIAL MEDIA FIXED LINKS -->
+  <div class="flySocial">
+    <!-- LINKEDIN PROFILE -->
+    <a href="https://linkedin.com/in/halidkartal" target="_blank">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <!-- GITHUB PROFILE -->
+    <a href="https://github.com/kaartal" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <!-- FACEBOOK PROFILE -->
+    <a href="https://www.facebook.com/halid.kartal.2025" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+
+  <!-- DEVELOPER INFO -->
+  <div class="infoBox">
+    <!-- ROCKET PICTURE -->
+    <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
+      <img
+        :class="['rocket-img', { 'rocket-enter': rocketVisible, 'rocket-float': rocketVisible }]"
+        :src="rocketImg"
+        alt="Developer Image"
+      />
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="developerDescription">
+      <h1 class="fadeSection" :class="{ visible: showTitle }">
+        Hi, I'm <span class="highlight">Kartal</span>
+      </h1>
+
+      <h2 class="fadeSection" :class="{ visible: showTitle }">
+        I'm a Full-Stack Software Engineer
+      </h2>
+
+      <p class="fadeSection" :class="{ visible: showText }">
+        Innovative Full Stack Developer passionate about creating seamless and impactful app solutions.
+        Passionate about using modern technologies to solve real-world problems.
+      </p>
+
+      <div class="actionsRow fadeSection" :class="{ visible: showButton }">
+        <div class="resumeButton">
+           <a href="/resume halidkartal.pdf" download>
+  <button class="glowHover">
+    CV Coming Soon 🚀
+  </button>
+</a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import rocketImg from '@/assets/rocket.png'
+
+const showImage = ref(false)
+const showTitle = ref(false)
+const showText = ref(false)
+const showButton = ref(false)
+const rocketVisible = ref(false)
+
+// SHOW TEXT 1s, 1s, 1s, 0.5s
+onMounted(() => {
+  setTimeout(() => {
+    showImage.value = true
+    rocketVisible.value = true
+    setTimeout(() => {
+      showTitle.value = true
+      setTimeout(() => {
+        showText.value = true
+        setTimeout(() => {
+          showButton.value = true
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 500)
+})
+
+const scrollArrow = ref(null)
+
+const handleScroll = () => {
+  if (window.scrollY > 10) {
+    scrollArrow.value.style.opacity = '0'
+  } else {
+    scrollArrow.value.style.opacity = '1'
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+

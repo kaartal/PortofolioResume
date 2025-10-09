@@ -1,51 +1,3 @@
-<template>
-  <div v-if="showPreloader" class="preloader" :class="{ 'fade-out': finished }">
-    <!-- TERMINAL BOX -->
-    <div class="codeBox scale-up">
-      <div class="windowsButtons">
-        <span class="windowButton red"></span>
-        <span class="windowButton yellow"></span>
-        <span class="windowButton green"></span>
-      </div>
-      <pre>{{ displayedCode }} <span class="cursor"></span></pre>
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { ref, onMounted } from "vue";
-
-const fullCode = `
-kartal-desktop: console.log("☕ Making coffee");
-kartal-desktop: console.log("💻 Compiling focus");
-kartal-desktop: console.log("✅ Developer mode: ON");
-`;
-
-const displayedCode = ref("");
-const showPreloader = ref(true);
-const finished = ref(false);
-
-onMounted(() => {
-  const totalDuration = 5000; 
-  const typingSpeed = totalDuration / fullCode.length;
-  let index = 0;
-// TYPING CODE
-  const type = () => {
-    if (index < fullCode.length) {
-      displayedCode.value += fullCode[index];
-      index++;
-      setTimeout(type, typingSpeed);
-    } else {
-      finished.value = true;
-      setTimeout(() => {
-        showPreloader.value = false;
-      }, 4000); 
-    }
-  };
-  type();
-});
-</script>
-
 <style scoped>
 .preloader {
   position: fixed;
@@ -63,7 +15,14 @@ onMounted(() => {
 
 .preloader.fade-out {
   opacity: 0;
-  transform: scale(1.05);
+  transform: scale(1.01);
+}
+
+.code {
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .codeBox {
@@ -71,14 +30,13 @@ onMounted(() => {
   padding: 2rem 2.5rem;
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(160, 77, 255, 0.6),
-    inset 0 0 8px rgba(160, 77, 255, 0.3);
+    inset 0 0 0px rgba(160, 77, 255, 0.3);
   max-width: 90%;
   min-width: 420px;
   border: 1.5px solid #a04dff;
   position: relative;
   overflow: hidden;
-  animation: glow 2s infinite alternate;
-  height:100px;
+  height:160px;
 }
 
 @keyframes glow {
@@ -132,12 +90,58 @@ onMounted(() => {
   51%, 100% { opacity: 0; }
 }
 
-.scale-up {
-  animation: scaleUp 0.6s ease;
-}
+
 @keyframes scaleUp {
   from { transform: scale(0.1); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
 </style>
+
+
+<template>
+  <div v-if="showPreloader" class="preloader" :class="{ 'fade-out': finished }">
+    <!-- TERMINAL BOX -->
+    <div class="codeBox scale-up">
+      <div class="windowsButtons">
+        <span class="windowButton red"></span>
+        <span class="windowButton yellow"></span>
+        <span class="windowButton green"></span>
+      </div>
+      <pre>{{ displayedCode }} <span class="cursor"></span></pre>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+
+const fullCode = `
+kartal-desktop: console.log("☕ Making coffee");
+kartal-desktop: console.log("💻 Compiling focus");
+kartal-desktop: console.log("✅ Developer mode: ON");`;
+const displayedCode = ref("");
+const showPreloader = ref(true);
+const finished = ref(false);
+
+onMounted(() => {
+  const totalDuration = 4400; 
+  const typingSpeed = totalDuration / fullCode.length;
+  let index = 0;
+// TYPING CODE
+  const type = () => {
+    if (index < fullCode.length) {
+      displayedCode.value += fullCode[index];
+      index++;
+      setTimeout(type, typingSpeed);
+    } else {
+      finished.value = true;
+      setTimeout(() => {
+        showPreloader.value = false;
+      }, 4000); 
+    }
+  };
+  type();
+});
+</script>
+

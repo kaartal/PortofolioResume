@@ -1,49 +1,3 @@
-<template>
-  <div class="infoBar">
-    <div class="infoItem">
-      <i class="fas fa-map-marker-alt"></i>
-      <span>Tuzla</span>
-    </div>
-    <div class="infoItem">
-      <i class="fas fa-globe"></i>
-      <span>UTC+2</span>
-    </div>
-    <div class="infoItem">
-      <i class="fas fa-clock"></i>
-      <span>{{ formattedTime }}</span>
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-
-const time = ref(new Date())
-
-function updateTime() {
-  time.value = new Date()
-}
-
-let interval
-
-onMounted(() => {
-  updateTime()
-  interval = setInterval(updateTime, 1000)
-})
-
-onUnmounted(() => {
-  clearInterval(interval)
-})
-
-const formattedTime = computed(() =>
-  time.value.toLocaleTimeString('bs-BA', {
-    timeZone: 'Europe/Sarajevo',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-)
-</script>
-
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
@@ -92,3 +46,51 @@ const formattedTime = computed(() =>
   }
 }
 </style>
+
+
+<template>
+  <div class="infoBar">
+    <div class="infoItem">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Tuzla</span>
+    </div>
+    <div class="infoItem">
+      <i class="fas fa-globe"></i>
+      <span>UTC+2</span>
+    </div>
+    <div class="infoItem">
+      <i class="fas fa-clock"></i>
+      <span>{{ formattedTime }}</span>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+
+const time = ref(new Date())
+
+function updateTime() {
+  time.value = new Date()
+}
+
+let interval
+
+onMounted(() => {
+  updateTime()
+  interval = setInterval(updateTime, 1000)
+})
+
+onUnmounted(() => {
+  clearInterval(interval)
+})
+
+const formattedTime = computed(() =>
+  time.value.toLocaleTimeString('bs-BA', {
+    timeZone: 'Europe/Sarajevo',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+)
+</script>
+
