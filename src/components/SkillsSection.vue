@@ -51,7 +51,7 @@
   margin: 0;
   font-size: 15px;
   font-weight: 600;
-  color: #f3e8ff; /* svjetlo ljubičasta */
+  color: #f3e8ff; /*  */
 
 .typingTitle {
   font-family: 'Orbitron', sans-serif;
@@ -74,6 +74,7 @@
   gap: 1.5rem;
   padding: 2rem;
   margin-top:-40px;
+  margin-left:-4px;
 }
 
 .skillCard {
@@ -91,7 +92,7 @@
   animation: floatUpDown 4s ease-in-out infinite;
   width: 100%;
   max-width: 500px;
-  max-height: 400px;
+  height: 350px;
   margin: auto; 
 }
 

@@ -39,8 +39,8 @@
   align-items: center;
   width: 120px;
   height: 120px;
-  background-color: #1e1e1e; 
-  border-radius: 20px; 
+  background-color: #1e1e1e;
+  border-radius: 20px;
 }
 
 .logoText {
@@ -145,7 +145,10 @@
     pointer-events: auto;
     transform: translateX(0);
   }
-
+.hamburger span {
+  display: block;
+  margin: 4px 0;
+}
   .hamburger {
     display: flex;
     position: absolute;
@@ -185,7 +188,7 @@
 @media (max-width: 480px) {
   .navbarBox {
     max-width: 100%;
-    display:none;
+
   }
 }
 </style>

@@ -160,7 +160,15 @@ transform: translateZ(0);
   .yearItem {
     font-size: 0.95rem;
   }
+
+  .underTitleLine{
+    display:none;
+  }
 }
+
+
+
+
 
 @keyframes pulseGlow {
   0% {

@@ -91,8 +91,10 @@
 
 /* SMALL SCREEN DESIGN RESPONSIVE */
 @media (max-width: 768px) {
+ 
   .footerSectionDesign {
   margin-top: 30px;
+  clip-path: polygon(0 20%, 145% 0, 127% 100%, 0% 100%);
   }
   .footerTitleText {
     font-size: 2.4em;
@@ -114,6 +116,8 @@
 }
 
 @media (max-width: 480px) {
+
+   
   .footerSectionDesign {
     padding: 30px 15px;
   }
@@ -153,7 +157,7 @@
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
   <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
-    <text x="15" y="120" 
+    <text x="10" y="130" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
           fill="white">

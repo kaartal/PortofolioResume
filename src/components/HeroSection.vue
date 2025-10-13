@@ -21,12 +21,25 @@
   width: 100%;
   height: 800px;
   aspect-ratio: 5 / 6;
-  z-index: 1;
+  z-index: 2;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSlide 1.2s ease-out forwards;
+  animation-delay: 0.3s; 
 }
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 2;
+    transform: translateY(-1);
+  }
+}
+
 
 .imageDeveloper img {
   width: 100%;
@@ -224,6 +237,8 @@ font-family: 'Orbitron', sans-serif;
   .developerDescription {
     max-width: 90%;
     text-align: center;
+    margin-top:-80px;
+    margin-bottom:-40px;
   }
 
   .developerDescription h1 {
@@ -248,8 +263,9 @@ font-family: 'Orbitron', sans-serif;
   }
 
   .infoBox {
-  margin-top:-168px;
-}}
+  margin-top:-170px;
+}
+}
 
 @media (max-width: 480px) {
   .imageDeveloper {
@@ -273,6 +289,8 @@ font-family: 'Orbitron', sans-serif;
     width: 90%;
     font-size: 16px;
   }
+
+
 }
 </style>
 

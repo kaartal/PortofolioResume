@@ -82,7 +82,6 @@
   animation: floatSmooth 6s ease-in-out infinite;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 2px 1px rgba(176, 83, 255, 0.7);
-  
 }
 
 .projectItem.active {
@@ -205,6 +204,7 @@
 
   .projectItem {
     width: 100%;
+    height:570px;
   }
 }
 </style>
