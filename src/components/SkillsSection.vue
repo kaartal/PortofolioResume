@@ -227,6 +227,7 @@
   .skillsGrid {
     grid-template-columns: 1fr; 
     padding: 2rem;
+    margin-bottom:-240px;
   }
 
   .skillCard {

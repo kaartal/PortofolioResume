@@ -237,8 +237,8 @@ font-family: 'Orbitron', sans-serif;
   .developerDescription {
     max-width: 90%;
     text-align: center;
-    margin-top:-80px;
-    margin-bottom:-40px;
+    margin-top:-60px;
+    margin-bottom:-30px;
   }
 
   .developerDescription h1 {

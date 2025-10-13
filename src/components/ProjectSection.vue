@@ -200,6 +200,11 @@
   .projectGrid {
     flex-direction: column;
     align-items: center;
+    margin-bottom:-240px;
+  }
+
+  .projectBox{
+    margin-bottom:-240px;
   }
 
   .projectItem {
