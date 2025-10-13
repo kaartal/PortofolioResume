@@ -50,6 +50,7 @@
   font-size: 2em;
   transition: color 0.3s ease;
   width:40px;
+  
 }
 .socialLinksSectionDesign a i {
   color: white;
@@ -102,7 +103,7 @@
   }
 
   .emailTextDesign {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-bottom: 30px;
   }
 
@@ -127,7 +128,7 @@
   }
 
   .emailTextDesign {
-    font-size: 1em;
+    font-size: 1.2;
   }
 
   .socialLinksText {
@@ -156,7 +157,7 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="220" height="50">
+  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="260" height="70">
     <text x="10" y="130" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 

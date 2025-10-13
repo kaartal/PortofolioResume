@@ -145,7 +145,8 @@ transform: translateZ(0);
 @media (max-width: 768px) {
   .timelineContainer {
     margin-left: 40px;
-    border-left-width: 4px;  
+    border-left-width: 4px;
+    margin-bottom:-40px;
   }
 
   .circle {
