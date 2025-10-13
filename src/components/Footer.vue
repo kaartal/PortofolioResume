@@ -68,7 +68,7 @@
 
 .craftedFromDeveloper {
   margin-top: 30px;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 /* TABLET RESPONSIVE */
@@ -113,6 +113,7 @@
 
   .craftedFromDeveloper {
     font-size: 1.1em;
+    padding:10px 40px;
   }
 }
 
