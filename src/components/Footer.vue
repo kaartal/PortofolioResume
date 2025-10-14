@@ -46,7 +46,7 @@
 }
 
 .socialLinksText a {
-  color: white;
+  color: #A04DFF;
   font-size: 2em;
   transition: color 0.3s ease;
   width:40px;
@@ -94,16 +94,15 @@
 @media (max-width: 768px) {
  
   .footerSectionDesign {
-  margin-top: 30px;
-  clip-path: polygon(0 20%, 145% 0, 127% 100%, 0% 100%);
+  clip-path: polygon(0 20%, 165% 0, 127% 100%, 0% 100%);
   }
   .footerTitleText {
     font-size: 3.2em;
-    padding: 14px 18px;
+    padding: 15px 20px;
   }
 
   .emailTextDesign {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-bottom: 30px;
   }
 
@@ -159,10 +158,10 @@
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
   <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="140" height="50">
-    <text x="10" y="130" 
+    <text x="0" y="120" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
-          fill="white">
+          fill="#A04DFF">
       Halid Kartal
     </text>
   </svg>
