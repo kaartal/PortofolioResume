@@ -169,7 +169,7 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg viewBox="0 0 600 120" width="210" height="40" preserveAspectRatio="xMinYMin meet">
+  <svg viewBox="0 0 640 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
     <text x="0" y="120" class="signature-text">
       Halid Kartal
     </text>
