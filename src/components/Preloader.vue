@@ -99,7 +99,7 @@
     min-width: auto;
     width: 90%;
     padding: 2rem 2rem;
-    font-size: 14px;
+    font-size: 10px;
     height: 160px;
     margin:10px 10px;
     box-shadow: 0 0 25px rgba(160, 77, 255, 0.5),
@@ -134,7 +134,7 @@
 @media (max-width: 480px) {
   .codeBox {
     padding: 2rem 1rem;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.7;
   }
 
