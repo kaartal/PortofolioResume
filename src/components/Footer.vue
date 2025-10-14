@@ -104,7 +104,7 @@
   }
 
   .craftedFromDeveloper {
-    font-size: 1.0em;
+    font-size: 1.4em;
     padding:10px 2px;
   }
 }
@@ -133,6 +133,11 @@
     font-size: 1.7em;
   }
 
+    .craftedFromDeveloper {
+    font-size: 1.2em;
+    padding:10px 2px;
+  }
+
  
 }
 </style>
@@ -153,8 +158,8 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg viewBox="0 0 600 120" width="440" height="50">
-    <text x="0" y="100" 
+  <svg viewBox="0 0 600 120" width="310" height="40">
+    <text x="0" y="120" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
           fill="#A04DFF"
