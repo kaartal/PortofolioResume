@@ -118,8 +118,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 104vw;
-    height: 102vh; /* zauzima cijeli ekran */
+    width: 105vw;
+    height: 100vh; /* zauzima cijeli ekran */
     background: rgba(0, 0, 0, 0.98); /* crna pozadina */
     flex-direction: column;
     justify-content: center;
@@ -131,7 +131,8 @@
     pointer-events: none;
     transform: translateY(-100%);
     transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 999;
+    z-index: 2;
+
   }
 
   .navigationLinks.open {
@@ -148,10 +149,11 @@
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 2px;
     transition: color 0.3s ease;
+        margin-right:-22px;
   }
 
   .navigationLinks li a:hover {
-    color: #00d8ff; /* efekat hovera */
+    color: #a04dff; /* efekat hovera */
   }
 
   .hamburger {
@@ -203,6 +205,8 @@
     z-index: 1001;
   }
 
+
+
   .logoPic {
     display: none;
   }
@@ -225,6 +229,8 @@
 </head>
   <nav :class="['navbarBox', { navbarHidden: isHidden }]">
     
+
+
     <!-- LOGO -->
    <ul :class="['navigationLinks', { open: menuOpen }]">
   <li v-for="link in links" :key="link.id">
