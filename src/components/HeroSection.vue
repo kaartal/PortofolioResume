@@ -358,7 +358,7 @@ animation-delay: 0.6s;
 
       <div class="actionsRow fadeSection" :class="{ visible: showButton }">
         <div class="resumeButton">
-  <a href="/public//Halid Kartal.pdf" target="_blank" rel="noopener">
+  <a href="Halid Kartal.pdf" target="_blank" rel="noopener">
     <button class="glowHover">
       Take a look at my CV 🚀
     </button>
