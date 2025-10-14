@@ -98,12 +98,12 @@
   clip-path: polygon(0 20%, 145% 0, 127% 100%, 0% 100%);
   }
   .footerTitleText {
-    font-size: 2.4em;
+    font-size: 2.8em;
     padding: 4px 8px;
   }
 
   .emailTextDesign {
-    font-size: 1.4em;
+    font-size: 1.1em;
     margin-bottom: 30px;
   }
 
@@ -112,7 +112,7 @@
   }
 
   .craftedFromDeveloper {
-    font-size: 1.1em;
+    font-size: 1.0em;
     padding:10px 40px;
   }
 }
