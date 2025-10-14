@@ -83,13 +83,6 @@
   }
 }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-  .footerMainBox {
-    clip-path: polygon(20 15%, 1020% 20, 100% 100%, 22% 100%);
-  }
-}
-
 /* SMALL SCREEN DESIGN RESPONSIVE */
 @media (max-width: 768px) {
  
@@ -112,7 +105,7 @@
 
   .craftedFromDeveloper {
     font-size: 1.0em;
-    padding:10px 40px;
+    padding:10px 12px;
   }
 }
 
@@ -138,6 +131,8 @@
   .socialLinksText a {
     font-size: 1.7em;
   }
+
+ 
 }
 </style>
 
@@ -147,7 +142,7 @@
       <h2 class="footerTitleText">Contact me</h2>
       <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">halidkartal09@gmail.com</a>
 
-      <!-- SOCIAL LINKS LINKEDIN, FACEBOOK, GITHUB -->
+      <!-- SOCIAL LINKS LINKEDIN, FACEBOOK AND GITHUB -->
       <div class="socialLinksSectionDesign">
         <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -158,7 +153,7 @@
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
   <svg viewBox="0 0 600 120" width="440" height="50">
-    <text x="0" y="120" 
+    <text x="0" y="100" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
           fill="#A04DFF"
