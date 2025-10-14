@@ -203,8 +203,6 @@ animation-delay: 0.6s;
   animation: floatY 3s ease-in-out infinite;
 }
 
-
-
 .flySocial a {
   color: #555;
   font-size: 22px;
@@ -346,7 +344,7 @@ animation-delay: 0.6s;
     <!-- DESCRIPTION AND INFO ABOUT DEVELOPER -->
     <div class="developerDescription">
       <h1 class="fadeSection" :class="{ visible: showTitle }">
-        Hi, I'm <span class="highlight">asdsa</span>
+        Hi, I'm <span class="highlight">Kartal</span>
       </h1>
 
       <h2 class="fadeSection" :class="{ visible: showTitle1 }">
@@ -360,12 +358,12 @@ animation-delay: 0.6s;
 
       <div class="actionsRow fadeSection" :class="{ visible: showButton }">
         <div class="resumeButton">
-           <a href="/resume " download>
-  <button class="glowHover">
-    Take a look at my CV 🚀
-  </button>
-</a>
-        </div>
+  <a href="/public//Halid Kartal.pdf" target="_blank" rel="noopener">
+    <button class="glowHover">
+      Take a look at my CV 🚀
+    </button>
+  </a>
+</div>
       </div>
     </div>
   </div>
