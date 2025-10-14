@@ -129,7 +129,7 @@
 
   .footerTitleText {
     font-size: 2.0em;
-    padding: 10px 25px;
+    padding: 15px 30px;
   }
 
   .emailTextDesign {
@@ -170,7 +170,7 @@
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
   <svg viewBox="0 0 640 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
-    <text x="-4" y="110" class="signature-text">
+    <text x="-2" y="110" class="signature-text">
       Halid Kartal
     </text>
   </svg>
