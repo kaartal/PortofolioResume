@@ -159,9 +159,9 @@
     width: 32px;
     height: 22px;
     background: transparent;
-    border: none;
+ 
     cursor: pointer;
-    z-index: 211111;
+    z-index: 2;
   }
 
   .navbarBox {

@@ -289,13 +289,10 @@ font-family: 'Orbitron', sans-serif;
     width: 90%;
     font-size: 16px;
   }
-
-
 }
 </style>
 
 <template>
-
 <div id="about"></div>
 
   <!-- SOCIAL MEDIA FIXED LINKS -->
@@ -314,7 +311,7 @@ font-family: 'Orbitron', sans-serif;
     </a>
   </div>
 
-  <!-- DEVELOPER INFO -->
+  <!-- DEVELOPER INFO SECTION BOX -->
   <div class="infoBox">
     <!-- ROCKET PICTURE -->
     <div class="imageDeveloper fade-section" :class="{ visible: showImage }">
@@ -325,7 +322,7 @@ font-family: 'Orbitron', sans-serif;
       />
     </div>
 
-    <!-- DESCRIPTION -->
+    <!-- DESCRIPTION AND INFO ABOUT DEVELOPER -->
     <div class="developerDescription">
       <h1 class="fadeSection" :class="{ visible: showTitle }">
         Hi, I'm <span class="highlight">Kartal</span>
@@ -347,13 +344,10 @@ font-family: 'Orbitron', sans-serif;
     CV Coming Soon 🚀
   </button>
 </a>
-
         </div>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script setup>

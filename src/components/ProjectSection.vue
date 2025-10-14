@@ -144,15 +144,16 @@
 }
 
 .projectName {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .projectDescription {
   font-size: 1.0rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #ccc;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .projectDateOfProduct{
