@@ -128,8 +128,8 @@
   }
 
   .footerTitleText {
-    font-size: 2.0em;
-    padding: 15px 30px;
+    font-size: 2.2em;
+    padding: 15px 25px;
   }
 
   .emailTextDesign {
