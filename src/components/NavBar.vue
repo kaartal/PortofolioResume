@@ -161,7 +161,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 211111;
   }
 
   .navbarBox {

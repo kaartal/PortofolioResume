@@ -40,11 +40,13 @@
   font-size: 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .infoBar {
     display: none;
   }
 }
+
+
 </style>
 
 

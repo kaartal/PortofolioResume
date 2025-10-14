@@ -92,7 +92,7 @@
   animation: floatUpDown 4s ease-in-out infinite;
   width: 100%;
   max-width: 500px;
-  height: 350px;
+  height: 320px;
   margin: auto; 
 }
 
@@ -213,7 +213,7 @@
   to { border-color: transparent; width: max-content; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1220px) {
   .skillsGrid {
     grid-template-columns: repeat(2, 1fr);
   }

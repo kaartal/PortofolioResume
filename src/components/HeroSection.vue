@@ -219,7 +219,7 @@ font-family: 'Orbitron', sans-serif;
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
+@media (max-width: 1124px) {
   .infoBox {
     padding-top: 8rem;
     margin-top: 40px;
