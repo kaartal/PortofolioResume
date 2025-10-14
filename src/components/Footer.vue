@@ -161,7 +161,8 @@
     <text x="0" y="120" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
-          fill="#A04DFF">
+          fill="#A04DFF"
+          preserveAspectRatio="xMinYMin meet">
       Halid Kartal
     </text>
   </svg>
