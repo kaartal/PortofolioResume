@@ -52,7 +52,7 @@
 
 .signature-text {
   font-family: "Brush Script MT", cursive;
-  font-size: 140px;
+  font-size: 130px;
   fill: #A04DFF;
   margin-left:242px;
 }
@@ -145,7 +145,7 @@
   }
 
     .craftedFromDeveloper {
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding:10px 2px;
   }
 
