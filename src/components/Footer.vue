@@ -38,13 +38,24 @@
 }
 
 .socialLinksSectionDesign {
-  margin: 20px 0;
+  margin: 40px 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
+.craftedFromDeveloper {
+  text-align: center;
+  margin-top: 20px;
+  
+}
 
+.signature-text {
+  font-family: "Brush Script MT", cursive;
+  font-size: 140px;
+  fill: #A04DFF;
+  margin-left:242px;
+}
 .socialLinksText a {
   color: #A04DFF;
   font-size: 2em;
@@ -158,16 +169,13 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg viewBox="0 0 600 120" width="310" height="40">
-    <text x="0" y="120" 
-          font-family="Brush Script MT, cursive" 
-          font-size="130" 
-          fill="#A04DFF"
-          preserveAspectRatio="xMinYMin meet">
+  <svg viewBox="0 0 600 120" width="210" height="40" preserveAspectRatio="xMinYMin meet">
+    <text x="0" y="120" class="signature-text">
       Halid Kartal
     </text>
   </svg>
 </div>
+
 </footer>
 </div>
 </template>
