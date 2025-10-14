@@ -53,7 +53,6 @@
   font-family: "Brush Script MT", cursive;
   font-size: 130px;
   fill: #A04DFF;
-  margin-left:242px;
 }
 .socialLinksText a {
   color: #A04DFF;
@@ -79,6 +78,7 @@
 .craftedFromDeveloper {
   margin-top: 30px;
   font-size: 1.3em;
+  margin-bottom:-40px;
 }
 
 /* TABLET RESPONSIVE */
@@ -168,8 +168,8 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg viewBox="0 0 640 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
-    <text x="-1" y="110" class="signature-text">
+  <svg viewBox="0 0 610 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
+    <text x="5" y="110" class="signature-text">
       Halid Kartal
     </text>
   </svg>
