@@ -220,6 +220,7 @@
   .skillCard {
     max-width: 95%;
     gap:5px;
+    height:400px;
   }
 }
 
@@ -234,6 +235,7 @@
     width: 94% !important;
     max-width: none !important;
     margin: 0; 
+    height:400px;
   }
 }
 

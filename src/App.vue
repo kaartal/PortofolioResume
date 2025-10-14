@@ -30,7 +30,7 @@ const ColorTrail = defineAsyncComponent(() =>
 );
 const ProjectSection = defineAsyncComponent(() =>
   import("@/components/ProjectSection.vue")
-);
+);  
 const LearningSteps = defineAsyncComponent(() =>
   import("@/components/LearningSteps.vue")
 );
@@ -41,6 +41,6 @@ import Preloader from "@/components/Preloader.vue";
 onMounted(() => {
   setTimeout(() => {
     loading.value = false;
-  }, 4000);
+  }, 3500);
 });
 </script>

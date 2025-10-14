@@ -178,7 +178,7 @@ const showPreloader = ref(true);
 const finished = ref(false);
 
 onMounted(() => {
-  const totalDuration = 4400; 
+  const totalDuration = 3600; 
   const typingSpeed = totalDuration / fullCode.length;
   let index = 0;
 // TYPING CODE
@@ -191,7 +191,7 @@ onMounted(() => {
       finished.value = true;
       setTimeout(() => {
         showPreloader.value = false;
-      }, 2300); 
+      }, 2100); 
     }
   };
   type();
