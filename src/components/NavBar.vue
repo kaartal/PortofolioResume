@@ -101,7 +101,7 @@
   border-radius:20px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   user-select: none;
 }
 
@@ -117,73 +117,97 @@
   .navigationLinks {
     position: fixed;
     top: 0;
-    right: 0;
-    height: 24vh;
-    background: rgba(17, 23, 40, 0.95);
-    border-radius: 0 0 0 12px;
+    left: 0;
+    width: 104vw;
+    height: 102vh; /* zauzima cijeli ekran */
+    background: rgba(0, 0, 0, 0.98); /* crna pozadina */
     flex-direction: column;
-    gap: 2rem;
-    padding: 80px 24px 24px 24px;
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.6);
-    width: 250px;
-    max-width: 80vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(100%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2;
+    transform: translateY(-100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 999;
   }
-.logoPic {
-  display:none;
-}
 
-.logoImage {
-  display:none;
-}
   .navigationLinks.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-.hamburger span {
-  display: block;
-  margin: 4px 0;
-}
+
+  .navigationLinks li a {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+  }
+
+  .navigationLinks li a:hover {
+    color: #00d8ff; /* efekat hovera */
+  }
+
   .hamburger {
     display: flex;
-    position: absolute;
-    top: 24px;
-    right: 51px;
+    position: fixed;
+    top: 44px;
+    right: 84px;
     flex-direction: column;
     justify-content: space-around;
-    width: 32px;
-    height: 22px;
+    width: 34px;
+    height: 26px;
     background: transparent;
- 
+    border: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 1000;
+  }
+
+  .hamburger span {
+    width: 40px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .bar1.open {
+    transform: rotate(45deg) translateY(-6px);
+  }
+
+  .bar2.open {
+    opacity: 0;
+  }
+
+  .bar3.open {
+    transform: rotate(-45deg) translateY(1px);
   }
 
   .navbarBox {
     width: 100%;
     justify-content: space-between;
-    padding: 16px;
-      background: none;
-    backdrop-filter: none;
+    background: transparent;
     box-shadow: none;
+    backdrop-filter: none;
+    position: fixed;
+    top: 0;
+    left: 10;
+    padding: 20px;
+    z-index: 1001;
   }
 
   .logoPic {
-    position: static;
-    left: auto;
-  }
-
-  .navigationLinks li a {
-    font-size: 1.2rem;
-    padding: 12px 8px;
-    text-align: left;
+    display: none;
   }
 }
+
 
 @media (max-width: 480px) {
   .navbarBox {
@@ -211,8 +235,11 @@
     >
       {{ link.name }}
     </a>
+
   </li>
+
 </ul>
+
 
 <!-- HAMBURGER BUTTON -->
    <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
