@@ -117,7 +117,7 @@
   }
 
   .footerTitleText {
-    font-size: 2.4em;
+    font-size: 2.2em;
     padding: 10px 25px;
   }
 
