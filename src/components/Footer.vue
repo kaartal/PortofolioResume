@@ -87,7 +87,7 @@
 @media (max-width: 768px) {
  
   .footerSectionDesign {
-  clip-path: polygon(0 20%, 165% 0, 127% 100%, 0% 100%);
+  clip-path: polygon(0 20%, 205% 0, 127% 100%, 0% 100%);
   }
   .footerTitleText {
     font-size: 3.2em;
@@ -95,7 +95,7 @@
   }
 
   .emailTextDesign {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-bottom: 30px;
   }
 
@@ -105,7 +105,7 @@
 
   .craftedFromDeveloper {
     font-size: 1.0em;
-    padding:10px 12px;
+    padding:10px 2px;
   }
 }
 
