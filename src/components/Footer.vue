@@ -90,12 +90,12 @@
   clip-path: polygon(0 20%, 205% 0, 127% 100%, 0% 100%);
   }
   .footerTitleText {
-    font-size: 3.2em;
-    padding: 15px 20px;
+    font-size: 3.4em;
+    padding: 20px 40px;
   }
 
   .emailTextDesign {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 30px;
   }
 
