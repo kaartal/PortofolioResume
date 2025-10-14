@@ -54,7 +54,7 @@
 }
 .socialLinksSectionDesign a i {
   color: white;
-  font-size: 2em;
+  font-size: 2.7em;
   transition: color 0.3s ease;
 }
 
@@ -103,12 +103,12 @@
   }
 
   .emailTextDesign {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-bottom: 30px;
   }
 
   .socialLinksText a {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .craftedFromDeveloper {
@@ -137,7 +137,7 @@
   }
 
   .socialLinksText a {
-    font-size: 1.3em;
+    font-size: 1.7em;
   }
 }
 </style>
