@@ -133,9 +133,9 @@
 
 @media (max-width: 480px) {
   .codeBox {
-    padding: 7rem 4rem;
+    padding: 2rem 1rem;
     font-size: 12px;
-    line-height: 2.7;
+    line-height: 1.7;
   }
 
   .code {
