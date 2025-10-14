@@ -189,7 +189,7 @@
   width: 0;
   animation: typing 2s steps(30, end) forwards;
   margin-bottom: 0.1rem;
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.1);
   user-select: none;
 }
 

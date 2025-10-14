@@ -120,7 +120,7 @@ font-family: 'Orbitron', sans-serif;
 }
 
 .glowHover {
-  width: 220px;
+  width: 280px;
   height: 50px;
   border: none;
   outline: none;
@@ -341,7 +341,7 @@ font-family: 'Orbitron', sans-serif;
         <div class="resumeButton">
            <a href="/resume halidkartal.pdf" download>
   <button class="glowHover">
-    CV Coming Soon 🚀
+    Take a look at my CV 🚀
   </button>
 </a>
         </div>
