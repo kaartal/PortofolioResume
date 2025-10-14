@@ -41,6 +41,6 @@ import Preloader from "@/components/Preloader.vue";
 onMounted(() => {
   setTimeout(() => {
     loading.value = false;
-  }, 4250);
+  }, 4000);
 });
 </script>
