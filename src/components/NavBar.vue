@@ -18,14 +18,7 @@
   animation: floatNav 8s ease-in-out infinite;
 }
 
-@keyframes floatNav {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 7px);
-  }
-}
+
 
 .navbarHidden {
   opacity: 0;
@@ -149,7 +142,7 @@
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 2px;
     transition: color 0.3s ease;
-        margin-right:-22px;
+
   }
 
   .navigationLinks li a:hover {
@@ -160,11 +153,11 @@
     display: flex;
     position: fixed;
     top: 44px;
-    right: 84px;
+    right: 44px;
     flex-direction: column;
     justify-content: space-around;
-    width: 34px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -172,8 +165,8 @@
   }
 
   .hamburger span {
-    width: 40px;
-    height: 3px;
+    width: 30px;
+    height: 4px;
     background: #fff;
     border-radius: 2px;
     transition: all 0.3s ease;
@@ -200,9 +193,10 @@
     backdrop-filter: none;
     position: fixed;
     top: 0;
-    left: 10;
+    left: 9;
     padding: 0px;
-    z-index: 1001;
+    z-index: 3;
+    
   }
 
 
