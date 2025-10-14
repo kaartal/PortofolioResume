@@ -157,8 +157,8 @@
       <!-- CRAFTED BY DEVELOPER SIGNATURE -->
      <div class="craftedFromDeveloper">
   <span>Created by me</span><br />
-  <svg xmlns='@/assets/halidkartal.png' viewBox="0 0 600 120" width="140" height="50">
-    <text x="0" y="120" 
+  <svg viewBox="0 0 800 120" width="240" height="50">
+    <text x="80" y="120" 
           font-family="Brush Script MT, cursive" 
           font-size="130" 
           fill="#A04DFF"
