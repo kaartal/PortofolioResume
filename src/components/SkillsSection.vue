@@ -319,7 +319,7 @@
         </div>
         <h3>
           <img src="@/assets/mysql.png" alt="Microsoft logo" class="iconLanguage" />
-          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> database
+          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> 
         </h3>
         <div class="writingCode">
           <div class="line line1">CREATE TABLE Users (</div>

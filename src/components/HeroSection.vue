@@ -26,19 +26,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  animation: fadeInSlide 2.4s ease-out forwards;
+  animation-delay: 0.6s; 
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInSlide 1.2s ease-out forwards;
-  animation-delay: 0.3s; 
 }
 
 @keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(600px);
+  }
   to {
-    opacity: 2;
-    transform: translateY(-1);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
 
 
 .imageDeveloper img {
@@ -50,7 +53,7 @@
 
 /*ROCKET ANIMATION */
 .rocket-float {
-  animation: rocketMove 5s ease-in-out infinite, rocketGlow 3s infinite alternate ease-in-out;
+  animation: rocketMove 7s ease-in-out infinite, rocketGlow 6s infinite alternate ease-in-out;
 }
 
 @keyframes rocketMove {
@@ -66,9 +69,12 @@
 
 }/* DEVELOPER INFO */
 .fadeSection.visible {
-  opacity: 1;
+  opacity: 0;
   pointer-events: auto;
+  transition: opacity 0.5s ease;
 }
+
+
 
 .developerDescription {
   max-width: 600px;
@@ -92,6 +98,7 @@
   font-size: 2.5rem;
   margin-top: 0.2rem;
   font-family: 'Orbitron', sans-serif;
+  animation-delay: 0.6s; 
 }
 
 .developerDescription p {
@@ -104,6 +111,7 @@ font-size: 1.2rem;
 letter-spacing: 1px; 
 line-height: 1.6; 
 font-family: 'Orbitron', sans-serif;
+animation-delay: 0.6s; 
 }
 
 .actionsRow {
@@ -195,6 +203,8 @@ font-family: 'Orbitron', sans-serif;
   animation: floatY 3s ease-in-out infinite;
 }
 
+
+
 .flySocial a {
   color: #555;
   font-size: 22px;
@@ -204,6 +214,17 @@ font-family: 'Orbitron', sans-serif;
 .flySocial a:hover {
   transform: scale(1.3);
   color: #A04DFF;
+}
+
+.rocket-img {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
+}
+
+.rocket-enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes textGlow {
@@ -298,15 +319,15 @@ font-family: 'Orbitron', sans-serif;
   <!-- SOCIAL MEDIA FIXED LINKS -->
   <div class="flySocial">
     <!-- LINKEDIN PROFILE -->
-    <a href="https://linkedin.com/in/halidkartal" target="_blank">
+    <a href="" target="_blank">
       <i class="fab fa-linkedin-in"></i>
     </a>
     <!-- GITHUB PROFILE -->
-    <a href="https://github.com/kaartal" target="_blank">
+    <a href="" target="_blank">
       <i class="fab fa-github"></i>
     </a>
     <!-- FACEBOOK PROFILE -->
-    <a href="https://www.facebook.com/halid.kartal.2025" target="_blank">
+    <a href="" target="_blank">
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>
@@ -325,10 +346,10 @@ font-family: 'Orbitron', sans-serif;
     <!-- DESCRIPTION AND INFO ABOUT DEVELOPER -->
     <div class="developerDescription">
       <h1 class="fadeSection" :class="{ visible: showTitle }">
-        Hi, I'm <span class="highlight">Kartal</span>
+        Hi, I'm <span class="highlight">asdsa</span>
       </h1>
 
-      <h2 class="fadeSection" :class="{ visible: showTitle }">
+      <h2 class="fadeSection" :class="{ visible: showTitle1 }">
         I'm a Full-Stack Software Engineer
       </h2>
 
@@ -339,7 +360,7 @@ font-family: 'Orbitron', sans-serif;
 
       <div class="actionsRow fadeSection" :class="{ visible: showButton }">
         <div class="resumeButton">
-           <a href="/resume halidkartal.pdf" download>
+           <a href="/resume " download>
   <button class="glowHover">
     Take a look at my CV 🚀
   </button>
@@ -355,27 +376,39 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import rocketImg from '@/assets/rocket.png'
 
 const showImage = ref(false)
-const showTitle = ref(false)
-const showText = ref(false)
-const showButton = ref(false)
+const showTitle = ref(true)
+const showTitle1 = ref(true)
+const showText = ref(true)
+const showButton = ref(true)
 const rocketVisible = ref(false)
+const showSubtitle = ref(true)
 
 // SHOW TEXT 1s, 1s, 1s, 0.5s
-onMounted(() => {
-  setTimeout(() => {
-    showImage.value = true
-    rocketVisible.value = true
-    setTimeout(() => {
-      showTitle.value = true
-      setTimeout(() => {
-        showText.value = true
-        setTimeout(() => {
-          showButton.value = true
-        }, 1000)
-      }, 1000)
-    }, 1000)
-  }, 500)
-})
+onMounted(async () => {
+  const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+  await wait(500);
+  showImage.value = true;
+  rocketVisible.value = true;
+
+  await wait(3000); 
+  showTitle.value = false; 
+
+  await wait(1000); 
+  showTitle1.value = false; 
+
+  await wait(700); 
+
+  showSubtitle.value = false; 
+
+  await wait(700); // 4s od početka
+  showText.value = false; // za paragraf
+
+  await wait(1000);
+  showButton.value = false;
+});
+
+
 
 const scrollArrow = ref(null)
 
@@ -394,5 +427,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-</script>
 
+
+</script>

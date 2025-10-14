@@ -10,19 +10,17 @@
   font-family: "Courier New", monospace;
   color: #a04dff;
   overflow: hidden;
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 .preloader.fade-out {
   opacity: 0;
-  transform: scale(1.01);
 }
 
 .code {
   white-space: pre-wrap;
   font-family: monospace;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 .codeBox {
@@ -30,13 +28,14 @@
   padding: 2rem 2.5rem;
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(160, 77, 255, 0.6),
-    inset 0 0 0px rgba(160, 77, 255, 0.3);
+  inset 0 0 0px rgba(160, 77, 255, 0.3);
   max-width: 90%;
   min-width: 420px;
   border: 1.5px solid #a04dff;
   position: relative;
   overflow: hidden;
   height:160px;
+  overflow-y: 1px; /* dodaj ovo */
 }
 
 @keyframes glow {
@@ -78,11 +77,10 @@
 .cursor {
   display: inline-block;
   width: 8px;
-  height: 22px;
+  height: 14px;
   background-color: #a04dff;
   margin-left: 2px;
   animation: blink 1.2s steps(2, start) infinite;
-  vertical-align: bottom;
 }
 
 @keyframes blink {
@@ -95,6 +93,61 @@
   from { transform: scale(0.1); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+@media (max-width: 768px) {
+  .codeBox {
+    min-width: auto;
+    width: 90%;
+    padding: 2rem 2rem;
+    font-size: 14px;
+    height: 160px;
+    margin:10px 10px;
+    box-shadow: 0 0 25px rgba(160, 77, 255, 0.5),
+  inset 0 0 0px rgba(160, 77, 255, 0.3);
+  line-height: 1.5;
+  }
+
+  .code {
+    font-size: 12px;
+    
+  }
+
+  .windowsButtons {
+    top: 10px;
+    left: 12px;
+    gap: 6px;
+  }
+
+  .windowButton {
+    width: 12px;
+    height: 12px;
+  }
+
+  .cursor {
+    width: 6px;
+    height: 12px;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .codeBox {
+    padding: 7rem 4rem;
+    font-size: 12px;
+    line-height: 2.7;
+  }
+
+  .code {
+    font-size: 14px;
+  }
+
+  .cursor {
+    width: 5px;
+    height: 10px;
+  }
+}
+
 
 </style>
 
@@ -138,7 +191,7 @@ onMounted(() => {
       finished.value = true;
       setTimeout(() => {
         showPreloader.value = false;
-      }, 4000); 
+      }, 2300); 
     }
   };
   type();

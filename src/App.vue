@@ -1,6 +1,6 @@
 <template>
-  <!-- <Preloader v-if="loading" />
-  <template v-else>-->
+   <Preloader v-if="loading" />
+  <template v-else>
     <ColorTrail />
     <NavBar />
     <HeroSection id="about" />
@@ -9,7 +9,7 @@
     <LearningSteps id="timeline" />
     <Time />
     <Footer />
-
+</template>
 </template>
 
 <script setup>
@@ -41,6 +41,6 @@ import Preloader from "@/components/Preloader.vue";
 onMounted(() => {
   setTimeout(() => {
     loading.value = false;
-  }, 7000);
+  }, 4250);
 });
 </script>
