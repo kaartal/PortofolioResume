@@ -280,7 +280,7 @@ const projects = [
   {
     title: "vehicleregistration.html",
     date: "Mar 2024 - Apr 2024",
-    description: "I developed a full-stack web application that simulates vehicle registration processes. The application allows users to register vehicles, manage ownership records, issue license plates...",
+    description: "I developed a full-stack web application that simulates vehicle registration processes. The application allows users to register vehicles, manage ownership records, issue license plates..",
     tags: ["PHP", "CSS", "HTML", "MySQL"],
     source: "https://github.com/kaartal/VehicleRegistration",
     image: new URL('@/assets/carregistration.png', import.meta.url).href,

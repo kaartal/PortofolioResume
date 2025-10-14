@@ -92,7 +92,7 @@
   animation: floatUpDown 4s ease-in-out infinite;
   width: 100%;
   max-width: 500px;
-  height: 320px;
+  height: 310px;
   margin: auto; 
 }
 
