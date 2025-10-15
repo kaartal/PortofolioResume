@@ -25,7 +25,7 @@
   display: inline-block;
   padding: 5px 10px;
   margin-bottom: 20px;
-  clip-path: polygon(0 15%, 100% 0, 1030% 100%, 0% 100%);
+  clip-path: polygon(0 20%, 60% 0, 1030% 100%, 0% 100%);
 }
 
 .emailTextDesign {

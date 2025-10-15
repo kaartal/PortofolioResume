@@ -34,7 +34,7 @@
 @keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateY(600px);
+    transform: translateY(800px);
   }
   to {
     opacity: 1;
@@ -53,7 +53,7 @@
 
 /*ROCKET ANIMATION */
 .rocket-float {
-  animation: rocketMove 7s ease-in-out infinite, rocketGlow 6s infinite alternate ease-in-out;
+  animation: rocketMove 9s ease-in-out infinite, rocketGlow 9s infinite alternate ease-in-out;
 }
 
 @keyframes rocketMove {
@@ -67,12 +67,19 @@
     transform: translateY(0) rotate(-1deg);
   }
 
+  
 }/* DEVELOPER INFO */
+.fadeSection {
+  opacity: 1;
+  transform: translateX(40px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
 .fadeSection.visible {
   opacity: 0;
-  pointer-events: auto;
-  transition: opacity 0.5s ease;
+  transform: translateY(0);
 }
+
 
 
 
@@ -337,6 +344,11 @@ animation-delay: 0.6s;
       <img
         :class="['rocket-img', { 'rocket-enter': rocketVisible, 'rocket-float': rocketVisible }]"
         :src="rocketImg"
+
+
+
+
+
         alt="Developer Image"
       />
     </div>

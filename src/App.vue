@@ -1,6 +1,6 @@
 <template>
-   <Preloader v-if="loading" />
-  <template v-else>
+   <!--<Preloader v-if="loading" />
+  <template v-else>-->
     <ColorTrail />
     <NavBar />
     <HeroSection id="about" />
@@ -9,7 +9,7 @@
     <LearningSteps id="timeline" />
     <Time />
     <Footer />
-</template>
+<!-- </template>-->
 </template>
 
 <script setup>

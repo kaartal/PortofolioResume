@@ -72,7 +72,7 @@
   flex-direction: column;
   cursor: pointer;
   scroll-snap-align: center;
-  height: 620px;
+  height: 580px;
   position: relative;
   opacity: 0.5;
   transform: translateY(10px);
@@ -197,6 +197,22 @@
   transform: translateY(-1px);
 }
 
+@media (max-width: 1024px) {
+  .projectGrid {
+    align-items: center;
+    margin-bottom:-240px;
+  }
+
+  .projectBox{
+    margin-bottom:-240px;
+  }
+
+  .projectItem {
+    width: 100%;
+    height:640px;
+  }
+}
+
 @media (max-width: 768px) {
   .projectGrid {
     flex-direction: column;
@@ -278,28 +294,28 @@ const setActive = async (index) => {
 
 const projects = [
   {
-    title: "vehicleregistration.html",
-    date: "Mar 2024 - Apr 2024",
-    description: "I developed a full-stack web application that simulates vehicle registration processes. The application allows users to register vehicles, manage ownership records, issue license plates..",
-    tags: ["PHP", "CSS", "HTML", "MySQL"],
+    title: "souvneir.cs",
+    date: "Oct 2025 - Curent",
+    description: "I am currently developing a full-stack web application for managing and selling souvenirs.The application is designed to allow users to browse, add, and purchase unique souvenirs.",
+    tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/VehicleRegistration",
-    image: new URL('@/assets/carregistration.png', import.meta.url).href,
+    image: new URL('@/assets/WebShopMockUp.png', import.meta.url).href,
   },
   {
     title: "ticketshop.cs",
-    date: "Dec 2025 – Jun 2025",
+    date: "Dec 2024 – Jun 2025",
     description: "Developed a comprehensive online ticketing platform that facilitates the seamless sale and real-time tracking of digital tickets.",
     tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/FootballTickets",
-    image: new URL('@/assets/ticket.avif', import.meta.url).href,
+    image: new URL('@/assets/FootbalTicketsMockUp.png', import.meta.url).href,
   },
   {
     title: "bank.cpp",
-    date: "Mar 2024 - May 2024",
+    date: "Mar 2024 - Apr 2024",
     description: "I designed and implemented a desktop-based banking simulation system in C++, focusing on replicating real-world banking processes and account management.",
     tags: ["C++", "C"],
     source: "https://github.com/kaartal/BankSystem",
-    image: new URL('@/assets/bank.jpg', import.meta.url).href,
+    image: new URL('@/assets/TerminalSoftwareMockUp.png', import.meta.url).href,
   },
 ];
 
