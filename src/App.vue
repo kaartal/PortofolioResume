@@ -7,6 +7,7 @@
     <SkillsSection id="skills" />
     <ProjectSection id="projects" />
     <LearningSteps id="timeline" />
+    <ContactDeveloper id="contact" />
     <Time />
     <Footer />
 <!-- </template>-->
@@ -33,6 +34,9 @@ const ProjectSection = defineAsyncComponent(() =>
 );  
 const LearningSteps = defineAsyncComponent(() =>
   import("@/components/LearningSteps.vue")
+);
+const ContactDeveloper = defineAsyncComponent(() =>
+  import("@/components/ContactDeveloper.vue")
 );
 const Footer = defineAsyncComponent(() => import("@/components/Footer.vue"));
 const Time = defineAsyncComponent(() => import("@/components/Time.vue"));

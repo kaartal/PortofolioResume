@@ -81,6 +81,19 @@
   margin-bottom:-40px;
 }
 
+
+
+@media(max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+
+  .contactImage img,
+  .contactForm {
+    width: 100%;
+  }
+}
+
 /* TABLET RESPONSIVE */
 @media (max-width: 1024px) {
 
@@ -158,25 +171,24 @@
       <h2 class="footerTitleText">Contact me</h2>
       <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">halidkartal09@gmail.com</a>
 
-      <!-- SOCIAL LINKS LINKEDIN, FACEBOOK AND GITHUB -->
       <div class="socialLinksSectionDesign">
         <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
       </div>
 
-      <!-- CRAFTED BY DEVELOPER SIGNATURE -->
-     <div class="craftedFromDeveloper">
-  <span>Created by me</span><br />
-  <svg viewBox="0 0 610 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
-    <text x="5" y="120" class="signature-text">
-      Halid Kartal
-    </text>
-  </svg>
-</div>
+      <div class="craftedFromDeveloper">
+        <span>Created by me</span><br />
+        <svg viewBox="0 0 610 130" width="200" height="60" preserveAspectRatio="xMinYMin meet">
+          <text x="5" y="120" class="signature-text">
+            Halid Kartal
+          </text>
+        </svg>
+      </div>
 
-</footer>
-</div>
+      
+    </footer>
+  </div>
 </template>
 
 

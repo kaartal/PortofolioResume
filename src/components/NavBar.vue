@@ -694,6 +694,7 @@ const links = [
   { id: 'skills', name: 'Skills' },
   { id: 'projects', name: 'Projects' },
   { id: 'timeline', name: 'Timeline' },
+  { id: 'contact', name: 'Contact' },
 ];
 
 const menuOpen = ref(false);

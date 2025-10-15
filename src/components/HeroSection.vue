@@ -67,7 +67,7 @@
     transform: translateY(0) rotate(-1deg);
   }
 
-  
+
 }/* DEVELOPER INFO */
 .fadeSection {
   opacity: 1;
@@ -261,14 +261,14 @@ animation-delay: 0.6s;
   }
 
   .developerDescription {
-    max-width: 90%;
+    max-width: 100%;
     text-align: center;
     margin-top:-60px;
     margin-bottom:-30px;
   }
 
   .developerDescription h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
   }
 
   .developerDescription h2 {
@@ -412,8 +412,8 @@ onMounted(async () => {
 
   showSubtitle.value = false; 
 
-  await wait(700); // 4s od početka
-  showText.value = false; // za paragraf
+  await wait(700); 
+  showText.value = false; 
 
   await wait(1000);
   showButton.value = false;
