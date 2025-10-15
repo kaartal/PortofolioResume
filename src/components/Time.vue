@@ -8,18 +8,25 @@
   display: flex;
   gap: 4px;
   z-index: 2;
-  animation: floatY 3s ease-in-out infinite;
+  animation: slideInRight 2.8s ease-out forwards, floatY 1s ease-in-out infinite 2.8s;
   user-select: none;
+  opacity: 0;
 }
 
-@keyframes floatY {
-  0%, 100% {
-    transform: translateY(0);
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-2px);
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
+
+
+
 
 .infoItem {
   background-color: #0e0e0e;
@@ -45,10 +52,7 @@
     display: none;
   }
 }
-
-
 </style>
-
 
 <template>
   <div class="infoBar">
@@ -95,4 +99,3 @@ const formattedTime = computed(() =>
   })
 )
 </script>
-

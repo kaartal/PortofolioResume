@@ -709,4 +709,3 @@ const scrollToSection = (id) => {
 };
 
 </script>
-
