@@ -7,7 +7,7 @@
     <SkillsSection id="skills" />
     <ProjectSection id="projects" />
     <LearningSteps id="timeline" />
-    <ContactDeveloper id="contact" />
+
     <Time />
     <Footer />
 <!-- </template>-->
