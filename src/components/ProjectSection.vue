@@ -263,7 +263,7 @@
           </div>
           <div class="links">
             <a :href="project.source" target="_blank" class="sourceButton">
-              <img src="@/assets/github.png" alt="GitHub Logo" class="sourceLogo" />
+              <img src="/github.webp" alt="GitHub Logo" class="sourceLogo" />
               Source
             </a>
           </div>
@@ -299,7 +299,7 @@ const projects = [
     description: "I am currently developing a full-stack web application for managing and selling souvenirs.The application is designed to allow users to browse, add, and purchase unique souvenirs.",
     tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/VehicleRegistration",
-    image: new URL('@/assets/WebShopMockUp.png', import.meta.url).href,
+    image: new URL('/WebShopMockUp.webp', import.meta.url).href,
   },
   {
     title: "ticketshop.cs",
@@ -307,7 +307,7 @@ const projects = [
     description: "Developed a comprehensive online ticketing platform that facilitates the seamless sale and real-time tracking of digital tickets.",
     tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/FootballTickets",
-    image: new URL('@/assets/FootbalTicketsMockUp.png', import.meta.url).href,
+    image: new URL('/FootbalTicketsMockUp.webp', import.meta.url).href,
   },
   {
     title: "bank.cpp",
@@ -315,7 +315,7 @@ const projects = [
     description: "I designed and implemented a desktop-based banking simulation system in C++, focusing on replicating real-world banking processes and account management.",
     tags: ["C++", "C"],
     source: "https://github.com/kaartal/BankSystem",
-    image: new URL('@/assets/TerminalSoftwareMockUp.png', import.meta.url).href,
+    image: new URL('/TerminalSoftwareMockUp.webp', import.meta.url).href,
   },
 ];
 

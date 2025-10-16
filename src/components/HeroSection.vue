@@ -392,7 +392,7 @@ animation-delay: 0.6s;
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import rocketImg from '@/assets/halidkartal.webp'
+import rocketImg from '/halidkartal.webp'
 
 const showImage = ref(false)
 const showTitle = ref(true)
@@ -439,13 +439,7 @@ const handleScroll = () => {
   }
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 
 
 </script>
