@@ -269,18 +269,26 @@ animation-delay: 0.6s;
 
   .developerDescription h1 {
     font-size: 2.7rem;
+    margin-right:85px;
   }
 
   .developerDescription h2 {
     font-size: 1.8rem;
+        margin-right:85px;
   }
 
   .developerDescription p {
     font-size: 1rem;
+        margin-right:85px;
   }
 
     .flySocial {
     left: 4px;  }
+
+    .resumeButton {
+  text-align: center;
+  margin-right:85px;
+}
 }
 
 @media (max-width: 768px) {

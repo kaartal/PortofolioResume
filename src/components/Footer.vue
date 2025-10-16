@@ -169,7 +169,7 @@
   <div class="footerSectionDesign">
     <footer class="footerMainBox">
       <h2 class="footerTitleText">Contact me</h2>
-      <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">halidkartal09@gmail.com</a>
+      <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">hi@halidkartal.dev</a>
 
       <div class="socialLinksSectionDesign">
         <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
