@@ -62,7 +62,7 @@ const cursor = ref(null);
 const mouse = ref({ x: -100, y: -100 });
 
 let ctx, stars = [], animationId;
-const numStars = 650;
+const numStars = 550;
 
 class Star {
   constructor() {

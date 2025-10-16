@@ -1,5 +1,5 @@
 <template>
-  <ColorTrail />
+
    <!--<Preloader v-if="loading" />
   <template v-else>-->
     <NavBar />
