@@ -1,5 +1,5 @@
 <template>
-
+  <ColorTrail />
    <!--<Preloader v-if="loading" />
   <template v-else>-->
     <NavBar />
@@ -7,7 +7,7 @@
     <SkillsSection id="skills" />
     <ProjectSection id="projects" />
     <LearningSteps id="timeline" />
-    <ContactDeveloper id="contact" />
+
     <Time />
     <Footer />
 <!-- </template>-->
