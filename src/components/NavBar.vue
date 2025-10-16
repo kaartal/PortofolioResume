@@ -146,7 +146,7 @@
   }
 
   .navigationLinks li a:hover {
-    color: #a04dff; /* efekat hovera */
+    color: #a04dff; 
   }
 
   .hamburger {
@@ -364,7 +364,7 @@
   }
 
   .navigationLinks li a:hover {
-    color: #a04dff; /* efekat hovera */
+    color: #a04dff; 
   }
 
   .hamburger {
@@ -582,7 +582,7 @@
   }
 
   .navigationLinks li a:hover {
-    color: #a04dff; /* efekat hovera */
+    color: #a04dff; 
   }
 
   .hamburger {

@@ -35,7 +35,7 @@
   position: relative;
   overflow: hidden;
   height:160px;
-  overflow-y: 1px; /* dodaj ovo */
+  overflow-y: 1px; 
 }
 
 @keyframes glow {

@@ -1,7 +1,7 @@
 <template>
+  <ColorTrail />
    <!--<Preloader v-if="loading" />
   <template v-else>-->
-    <ColorTrail />
     <NavBar />
     <HeroSection id="about" />
     <SkillsSection id="skills" />

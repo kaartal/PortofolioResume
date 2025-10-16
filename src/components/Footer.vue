@@ -172,9 +172,9 @@
       <a href="mailto:halidkartal09@gmail.com" class="emailTextDesign">hi@halidkartal.dev</a>
 
       <div class="socialLinksSectionDesign">
-        <a href="https://linkedin.com/in/halidkartal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/halid.kartal.2025" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://github.com/kaartal" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/halidkartal"  aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/halid.kartal.2025"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com/kaartal" ><i class="fab fa-github"></i></a>
       </div>
 
       <div class="craftedFromDeveloper">

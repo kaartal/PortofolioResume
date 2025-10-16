@@ -14,44 +14,7 @@
   border-radius: 9px;
 }
 
-/* TECH PART
-.tech-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 20px;
-  max-width: 600px;
-  width: 100%;
-}
 
-.tech-item {
-  background: rgba(14, 18, 23, 0.8); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 20px 10px;
-  text-align: center;
-  backdrop-filter: blur(6px); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.tech-item:hover {
-  border-color: #a855f7;
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6); 
-  transform: translateY(-6px) scale(1.01);
-}
-
-.tech-icon {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.tech-label {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #f3e8ff; /*  */
 
 .typingTitle {
   font-family: 'Orbitron', sans-serif;
@@ -365,26 +328,7 @@
   Solid experience in Bash scripting, Linux system administration, and automating tasks on Ubuntu and Debian systems.
 </p>
       </div>
-      <!-- TECH INFO -->
-      <!-- </div>
-      <div class="tech-container">
-    <div class="tech-item">
-      <img src="@/assets/git (2).webp" alt="Next.js" class="tech-icon">
-      <p class="tech-label">Git</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/terminal.webp" alt="React" class="tech-icon">
-      <p class="tech-label">Shell</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/.net.webp" alt="Remix" class="tech-icon">
-      <p class="tech-label">.NET</p>
-    </div>
-    <div class="tech-item">
-      <img src="@/assets/vuejs.webp" alt="Redux" class="tech-icon">
-      <p class="tech-label">Vue.js</p>
-    </div>
-  </div> -->
+     
   </div>
     </div>
 </template>
