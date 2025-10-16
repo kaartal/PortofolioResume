@@ -254,9 +254,9 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/c.png" alt=".NET logo" class="iconLanguage" /> 
-          <img src="@/assets/c++.png" alt="C# logo" class="iconLanguage" />
-          <img src="@/assets/c-sharp.png" alt="C# logo" class="iconLanguage" />
+          <img src="@/assets/c.webp" alt=".NET logo" class="iconLanguage" /> 
+          <img src="@/assets/c++.webp" alt="C# logo" class="iconLanguage" />
+          <img src="@/assets/c-sharp.webp" alt="C# logo" class="iconLanguage" />
           
         </h3>
         <div class="writingCode">
@@ -287,9 +287,9 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/html.png" alt="HTML logo" class="iconLanguage" />
-          <img src="@/assets/css.png" alt="CSS logo" class="iconLanguage" />
-          <img src="@/assets/javascript.png" alt="JavaScript logo" class="iconLanguage" />
+          <img src="@/assets/html.webp" alt="HTML logo" class="iconLanguage" />
+          <img src="@/assets/css.webp" alt="CSS logo" class="iconLanguage" />
+          <img src="@/assets/javascript.webp" alt="JavaScript logo" class="iconLanguage" />
            
         </h3>
         <div class="writingCode">
@@ -320,8 +320,8 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/mysql.png" alt="Microsoft logo" class="iconLanguage" />
-          <img src="@/assets/sql.png" alt="Microsoft logo" class="iconLanguage" /> 
+          <img src="@/assets/mysql.webp" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/sql.webp" alt="Microsoft logo" class="iconLanguage" /> 
         </h3>
         <div class="writingCode">
           <div class="line line1">CREATE TABLE Users (</div>
@@ -346,8 +346,8 @@
           <span class="btn green"></span>
         </div>
         <h3>
-          <img src="@/assets/linux.png" alt="Microsoft logo" class="iconLanguage" />
-          <img src="@/assets/ubuntu.png" alt="Microsoft logo" class="iconLanguage" /> 
+          <img src="@/assets/linux.webp" alt="Microsoft logo" class="iconLanguage" />
+          <img src="@/assets/ubuntu.webp" alt="Microsoft logo" class="iconLanguage" /> 
         </h3>
         <div class="writingCode">
           <div class="line line1">#!/bin/bash</div>
@@ -369,19 +369,19 @@
       <!-- </div>
       <div class="tech-container">
     <div class="tech-item">
-      <img src="@/assets/git (2).png" alt="Next.js" class="tech-icon">
+      <img src="@/assets/git (2).webp" alt="Next.js" class="tech-icon">
       <p class="tech-label">Git</p>
     </div>
     <div class="tech-item">
-      <img src="@/assets/terminal.png" alt="React" class="tech-icon">
+      <img src="@/assets/terminal.webp" alt="React" class="tech-icon">
       <p class="tech-label">Shell</p>
     </div>
     <div class="tech-item">
-      <img src="@/assets/.net.png" alt="Remix" class="tech-icon">
+      <img src="@/assets/.net.webp" alt="Remix" class="tech-icon">
       <p class="tech-label">.NET</p>
     </div>
     <div class="tech-item">
-      <img src="@/assets/vuejs.png" alt="Redux" class="tech-icon">
+      <img src="@/assets/vuejs.webp" alt="Redux" class="tech-icon">
       <p class="tech-label">Vue.js</p>
     </div>
   </div> -->
