@@ -1,7 +1,7 @@
 <style scoped>
 .navbarBox {
   position: fixed;
-  top: 30px;
+  top: 80px;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;

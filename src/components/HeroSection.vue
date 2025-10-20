@@ -372,8 +372,7 @@ animation-delay: 0.6s;
       </h2>
 
       <p class="fadeSection" :class="{ visible: showText }">
-        Innovative Full Stack Developer passionate about creating seamless and impactful app solutions.
-        Passionate about using modern technologies to solve real-world problems.
+        Innovative Full-Stack Software Engineer with a passion for building well-designed and functional applications. Focused on using modern technologies to develop practical and efficient solutions.
       </p>
 
       <div class="actionsRow fadeSection" :class="{ visible: showButton }">

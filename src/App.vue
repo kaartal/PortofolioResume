@@ -8,7 +8,6 @@
     <ProjectSection id="projects" />
     <LearningSteps id="timeline" />
     <ContactDeveloper id="contact" />
-    <Time />
     <Footer />
 <!-- </template>-->
 </template>
