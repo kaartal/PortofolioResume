@@ -332,15 +332,15 @@ animation-delay: 0.6s;
   <!-- SOCIAL MEDIA FIXED LINKS -->
   <div class="flySocial">
     <!-- LINKEDIN PROFILE -->
-    <a href="" target="_blank">
+    <a href="www.linkedin.com/in/halidkartal" target="_blank">
       <i class="fab fa-linkedin-in"></i>
     </a>
     <!-- GITHUB PROFILE -->
-    <a href="" target="_blank">
+    <a href="https://github.com/kaartal" target="_blank">
       <i class="fab fa-github"></i>
     </a>
     <!-- FACEBOOK PROFILE -->
-    <a href="" target="_blank">
+    <a href="https://www.facebook.com/halid.kartal.2025/" target="_blank">
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>
