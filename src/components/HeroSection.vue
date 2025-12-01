@@ -323,6 +323,10 @@ animation-delay: 0.6s;
     width: 90%;
     font-size: 16px;
   }
+
+  .imageDeveloper{
+    margin-bottom:-70px;
+  }
 }
 </style>
 

@@ -157,7 +157,7 @@
 }
 
 .projectDateOfProduct{
-  margin-top:-15px;
+  margin-top:-25px;
   margin-bottom:-10px;
 }
 
@@ -228,6 +228,11 @@
     width: 100%;
     height:570px;
   }
+
+  .projectContent{
+    height:460px;
+  }
+  
 }
 </style>
 
@@ -296,7 +301,7 @@ const projects = [
   {
     title: "souvneir.cs",
     date: "Oct 2025 - Curent",
-    description: "I am currently developing a full-stack web application for managing and selling souvenirs.The application is designed to allow users to browse, add, and purchase unique souvenirs.",
+    description: "I am currently developing web application for managing and selling souvenirs.The application is designed to allow users to purchase unique souvenirs.",
     tags: [".NET", "C#", "EF", "HTML", "CSS", "JavaScript", "SQL"],
     source: "https://github.com/kaartal/VehicleRegistration",
     image: new URL('/WebShopMockUp.webp', import.meta.url).href,

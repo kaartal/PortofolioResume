@@ -111,6 +111,7 @@
  
   .footerSectionDesign {
   clip-path: polygon(0 20%, 205% 0, 127% 100%, 0% 100%);
+  margin-bottom:-4px;
   }
   .footerTitleText {
     font-size: 3.4em;
@@ -129,6 +130,11 @@
   .craftedFromDeveloper {
     font-size: 1.4em;
     padding:10px 2px;
+    
+  }
+
+  .signature-text{
+    display:none;
   }
 }
 
@@ -136,7 +142,7 @@
 
    
   .footerSectionDesign {
-    padding: 30px 15px;
+    padding: 0px 15px;
   }
 
   .footerTitleText {
@@ -159,9 +165,14 @@
     .craftedFromDeveloper {
     font-size: 1.4em;
     padding:10px 2px;
+    margin-bottom:-100px;
   }
 
  
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 </style>
 
