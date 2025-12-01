@@ -11,7 +11,6 @@
   font-family: 'Poppins', sans-serif;
   flex-wrap: wrap;
   margin-top: 100px;
-  margin-bottom: 100px;
   height: 800px;
 }
 
