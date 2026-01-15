@@ -37,6 +37,7 @@ const LearningSteps = defineAsyncComponent(() =>
 const ContactDeveloper = defineAsyncComponent(() =>
   import("@/components/ContactDeveloper.vue")
 );
+
 const Footer = defineAsyncComponent(() => import("@/components/Footer.vue"));
 const Time = defineAsyncComponent(() => import("@/components/Time.vue"));
 import Preloader from "@/components/Preloader.vue";
