@@ -13,7 +13,7 @@
   opacity: 0;
 }
 
-
+/* */ 
 @keyframes slideInRight {
   0% {
     transform: translateX(80px);

@@ -20,7 +20,7 @@
   width: 100%;
   height: 800px;
   aspect-ratio: 5 / 6;
-  z-index: 2;
+  z-index: 999999;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -48,6 +48,7 @@
   object-fit: contain;
   background-color: transparent;
   border-radius: 20px;
+  z-index:9999;
 }
 
 /*ROCKET ANIMATION */
@@ -304,6 +305,7 @@ animation-delay: 0.6s;
   .imageDeveloper {
     max-width: 280px;
     aspect-ratio: 5 / 7;
+    z-index: 9999;;
   }
 
   .developerDescription h1 {
